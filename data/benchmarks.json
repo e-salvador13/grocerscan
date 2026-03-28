@@ -1,0 +1,2186 @@
+[
+  {
+    "item": "Licensed Plumber",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 82.00,
+      "regional": {
+        "Dallas_TX": 85.00,
+        "Houston_TX": 83.00,
+        "New_York_NY": 115.00,
+        "Los_Angeles_CA": 98.00,
+        "Chicago_IL": 92.00,
+        "Miami_FL": 78.00,
+        "Atlanta_GA": 75.00,
+        "Denver_CO": 88.00,
+        "Seattle_WA": 95.00,
+        "Cleveland_OH": 74.00,
+        "Richmond_VA": 79.00,
+        "Phoenix_AZ": 80.00
+      },
+      "range": {"low": 58.00, "high": 125.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Electrician (Journeyman)",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 78.00,
+      "regional": {
+        "Dallas_TX": 80.00,
+        "Houston_TX": 78.00,
+        "New_York_NY": 110.00,
+        "Los_Angeles_CA": 95.00,
+        "Chicago_IL": 88.00,
+        "Miami_FL": 74.00,
+        "Atlanta_GA": 72.00,
+        "Denver_CO": 84.00,
+        "Seattle_WA": 92.00,
+        "Cleveland_OH": 70.00,
+        "Richmond_VA": 75.00,
+        "Phoenix_AZ": 76.00
+      },
+      "range": {"low": 52.00, "high": 120.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Electrician (Master)",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 95.00,
+      "regional": {
+        "Dallas_TX": 98.00,
+        "Houston_TX": 95.00,
+        "New_York_NY": 135.00,
+        "Los_Angeles_CA": 115.00,
+        "Chicago_IL": 105.00,
+        "Miami_FL": 90.00,
+        "Atlanta_GA": 88.00,
+        "Denver_CO": 100.00,
+        "Seattle_WA": 110.00,
+        "Cleveland_OH": 85.00,
+        "Richmond_VA": 92.00,
+        "Phoenix_AZ": 93.00
+      },
+      "range": {"low": 70.00, "high": 150.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "HVAC Technician",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 80.00,
+      "regional": {
+        "Dallas_TX": 82.00,
+        "Houston_TX": 80.00,
+        "New_York_NY": 108.00,
+        "Los_Angeles_CA": 95.00,
+        "Chicago_IL": 88.00,
+        "Miami_FL": 78.00,
+        "Atlanta_GA": 74.00,
+        "Denver_CO": 86.00,
+        "Seattle_WA": 92.00,
+        "Cleveland_OH": 72.00,
+        "Richmond_VA": 77.00,
+        "Phoenix_AZ": 82.00
+      },
+      "range": {"low": 55.00, "high": 120.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "General Laborer",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 38.00,
+      "regional": {
+        "Dallas_TX": 36.00,
+        "Houston_TX": 35.00,
+        "New_York_NY": 52.00,
+        "Los_Angeles_CA": 45.00,
+        "Chicago_IL": 42.00,
+        "Miami_FL": 34.00,
+        "Atlanta_GA": 33.00,
+        "Denver_CO": 40.00,
+        "Seattle_WA": 44.00,
+        "Cleveland_OH": 32.00,
+        "Richmond_VA": 35.00,
+        "Phoenix_AZ": 36.00
+      },
+      "range": {"low": 25.00, "high": 58.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Carpenter",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 72.00,
+      "regional": {
+        "Dallas_TX": 70.00,
+        "Houston_TX": 68.00,
+        "New_York_NY": 100.00,
+        "Los_Angeles_CA": 88.00,
+        "Chicago_IL": 82.00,
+        "Miami_FL": 65.00,
+        "Atlanta_GA": 64.00,
+        "Denver_CO": 76.00,
+        "Seattle_WA": 85.00,
+        "Cleveland_OH": 62.00,
+        "Richmond_VA": 68.00,
+        "Phoenix_AZ": 70.00
+      },
+      "range": {"low": 48.00, "high": 110.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Painter",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 55.00,
+      "regional": {
+        "Dallas_TX": 52.00,
+        "Houston_TX": 50.00,
+        "New_York_NY": 78.00,
+        "Los_Angeles_CA": 68.00,
+        "Chicago_IL": 62.00,
+        "Miami_FL": 48.00,
+        "Atlanta_GA": 47.00,
+        "Denver_CO": 58.00,
+        "Seattle_WA": 65.00,
+        "Cleveland_OH": 46.00,
+        "Richmond_VA": 52.00,
+        "Phoenix_AZ": 53.00
+      },
+      "range": {"low": 35.00, "high": 85.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Roofer",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 65.00,
+      "regional": {
+        "Dallas_TX": 62.00,
+        "Houston_TX": 60.00,
+        "New_York_NY": 90.00,
+        "Los_Angeles_CA": 78.00,
+        "Chicago_IL": 72.00,
+        "Miami_FL": 60.00,
+        "Atlanta_GA": 58.00,
+        "Denver_CO": 68.00,
+        "Seattle_WA": 75.00,
+        "Cleveland_OH": 56.00,
+        "Richmond_VA": 62.00,
+        "Phoenix_AZ": 64.00
+      },
+      "range": {"low": 42.00, "high": 98.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Welder",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 75.00,
+      "regional": {
+        "Dallas_TX": 78.00,
+        "Houston_TX": 80.00,
+        "New_York_NY": 105.00,
+        "Los_Angeles_CA": 90.00,
+        "Chicago_IL": 82.00,
+        "Miami_FL": 70.00,
+        "Atlanta_GA": 68.00,
+        "Denver_CO": 78.00,
+        "Seattle_WA": 88.00,
+        "Cleveland_OH": 66.00,
+        "Richmond_VA": 72.00,
+        "Phoenix_AZ": 74.00
+      },
+      "range": {"low": 50.00, "high": 115.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Concrete Finisher",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 60.00,
+      "regional": {
+        "Dallas_TX": 58.00,
+        "Houston_TX": 56.00,
+        "New_York_NY": 85.00,
+        "Los_Angeles_CA": 72.00,
+        "Chicago_IL": 68.00,
+        "Miami_FL": 55.00,
+        "Atlanta_GA": 52.00,
+        "Denver_CO": 64.00,
+        "Seattle_WA": 70.00,
+        "Cleveland_OH": 50.00,
+        "Richmond_VA": 57.00,
+        "Phoenix_AZ": 58.00
+      },
+      "range": {"low": 38.00, "high": 92.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Drywall Installer",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 58.00,
+      "regional": {
+        "Dallas_TX": 55.00,
+        "Houston_TX": 54.00,
+        "New_York_NY": 82.00,
+        "Los_Angeles_CA": 70.00,
+        "Chicago_IL": 65.00,
+        "Miami_FL": 52.00,
+        "Atlanta_GA": 50.00,
+        "Denver_CO": 62.00,
+        "Seattle_WA": 68.00,
+        "Cleveland_OH": 48.00,
+        "Richmond_VA": 55.00,
+        "Phoenix_AZ": 56.00
+      },
+      "range": {"low": 36.00, "high": 88.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Tile Setter",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 65.00,
+      "regional": {
+        "Dallas_TX": 62.00,
+        "Houston_TX": 60.00,
+        "New_York_NY": 92.00,
+        "Los_Angeles_CA": 80.00,
+        "Chicago_IL": 72.00,
+        "Miami_FL": 58.00,
+        "Atlanta_GA": 56.00,
+        "Denver_CO": 68.00,
+        "Seattle_WA": 75.00,
+        "Cleveland_OH": 54.00,
+        "Richmond_VA": 62.00,
+        "Phoenix_AZ": 63.00
+      },
+      "range": {"low": 42.00, "high": 100.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Mason/Bricklayer",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 70.00,
+      "regional": {
+        "Dallas_TX": 68.00,
+        "Houston_TX": 66.00,
+        "New_York_NY": 98.00,
+        "Los_Angeles_CA": 85.00,
+        "Chicago_IL": 78.00,
+        "Miami_FL": 64.00,
+        "Atlanta_GA": 62.00,
+        "Denver_CO": 74.00,
+        "Seattle_WA": 82.00,
+        "Cleveland_OH": 60.00,
+        "Richmond_VA": 67.00,
+        "Phoenix_AZ": 68.00
+      },
+      "range": {"low": 46.00, "high": 108.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Excavation Operator",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 68.00,
+      "regional": {
+        "Dallas_TX": 65.00,
+        "Houston_TX": 66.00,
+        "New_York_NY": 95.00,
+        "Los_Angeles_CA": 82.00,
+        "Chicago_IL": 76.00,
+        "Miami_FL": 62.00,
+        "Atlanta_GA": 60.00,
+        "Denver_CO": 72.00,
+        "Seattle_WA": 80.00,
+        "Cleveland_OH": 58.00,
+        "Richmond_VA": 65.00,
+        "Phoenix_AZ": 66.00
+      },
+      "range": {"low": 44.00, "high": 105.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Demolition Worker",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 48.00,
+      "regional": {
+        "Dallas_TX": 45.00,
+        "Houston_TX": 44.00,
+        "New_York_NY": 68.00,
+        "Los_Angeles_CA": 58.00,
+        "Chicago_IL": 54.00,
+        "Miami_FL": 42.00,
+        "Atlanta_GA": 40.00,
+        "Denver_CO": 50.00,
+        "Seattle_WA": 56.00,
+        "Cleveland_OH": 38.00,
+        "Richmond_VA": 45.00,
+        "Phoenix_AZ": 46.00
+      },
+      "range": {"low": 30.00, "high": 72.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Insulation Installer",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 52.00,
+      "regional": {
+        "Dallas_TX": 50.00,
+        "Houston_TX": 48.00,
+        "New_York_NY": 72.00,
+        "Los_Angeles_CA": 64.00,
+        "Chicago_IL": 58.00,
+        "Miami_FL": 46.00,
+        "Atlanta_GA": 44.00,
+        "Denver_CO": 56.00,
+        "Seattle_WA": 62.00,
+        "Cleveland_OH": 42.00,
+        "Richmond_VA": 50.00,
+        "Phoenix_AZ": 50.00
+      },
+      "range": {"low": 34.00, "high": 78.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Flooring Installer",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 58.00,
+      "regional": {
+        "Dallas_TX": 55.00,
+        "Houston_TX": 54.00,
+        "New_York_NY": 80.00,
+        "Los_Angeles_CA": 70.00,
+        "Chicago_IL": 64.00,
+        "Miami_FL": 52.00,
+        "Atlanta_GA": 50.00,
+        "Denver_CO": 62.00,
+        "Seattle_WA": 68.00,
+        "Cleveland_OH": 48.00,
+        "Richmond_VA": 55.00,
+        "Phoenix_AZ": 56.00
+      },
+      "range": {"low": 38.00, "high": 88.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Glass/Glazier",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 65.00,
+      "regional": {
+        "Dallas_TX": 62.00,
+        "Houston_TX": 60.00,
+        "New_York_NY": 92.00,
+        "Los_Angeles_CA": 80.00,
+        "Chicago_IL": 72.00,
+        "Miami_FL": 58.00,
+        "Atlanta_GA": 56.00,
+        "Denver_CO": 68.00,
+        "Seattle_WA": 76.00,
+        "Cleveland_OH": 54.00,
+        "Richmond_VA": 62.00,
+        "Phoenix_AZ": 63.00
+      },
+      "range": {"low": 42.00, "high": 98.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Iron Worker",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 78.00,
+      "regional": {
+        "Dallas_TX": 75.00,
+        "Houston_TX": 76.00,
+        "New_York_NY": 112.00,
+        "Los_Angeles_CA": 95.00,
+        "Chicago_IL": 88.00,
+        "Miami_FL": 70.00,
+        "Atlanta_GA": 68.00,
+        "Denver_CO": 82.00,
+        "Seattle_WA": 90.00,
+        "Cleveland_OH": 66.00,
+        "Richmond_VA": 74.00,
+        "Phoenix_AZ": 75.00
+      },
+      "range": {"low": 52.00, "high": 120.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Sheet Metal Worker",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 72.00,
+      "regional": {
+        "Dallas_TX": 70.00,
+        "Houston_TX": 68.00,
+        "New_York_NY": 102.00,
+        "Los_Angeles_CA": 88.00,
+        "Chicago_IL": 80.00,
+        "Miami_FL": 65.00,
+        "Atlanta_GA": 64.00,
+        "Denver_CO": 76.00,
+        "Seattle_WA": 84.00,
+        "Cleveland_OH": 62.00,
+        "Richmond_VA": 70.00,
+        "Phoenix_AZ": 70.00
+      },
+      "range": {"low": 48.00, "high": 110.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Fire Sprinkler Fitter",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 76.00,
+      "regional": {
+        "Dallas_TX": 74.00,
+        "Houston_TX": 72.00,
+        "New_York_NY": 108.00,
+        "Los_Angeles_CA": 92.00,
+        "Chicago_IL": 85.00,
+        "Miami_FL": 68.00,
+        "Atlanta_GA": 66.00,
+        "Denver_CO": 80.00,
+        "Seattle_WA": 88.00,
+        "Cleveland_OH": 64.00,
+        "Richmond_VA": 73.00,
+        "Phoenix_AZ": 74.00
+      },
+      "range": {"low": 50.00, "high": 115.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Elevator Mechanic",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 105.00,
+      "regional": {
+        "Dallas_TX": 100.00,
+        "Houston_TX": 98.00,
+        "New_York_NY": 145.00,
+        "Los_Angeles_CA": 125.00,
+        "Chicago_IL": 115.00,
+        "Miami_FL": 95.00,
+        "Atlanta_GA": 92.00,
+        "Denver_CO": 108.00,
+        "Seattle_WA": 120.00,
+        "Cleveland_OH": 90.00,
+        "Richmond_VA": 100.00,
+        "Phoenix_AZ": 102.00
+      },
+      "range": {"low": 75.00, "high": 160.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Landscaper",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 42.00,
+      "regional": {
+        "Dallas_TX": 40.00,
+        "Houston_TX": 38.00,
+        "New_York_NY": 58.00,
+        "Los_Angeles_CA": 52.00,
+        "Chicago_IL": 46.00,
+        "Miami_FL": 38.00,
+        "Atlanta_GA": 36.00,
+        "Denver_CO": 44.00,
+        "Seattle_WA": 50.00,
+        "Cleveland_OH": 34.00,
+        "Richmond_VA": 40.00,
+        "Phoenix_AZ": 40.00
+      },
+      "range": {"low": 28.00, "high": 62.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Plumber Apprentice",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 45.00,
+      "regional": {
+        "Dallas_TX": 44.00,
+        "Houston_TX": 42.00,
+        "New_York_NY": 62.00,
+        "Los_Angeles_CA": 55.00,
+        "Chicago_IL": 50.00,
+        "Miami_FL": 40.00,
+        "Atlanta_GA": 38.00,
+        "Denver_CO": 48.00,
+        "Seattle_WA": 52.00,
+        "Cleveland_OH": 36.00,
+        "Richmond_VA": 42.00,
+        "Phoenix_AZ": 44.00
+      },
+      "range": {"low": 28.00, "high": 68.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Electrician Apprentice",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 42.00,
+      "regional": {
+        "Dallas_TX": 40.00,
+        "Houston_TX": 38.00,
+        "New_York_NY": 58.00,
+        "Los_Angeles_CA": 52.00,
+        "Chicago_IL": 48.00,
+        "Miami_FL": 36.00,
+        "Atlanta_GA": 35.00,
+        "Denver_CO": 45.00,
+        "Seattle_WA": 50.00,
+        "Cleveland_OH": 34.00,
+        "Richmond_VA": 40.00,
+        "Phoenix_AZ": 40.00
+      },
+      "range": {"low": 26.00, "high": 65.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Project Foreman",
+    "category": "labor",
+    "unit": "hourly",
+    "benchmarks": {
+      "national_average": 85.00,
+      "regional": {
+        "Dallas_TX": 82.00,
+        "Houston_TX": 80.00,
+        "New_York_NY": 118.00,
+        "Los_Angeles_CA": 102.00,
+        "Chicago_IL": 95.00,
+        "Miami_FL": 78.00,
+        "Atlanta_GA": 76.00,
+        "Denver_CO": 90.00,
+        "Seattle_WA": 98.00,
+        "Cleveland_OH": 72.00,
+        "Richmond_VA": 82.00,
+        "Phoenix_AZ": 83.00
+      },
+      "range": {"low": 58.00, "high": 130.00}
+    },
+    "source": "BLS OEWS 2025"
+  },
+  {
+    "item": "Copper Pipe 1/2 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 4.50,
+      "regional": {
+        "Dallas_TX": 4.40,
+        "Houston_TX": 4.35,
+        "New_York_NY": 5.80,
+        "Los_Angeles_CA": 5.20,
+        "Chicago_IL": 4.80,
+        "Miami_FL": 4.30,
+        "Atlanta_GA": 4.20,
+        "Denver_CO": 4.60,
+        "Seattle_WA": 5.00,
+        "Cleveland_OH": 4.10,
+        "Richmond_VA": 4.40,
+        "Phoenix_AZ": 4.45
+      },
+      "range": {"low": 3.20, "high": 6.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Copper Pipe 3/4 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 6.80,
+      "regional": {
+        "Dallas_TX": 6.60,
+        "Houston_TX": 6.50,
+        "New_York_NY": 8.80,
+        "Los_Angeles_CA": 7.90,
+        "Chicago_IL": 7.30,
+        "Miami_FL": 6.40,
+        "Atlanta_GA": 6.30,
+        "Denver_CO": 7.00,
+        "Seattle_WA": 7.60,
+        "Cleveland_OH": 6.20,
+        "Richmond_VA": 6.60,
+        "Phoenix_AZ": 6.70
+      },
+      "range": {"low": 4.80, "high": 9.80}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Copper Pipe 1 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 10.50,
+      "regional": {
+        "Dallas_TX": 10.20,
+        "Houston_TX": 10.00,
+        "New_York_NY": 13.50,
+        "Los_Angeles_CA": 12.20,
+        "Chicago_IL": 11.20,
+        "Miami_FL": 9.80,
+        "Atlanta_GA": 9.60,
+        "Denver_CO": 10.80,
+        "Seattle_WA": 11.80,
+        "Cleveland_OH": 9.40,
+        "Richmond_VA": 10.20,
+        "Phoenix_AZ": 10.40
+      },
+      "range": {"low": 7.50, "high": 15.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "PVC Pipe 2 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 2.20,
+      "regional": {
+        "Dallas_TX": 2.10,
+        "Houston_TX": 2.00,
+        "New_York_NY": 2.90,
+        "Los_Angeles_CA": 2.60,
+        "Chicago_IL": 2.40,
+        "Miami_FL": 2.00,
+        "Atlanta_GA": 1.95,
+        "Denver_CO": 2.30,
+        "Seattle_WA": 2.50,
+        "Cleveland_OH": 1.90,
+        "Richmond_VA": 2.10,
+        "Phoenix_AZ": 2.15
+      },
+      "range": {"low": 1.40, "high": 3.20}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "PVC Pipe 4 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 4.80,
+      "regional": {
+        "Dallas_TX": 4.60,
+        "Houston_TX": 4.50,
+        "New_York_NY": 6.20,
+        "Los_Angeles_CA": 5.60,
+        "Chicago_IL": 5.10,
+        "Miami_FL": 4.40,
+        "Atlanta_GA": 4.30,
+        "Denver_CO": 5.00,
+        "Seattle_WA": 5.40,
+        "Cleveland_OH": 4.20,
+        "Richmond_VA": 4.60,
+        "Phoenix_AZ": 4.70
+      },
+      "range": {"low": 3.20, "high": 7.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Romex Wire 12/2 (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 1.15,
+      "regional": {
+        "Dallas_TX": 1.10,
+        "Houston_TX": 1.08,
+        "New_York_NY": 1.48,
+        "Los_Angeles_CA": 1.35,
+        "Chicago_IL": 1.24,
+        "Miami_FL": 1.05,
+        "Atlanta_GA": 1.02,
+        "Denver_CO": 1.18,
+        "Seattle_WA": 1.30,
+        "Cleveland_OH": 1.00,
+        "Richmond_VA": 1.10,
+        "Phoenix_AZ": 1.12
+      },
+      "range": {"low": 0.75, "high": 1.65}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Romex Wire 14/2 (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 0.85,
+      "regional": {
+        "Dallas_TX": 0.82,
+        "Houston_TX": 0.80,
+        "New_York_NY": 1.10,
+        "Los_Angeles_CA": 1.00,
+        "Chicago_IL": 0.92,
+        "Miami_FL": 0.78,
+        "Atlanta_GA": 0.76,
+        "Denver_CO": 0.88,
+        "Seattle_WA": 0.96,
+        "Cleveland_OH": 0.74,
+        "Richmond_VA": 0.82,
+        "Phoenix_AZ": 0.84
+      },
+      "range": {"low": 0.55, "high": 1.25}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "EMT Conduit 1/2 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 1.80,
+      "regional": {
+        "Dallas_TX": 1.72,
+        "Houston_TX": 1.68,
+        "New_York_NY": 2.35,
+        "Los_Angeles_CA": 2.10,
+        "Chicago_IL": 1.95,
+        "Miami_FL": 1.65,
+        "Atlanta_GA": 1.60,
+        "Denver_CO": 1.85,
+        "Seattle_WA": 2.05,
+        "Cleveland_OH": 1.58,
+        "Richmond_VA": 1.72,
+        "Phoenix_AZ": 1.75
+      },
+      "range": {"low": 1.20, "high": 2.60}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "EMT Conduit 3/4 inch (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 2.40,
+      "regional": {
+        "Dallas_TX": 2.30,
+        "Houston_TX": 2.25,
+        "New_York_NY": 3.10,
+        "Los_Angeles_CA": 2.80,
+        "Chicago_IL": 2.60,
+        "Miami_FL": 2.20,
+        "Atlanta_GA": 2.15,
+        "Denver_CO": 2.50,
+        "Seattle_WA": 2.72,
+        "Cleveland_OH": 2.10,
+        "Richmond_VA": 2.30,
+        "Phoenix_AZ": 2.35
+      },
+      "range": {"low": 1.60, "high": 3.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Drywall Sheet 4x8 1/2 inch",
+    "category": "materials",
+    "unit": "per sheet",
+    "benchmarks": {
+      "national_average": 16.50,
+      "regional": {
+        "Dallas_TX": 15.80,
+        "Houston_TX": 15.50,
+        "New_York_NY": 21.00,
+        "Los_Angeles_CA": 19.20,
+        "Chicago_IL": 17.60,
+        "Miami_FL": 15.20,
+        "Atlanta_GA": 14.80,
+        "Denver_CO": 17.00,
+        "Seattle_WA": 18.50,
+        "Cleveland_OH": 14.50,
+        "Richmond_VA": 15.80,
+        "Phoenix_AZ": 16.00
+      },
+      "range": {"low": 12.00, "high": 24.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Drywall Sheet 4x8 5/8 inch",
+    "category": "materials",
+    "unit": "per sheet",
+    "benchmarks": {
+      "national_average": 18.50,
+      "regional": {
+        "Dallas_TX": 17.80,
+        "Houston_TX": 17.40,
+        "New_York_NY": 23.50,
+        "Los_Angeles_CA": 21.50,
+        "Chicago_IL": 19.80,
+        "Miami_FL": 17.00,
+        "Atlanta_GA": 16.60,
+        "Denver_CO": 19.10,
+        "Seattle_WA": 20.80,
+        "Cleveland_OH": 16.20,
+        "Richmond_VA": 17.80,
+        "Phoenix_AZ": 18.00
+      },
+      "range": {"low": 13.50, "high": 26.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Plywood 4x8 3/4 inch CDX",
+    "category": "materials",
+    "unit": "per sheet",
+    "benchmarks": {
+      "national_average": 52.00,
+      "regional": {
+        "Dallas_TX": 50.00,
+        "Houston_TX": 48.00,
+        "New_York_NY": 68.00,
+        "Los_Angeles_CA": 62.00,
+        "Chicago_IL": 56.00,
+        "Miami_FL": 48.00,
+        "Atlanta_GA": 46.00,
+        "Denver_CO": 54.00,
+        "Seattle_WA": 58.00,
+        "Cleveland_OH": 44.00,
+        "Richmond_VA": 50.00,
+        "Phoenix_AZ": 51.00
+      },
+      "range": {"low": 36.00, "high": 75.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "2x4 Lumber 8ft Stud",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 5.80,
+      "regional": {
+        "Dallas_TX": 5.50,
+        "Houston_TX": 5.40,
+        "New_York_NY": 7.60,
+        "Los_Angeles_CA": 6.80,
+        "Chicago_IL": 6.20,
+        "Miami_FL": 5.30,
+        "Atlanta_GA": 5.10,
+        "Denver_CO": 6.00,
+        "Seattle_WA": 6.50,
+        "Cleveland_OH": 5.00,
+        "Richmond_VA": 5.50,
+        "Phoenix_AZ": 5.60
+      },
+      "range": {"low": 3.80, "high": 8.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Concrete Ready-Mix",
+    "category": "materials",
+    "unit": "per cubic yard",
+    "benchmarks": {
+      "national_average": 165.00,
+      "regional": {
+        "Dallas_TX": 158.00,
+        "Houston_TX": 155.00,
+        "New_York_NY": 215.00,
+        "Los_Angeles_CA": 195.00,
+        "Chicago_IL": 178.00,
+        "Miami_FL": 152.00,
+        "Atlanta_GA": 148.00,
+        "Denver_CO": 172.00,
+        "Seattle_WA": 188.00,
+        "Cleveland_OH": 145.00,
+        "Richmond_VA": 158.00,
+        "Phoenix_AZ": 160.00
+      },
+      "range": {"low": 120.00, "high": 240.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Rebar #4 (per ft)",
+    "category": "materials",
+    "unit": "per foot",
+    "benchmarks": {
+      "national_average": 1.25,
+      "regional": {
+        "Dallas_TX": 1.20,
+        "Houston_TX": 1.18,
+        "New_York_NY": 1.62,
+        "Los_Angeles_CA": 1.45,
+        "Chicago_IL": 1.35,
+        "Miami_FL": 1.15,
+        "Atlanta_GA": 1.12,
+        "Denver_CO": 1.28,
+        "Seattle_WA": 1.40,
+        "Cleveland_OH": 1.10,
+        "Richmond_VA": 1.20,
+        "Phoenix_AZ": 1.22
+      },
+      "range": {"low": 0.85, "high": 1.80}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Insulation R-13 Batt (per sq ft)",
+    "category": "materials",
+    "unit": "per sq ft",
+    "benchmarks": {
+      "national_average": 0.72,
+      "regional": {
+        "Dallas_TX": 0.68,
+        "Houston_TX": 0.66,
+        "New_York_NY": 0.94,
+        "Los_Angeles_CA": 0.84,
+        "Chicago_IL": 0.78,
+        "Miami_FL": 0.65,
+        "Atlanta_GA": 0.62,
+        "Denver_CO": 0.75,
+        "Seattle_WA": 0.82,
+        "Cleveland_OH": 0.60,
+        "Richmond_VA": 0.68,
+        "Phoenix_AZ": 0.70
+      },
+      "range": {"low": 0.45, "high": 1.05}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Insulation R-30 Batt (per sq ft)",
+    "category": "materials",
+    "unit": "per sq ft",
+    "benchmarks": {
+      "national_average": 1.35,
+      "regional": {
+        "Dallas_TX": 1.28,
+        "Houston_TX": 1.25,
+        "New_York_NY": 1.75,
+        "Los_Angeles_CA": 1.58,
+        "Chicago_IL": 1.45,
+        "Miami_FL": 1.22,
+        "Atlanta_GA": 1.18,
+        "Denver_CO": 1.40,
+        "Seattle_WA": 1.52,
+        "Cleveland_OH": 1.15,
+        "Richmond_VA": 1.28,
+        "Phoenix_AZ": 1.32
+      },
+      "range": {"low": 0.90, "high": 1.95}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Roofing Shingles (Architectural)",
+    "category": "materials",
+    "unit": "per square (100 sqft)",
+    "benchmarks": {
+      "national_average": 135.00,
+      "regional": {
+        "Dallas_TX": 130.00,
+        "Houston_TX": 128.00,
+        "New_York_NY": 172.00,
+        "Los_Angeles_CA": 158.00,
+        "Chicago_IL": 145.00,
+        "Miami_FL": 125.00,
+        "Atlanta_GA": 122.00,
+        "Denver_CO": 140.00,
+        "Seattle_WA": 152.00,
+        "Cleveland_OH": 118.00,
+        "Richmond_VA": 130.00,
+        "Phoenix_AZ": 132.00
+      },
+      "range": {"low": 95.00, "high": 195.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Standing Seam Metal Roof",
+    "category": "materials",
+    "unit": "per square (100 sqft)",
+    "benchmarks": {
+      "national_average": 450.00,
+      "regional": {
+        "Dallas_TX": 435.00,
+        "Houston_TX": 425.00,
+        "New_York_NY": 580.00,
+        "Los_Angeles_CA": 525.00,
+        "Chicago_IL": 480.00,
+        "Miami_FL": 420.00,
+        "Atlanta_GA": 410.00,
+        "Denver_CO": 465.00,
+        "Seattle_WA": 505.00,
+        "Cleveland_OH": 395.00,
+        "Richmond_VA": 435.00,
+        "Phoenix_AZ": 445.00
+      },
+      "range": {"low": 320.00, "high": 650.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Commercial Carpet Tile (per sq ft)",
+    "category": "materials",
+    "unit": "per sq ft",
+    "benchmarks": {
+      "national_average": 4.50,
+      "regional": {
+        "Dallas_TX": 4.30,
+        "Houston_TX": 4.20,
+        "New_York_NY": 5.80,
+        "Los_Angeles_CA": 5.25,
+        "Chicago_IL": 4.80,
+        "Miami_FL": 4.10,
+        "Atlanta_GA": 4.00,
+        "Denver_CO": 4.65,
+        "Seattle_WA": 5.05,
+        "Cleveland_OH": 3.90,
+        "Richmond_VA": 4.30,
+        "Phoenix_AZ": 4.40
+      },
+      "range": {"low": 3.00, "high": 6.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Vinyl Plank Flooring (per sq ft)",
+    "category": "materials",
+    "unit": "per sq ft",
+    "benchmarks": {
+      "national_average": 3.80,
+      "regional": {
+        "Dallas_TX": 3.60,
+        "Houston_TX": 3.50,
+        "New_York_NY": 4.90,
+        "Los_Angeles_CA": 4.45,
+        "Chicago_IL": 4.10,
+        "Miami_FL": 3.45,
+        "Atlanta_GA": 3.35,
+        "Denver_CO": 3.95,
+        "Seattle_WA": 4.30,
+        "Cleveland_OH": 3.28,
+        "Richmond_VA": 3.60,
+        "Phoenix_AZ": 3.70
+      },
+      "range": {"low": 2.50, "high": 5.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Ceramic Tile (per sq ft)",
+    "category": "materials",
+    "unit": "per sq ft",
+    "benchmarks": {
+      "national_average": 5.50,
+      "regional": {
+        "Dallas_TX": 5.20,
+        "Houston_TX": 5.10,
+        "New_York_NY": 7.10,
+        "Los_Angeles_CA": 6.40,
+        "Chicago_IL": 5.90,
+        "Miami_FL": 5.00,
+        "Atlanta_GA": 4.85,
+        "Denver_CO": 5.70,
+        "Seattle_WA": 6.20,
+        "Cleveland_OH": 4.75,
+        "Richmond_VA": 5.20,
+        "Phoenix_AZ": 5.40
+      },
+      "range": {"low": 3.50, "high": 8.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Paint Interior (per gallon)",
+    "category": "materials",
+    "unit": "per gallon",
+    "benchmarks": {
+      "national_average": 42.00,
+      "regional": {
+        "Dallas_TX": 40.00,
+        "Houston_TX": 39.00,
+        "New_York_NY": 54.00,
+        "Los_Angeles_CA": 49.00,
+        "Chicago_IL": 45.00,
+        "Miami_FL": 38.00,
+        "Atlanta_GA": 37.00,
+        "Denver_CO": 43.00,
+        "Seattle_WA": 48.00,
+        "Cleveland_OH": 36.00,
+        "Richmond_VA": 40.00,
+        "Phoenix_AZ": 41.00
+      },
+      "range": {"low": 28.00, "high": 62.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Paint Exterior (per gallon)",
+    "category": "materials",
+    "unit": "per gallon",
+    "benchmarks": {
+      "national_average": 55.00,
+      "regional": {
+        "Dallas_TX": 52.00,
+        "Houston_TX": 50.00,
+        "New_York_NY": 72.00,
+        "Los_Angeles_CA": 65.00,
+        "Chicago_IL": 60.00,
+        "Miami_FL": 50.00,
+        "Atlanta_GA": 48.00,
+        "Denver_CO": 58.00,
+        "Seattle_WA": 62.00,
+        "Cleveland_OH": 46.00,
+        "Richmond_VA": 52.00,
+        "Phoenix_AZ": 54.00
+      },
+      "range": {"low": 36.00, "high": 80.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "HVAC Ductwork (per linear ft)",
+    "category": "materials",
+    "unit": "per linear ft",
+    "benchmarks": {
+      "national_average": 18.00,
+      "regional": {
+        "Dallas_TX": 17.00,
+        "Houston_TX": 16.50,
+        "New_York_NY": 23.50,
+        "Los_Angeles_CA": 21.00,
+        "Chicago_IL": 19.50,
+        "Miami_FL": 16.00,
+        "Atlanta_GA": 15.50,
+        "Denver_CO": 18.80,
+        "Seattle_WA": 20.50,
+        "Cleveland_OH": 15.00,
+        "Richmond_VA": 17.00,
+        "Phoenix_AZ": 17.50
+      },
+      "range": {"low": 12.00, "high": 26.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Circuit Breaker Panel 200A",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 285.00,
+      "regional": {
+        "Dallas_TX": 275.00,
+        "Houston_TX": 270.00,
+        "New_York_NY": 365.00,
+        "Los_Angeles_CA": 330.00,
+        "Chicago_IL": 305.00,
+        "Miami_FL": 265.00,
+        "Atlanta_GA": 258.00,
+        "Denver_CO": 295.00,
+        "Seattle_WA": 320.00,
+        "Cleveland_OH": 250.00,
+        "Richmond_VA": 275.00,
+        "Phoenix_AZ": 280.00
+      },
+      "range": {"low": 200.00, "high": 420.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Water Heater 40 Gallon Gas",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 680.00,
+      "regional": {
+        "Dallas_TX": 660.00,
+        "Houston_TX": 650.00,
+        "New_York_NY": 880.00,
+        "Los_Angeles_CA": 790.00,
+        "Chicago_IL": 725.00,
+        "Miami_FL": 640.00,
+        "Atlanta_GA": 620.00,
+        "Denver_CO": 700.00,
+        "Seattle_WA": 760.00,
+        "Cleveland_OH": 610.00,
+        "Richmond_VA": 660.00,
+        "Phoenix_AZ": 670.00
+      },
+      "range": {"low": 480.00, "high": 980.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Water Heater 50 Gallon Electric",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 720.00,
+      "regional": {
+        "Dallas_TX": 700.00,
+        "Houston_TX": 690.00,
+        "New_York_NY": 930.00,
+        "Los_Angeles_CA": 840.00,
+        "Chicago_IL": 770.00,
+        "Miami_FL": 680.00,
+        "Atlanta_GA": 660.00,
+        "Denver_CO": 740.00,
+        "Seattle_WA": 800.00,
+        "Cleveland_OH": 650.00,
+        "Richmond_VA": 700.00,
+        "Phoenix_AZ": 710.00
+      },
+      "range": {"low": 520.00, "high": 1020.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Toilet Commercial Grade",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 385.00,
+      "regional": {
+        "Dallas_TX": 370.00,
+        "Houston_TX": 365.00,
+        "New_York_NY": 495.00,
+        "Los_Angeles_CA": 445.00,
+        "Chicago_IL": 410.00,
+        "Miami_FL": 360.00,
+        "Atlanta_GA": 350.00,
+        "Denver_CO": 400.00,
+        "Seattle_WA": 430.00,
+        "Cleveland_OH": 340.00,
+        "Richmond_VA": 370.00,
+        "Phoenix_AZ": 378.00
+      },
+      "range": {"low": 265.00, "high": 560.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Sink Stainless Steel",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 320.00,
+      "regional": {
+        "Dallas_TX": 310.00,
+        "Houston_TX": 305.00,
+        "New_York_NY": 412.00,
+        "Los_Angeles_CA": 370.00,
+        "Chicago_IL": 342.00,
+        "Miami_FL": 298.00,
+        "Atlanta_GA": 290.00,
+        "Denver_CO": 332.00,
+        "Seattle_WA": 360.00,
+        "Cleveland_OH": 282.00,
+        "Richmond_VA": 310.00,
+        "Phoenix_AZ": 315.00
+      },
+      "range": {"low": 220.00, "high": 465.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "LED Light Fixture 2x4 Troffer",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 85.00,
+      "regional": {
+        "Dallas_TX": 82.00,
+        "Houston_TX": 80.00,
+        "New_York_NY": 110.00,
+        "Los_Angeles_CA": 99.00,
+        "Chicago_IL": 91.00,
+        "Miami_FL": 78.00,
+        "Atlanta_GA": 76.00,
+        "Denver_CO": 88.00,
+        "Seattle_WA": 96.00,
+        "Cleveland_OH": 74.00,
+        "Richmond_VA": 82.00,
+        "Phoenix_AZ": 84.00
+      },
+      "range": {"low": 58.00, "high": 125.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "LED Recessed Downlight 6 inch",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 32.00,
+      "regional": {
+        "Dallas_TX": 30.00,
+        "Houston_TX": 29.00,
+        "New_York_NY": 42.00,
+        "Los_Angeles_CA": 38.00,
+        "Chicago_IL": 35.00,
+        "Miami_FL": 28.00,
+        "Atlanta_GA": 27.00,
+        "Denver_CO": 33.00,
+        "Seattle_WA": 36.00,
+        "Cleveland_OH": 26.00,
+        "Richmond_VA": 30.00,
+        "Phoenix_AZ": 31.00
+      },
+      "range": {"low": 20.00, "high": 48.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Fire Sprinkler Head",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 18.50,
+      "regional": {
+        "Dallas_TX": 17.50,
+        "Houston_TX": 17.00,
+        "New_York_NY": 24.00,
+        "Los_Angeles_CA": 21.50,
+        "Chicago_IL": 20.00,
+        "Miami_FL": 16.50,
+        "Atlanta_GA": 16.00,
+        "Denver_CO": 19.20,
+        "Seattle_WA": 21.00,
+        "Cleveland_OH": 15.50,
+        "Richmond_VA": 17.50,
+        "Phoenix_AZ": 18.00
+      },
+      "range": {"low": 12.00, "high": 28.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Interior Door (Hollow Core)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 145.00,
+      "regional": {
+        "Dallas_TX": 138.00,
+        "Houston_TX": 135.00,
+        "New_York_NY": 188.00,
+        "Los_Angeles_CA": 170.00,
+        "Chicago_IL": 155.00,
+        "Miami_FL": 132.00,
+        "Atlanta_GA": 128.00,
+        "Denver_CO": 150.00,
+        "Seattle_WA": 164.00,
+        "Cleveland_OH": 125.00,
+        "Richmond_VA": 138.00,
+        "Phoenix_AZ": 142.00
+      },
+      "range": {"low": 98.00, "high": 210.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Interior Door (Solid Core)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 285.00,
+      "regional": {
+        "Dallas_TX": 275.00,
+        "Houston_TX": 268.00,
+        "New_York_NY": 368.00,
+        "Los_Angeles_CA": 332.00,
+        "Chicago_IL": 305.00,
+        "Miami_FL": 262.00,
+        "Atlanta_GA": 255.00,
+        "Denver_CO": 295.00,
+        "Seattle_WA": 320.00,
+        "Cleveland_OH": 248.00,
+        "Richmond_VA": 275.00,
+        "Phoenix_AZ": 280.00
+      },
+      "range": {"low": 195.00, "high": 415.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Exterior Door (Steel)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 480.00,
+      "regional": {
+        "Dallas_TX": 465.00,
+        "Houston_TX": 455.00,
+        "New_York_NY": 620.00,
+        "Los_Angeles_CA": 558.00,
+        "Chicago_IL": 512.00,
+        "Miami_FL": 445.00,
+        "Atlanta_GA": 432.00,
+        "Denver_CO": 498.00,
+        "Seattle_WA": 540.00,
+        "Cleveland_OH": 420.00,
+        "Richmond_VA": 465.00,
+        "Phoenix_AZ": 472.00
+      },
+      "range": {"low": 335.00, "high": 690.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Window Vinyl Double-Hung",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 365.00,
+      "regional": {
+        "Dallas_TX": 350.00,
+        "Houston_TX": 345.00,
+        "New_York_NY": 470.00,
+        "Los_Angeles_CA": 425.00,
+        "Chicago_IL": 390.00,
+        "Miami_FL": 338.00,
+        "Atlanta_GA": 328.00,
+        "Denver_CO": 378.00,
+        "Seattle_WA": 412.00,
+        "Cleveland_OH": 320.00,
+        "Richmond_VA": 350.00,
+        "Phoenix_AZ": 358.00
+      },
+      "range": {"low": 255.00, "high": 530.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Electrical Outlet (20A)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 8.50,
+      "regional": {
+        "Dallas_TX": 8.00,
+        "Houston_TX": 7.80,
+        "New_York_NY": 11.00,
+        "Los_Angeles_CA": 9.90,
+        "Chicago_IL": 9.10,
+        "Miami_FL": 7.60,
+        "Atlanta_GA": 7.40,
+        "Denver_CO": 8.80,
+        "Seattle_WA": 9.60,
+        "Cleveland_OH": 7.20,
+        "Richmond_VA": 8.00,
+        "Phoenix_AZ": 8.30
+      },
+      "range": {"low": 5.50, "high": 12.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Light Switch (Single Pole)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 4.50,
+      "regional": {
+        "Dallas_TX": 4.20,
+        "Houston_TX": 4.10,
+        "New_York_NY": 5.80,
+        "Los_Angeles_CA": 5.20,
+        "Chicago_IL": 4.80,
+        "Miami_FL": 4.00,
+        "Atlanta_GA": 3.90,
+        "Denver_CO": 4.65,
+        "Seattle_WA": 5.10,
+        "Cleveland_OH": 3.80,
+        "Richmond_VA": 4.20,
+        "Phoenix_AZ": 4.40
+      },
+      "range": {"low": 2.80, "high": 6.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "GFCI Outlet",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 22.00,
+      "regional": {
+        "Dallas_TX": 21.00,
+        "Houston_TX": 20.50,
+        "New_York_NY": 28.50,
+        "Los_Angeles_CA": 25.60,
+        "Chicago_IL": 23.50,
+        "Miami_FL": 20.00,
+        "Atlanta_GA": 19.50,
+        "Denver_CO": 22.80,
+        "Seattle_WA": 24.80,
+        "Cleveland_OH": 19.00,
+        "Richmond_VA": 21.00,
+        "Phoenix_AZ": 21.50
+      },
+      "range": {"low": 14.50, "high": 32.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Copper Fitting 1/2 inch Elbow",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 3.20,
+      "regional": {
+        "Dallas_TX": 3.05,
+        "Houston_TX": 3.00,
+        "New_York_NY": 4.15,
+        "Los_Angeles_CA": 3.72,
+        "Chicago_IL": 3.42,
+        "Miami_FL": 2.92,
+        "Atlanta_GA": 2.85,
+        "Denver_CO": 3.32,
+        "Seattle_WA": 3.60,
+        "Cleveland_OH": 2.78,
+        "Richmond_VA": 3.05,
+        "Phoenix_AZ": 3.12
+      },
+      "range": {"low": 2.10, "high": 4.65}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "PVC Fitting Coupling 2 inch",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 1.80,
+      "regional": {
+        "Dallas_TX": 1.72,
+        "Houston_TX": 1.68,
+        "New_York_NY": 2.35,
+        "Los_Angeles_CA": 2.10,
+        "Chicago_IL": 1.95,
+        "Miami_FL": 1.65,
+        "Atlanta_GA": 1.60,
+        "Denver_CO": 1.88,
+        "Seattle_WA": 2.04,
+        "Cleveland_OH": 1.55,
+        "Richmond_VA": 1.72,
+        "Phoenix_AZ": 1.76
+      },
+      "range": {"low": 1.20, "high": 2.60}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Shut-Off Valve 1/2 inch",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 18.00,
+      "regional": {
+        "Dallas_TX": 17.20,
+        "Houston_TX": 16.80,
+        "New_York_NY": 23.40,
+        "Los_Angeles_CA": 21.00,
+        "Chicago_IL": 19.40,
+        "Miami_FL": 16.40,
+        "Atlanta_GA": 15.90,
+        "Denver_CO": 18.60,
+        "Seattle_WA": 20.30,
+        "Cleveland_OH": 15.50,
+        "Richmond_VA": 17.20,
+        "Phoenix_AZ": 17.60
+      },
+      "range": {"low": 12.00, "high": 26.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Drywall Joint Compound (5 gal)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 18.50,
+      "regional": {
+        "Dallas_TX": 17.60,
+        "Houston_TX": 17.20,
+        "New_York_NY": 24.00,
+        "Los_Angeles_CA": 21.50,
+        "Chicago_IL": 19.80,
+        "Miami_FL": 16.80,
+        "Atlanta_GA": 16.30,
+        "Denver_CO": 19.20,
+        "Seattle_WA": 20.80,
+        "Cleveland_OH": 15.90,
+        "Richmond_VA": 17.60,
+        "Phoenix_AZ": 18.00
+      },
+      "range": {"low": 12.50, "high": 26.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Drywall Tape (500 ft roll)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 8.50,
+      "regional": {
+        "Dallas_TX": 8.10,
+        "Houston_TX": 7.90,
+        "New_York_NY": 11.00,
+        "Los_Angeles_CA": 9.90,
+        "Chicago_IL": 9.10,
+        "Miami_FL": 7.70,
+        "Atlanta_GA": 7.50,
+        "Denver_CO": 8.80,
+        "Seattle_WA": 9.60,
+        "Cleveland_OH": 7.30,
+        "Richmond_VA": 8.10,
+        "Phoenix_AZ": 8.30
+      },
+      "range": {"low": 5.50, "high": 12.50}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Faucet (Commercial Kitchen)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 245.00,
+      "regional": {
+        "Dallas_TX": 235.00,
+        "Houston_TX": 230.00,
+        "New_York_NY": 318.00,
+        "Los_Angeles_CA": 285.00,
+        "Chicago_IL": 262.00,
+        "Miami_FL": 225.00,
+        "Atlanta_GA": 218.00,
+        "Denver_CO": 255.00,
+        "Seattle_WA": 276.00,
+        "Cleveland_OH": 212.00,
+        "Richmond_VA": 235.00,
+        "Phoenix_AZ": 240.00
+      },
+      "range": {"low": 165.00, "high": 358.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Faucet (Lavatory)",
+    "category": "materials",
+    "unit": "each",
+    "benchmarks": {
+      "national_average": 125.00,
+      "regional": {
+        "Dallas_TX": 120.00,
+        "Houston_TX": 118.00,
+        "New_York_NY": 162.00,
+        "Los_Angeles_CA": 145.00,
+        "Chicago_IL": 134.00,
+        "Miami_FL": 115.00,
+        "Atlanta_GA": 112.00,
+        "Denver_CO": 130.00,
+        "Seattle_WA": 141.00,
+        "Cleveland_OH": 108.00,
+        "Richmond_VA": 120.00,
+        "Phoenix_AZ": 122.00
+      },
+      "range": {"low": 85.00, "high": 182.00}
+    },
+    "source": "RSMeans 2025"
+  },
+  {
+    "item": "Scissor Lift Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 225.00,
+      "regional": {
+        "Dallas_TX": 215.00,
+        "Houston_TX": 210.00,
+        "New_York_NY": 295.00,
+        "Los_Angeles_CA": 265.00,
+        "Chicago_IL": 242.00,
+        "Miami_FL": 208.00,
+        "Atlanta_GA": 200.00,
+        "Denver_CO": 235.00,
+        "Seattle_WA": 255.00,
+        "Cleveland_OH": 195.00,
+        "Richmond_VA": 215.00,
+        "Phoenix_AZ": 220.00
+      },
+      "range": {"low": 155.00, "high": 330.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Boom Lift Rental (40 ft)",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 385.00,
+      "regional": {
+        "Dallas_TX": 370.00,
+        "Houston_TX": 362.00,
+        "New_York_NY": 498.00,
+        "Los_Angeles_CA": 448.00,
+        "Chicago_IL": 412.00,
+        "Miami_FL": 355.00,
+        "Atlanta_GA": 345.00,
+        "Denver_CO": 400.00,
+        "Seattle_WA": 435.00,
+        "Cleveland_OH": 335.00,
+        "Richmond_VA": 370.00,
+        "Phoenix_AZ": 378.00
+      },
+      "range": {"low": 265.00, "high": 560.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Excavator Rental (Mini)",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 425.00,
+      "regional": {
+        "Dallas_TX": 410.00,
+        "Houston_TX": 400.00,
+        "New_York_NY": 550.00,
+        "Los_Angeles_CA": 495.00,
+        "Chicago_IL": 455.00,
+        "Miami_FL": 392.00,
+        "Atlanta_GA": 380.00,
+        "Denver_CO": 442.00,
+        "Seattle_WA": 480.00,
+        "Cleveland_OH": 370.00,
+        "Richmond_VA": 410.00,
+        "Phoenix_AZ": 418.00
+      },
+      "range": {"low": 295.00, "high": 620.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Skid Steer Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 350.00,
+      "regional": {
+        "Dallas_TX": 335.00,
+        "Houston_TX": 328.00,
+        "New_York_NY": 455.00,
+        "Los_Angeles_CA": 408.00,
+        "Chicago_IL": 375.00,
+        "Miami_FL": 322.00,
+        "Atlanta_GA": 312.00,
+        "Denver_CO": 365.00,
+        "Seattle_WA": 395.00,
+        "Cleveland_OH": 305.00,
+        "Richmond_VA": 335.00,
+        "Phoenix_AZ": 345.00
+      },
+      "range": {"low": 240.00, "high": 510.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Concrete Pump (per day)",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 1200.00,
+      "regional": {
+        "Dallas_TX": 1150.00,
+        "Houston_TX": 1125.00,
+        "New_York_NY": 1560.00,
+        "Los_Angeles_CA": 1400.00,
+        "Chicago_IL": 1285.00,
+        "Miami_FL": 1100.00,
+        "Atlanta_GA": 1070.00,
+        "Denver_CO": 1250.00,
+        "Seattle_WA": 1355.00,
+        "Cleveland_OH": 1040.00,
+        "Richmond_VA": 1150.00,
+        "Phoenix_AZ": 1180.00
+      },
+      "range": {"low": 850.00, "high": 1750.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Pipe Threading Machine Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 125.00,
+      "regional": {
+        "Dallas_TX": 120.00,
+        "Houston_TX": 118.00,
+        "New_York_NY": 162.00,
+        "Los_Angeles_CA": 146.00,
+        "Chicago_IL": 134.00,
+        "Miami_FL": 115.00,
+        "Atlanta_GA": 112.00,
+        "Denver_CO": 130.00,
+        "Seattle_WA": 142.00,
+        "Cleveland_OH": 108.00,
+        "Richmond_VA": 120.00,
+        "Phoenix_AZ": 122.00
+      },
+      "range": {"low": 85.00, "high": 182.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Welding Machine Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 95.00,
+      "regional": {
+        "Dallas_TX": 90.00,
+        "Houston_TX": 88.00,
+        "New_York_NY": 124.00,
+        "Los_Angeles_CA": 110.00,
+        "Chicago_IL": 102.00,
+        "Miami_FL": 86.00,
+        "Atlanta_GA": 84.00,
+        "Denver_CO": 98.00,
+        "Seattle_WA": 108.00,
+        "Cleveland_OH": 82.00,
+        "Richmond_VA": 90.00,
+        "Phoenix_AZ": 92.00
+      },
+      "range": {"low": 65.00, "high": 140.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Generator Portable (7500W)",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 110.00,
+      "regional": {
+        "Dallas_TX": 105.00,
+        "Houston_TX": 102.00,
+        "New_York_NY": 142.00,
+        "Los_Angeles_CA": 128.00,
+        "Chicago_IL": 118.00,
+        "Miami_FL": 100.00,
+        "Atlanta_GA": 98.00,
+        "Denver_CO": 114.00,
+        "Seattle_WA": 125.00,
+        "Cleveland_OH": 95.00,
+        "Richmond_VA": 105.00,
+        "Phoenix_AZ": 108.00
+      },
+      "range": {"low": 75.00, "high": 160.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Dumpster Rental 20 Yard",
+    "category": "equipment",
+    "unit": "per week",
+    "benchmarks": {
+      "national_average": 475.00,
+      "regional": {
+        "Dallas_TX": 455.00,
+        "Houston_TX": 445.00,
+        "New_York_NY": 615.00,
+        "Los_Angeles_CA": 552.00,
+        "Chicago_IL": 508.00,
+        "Miami_FL": 438.00,
+        "Atlanta_GA": 425.00,
+        "Denver_CO": 495.00,
+        "Seattle_WA": 535.00,
+        "Cleveland_OH": 412.00,
+        "Richmond_VA": 455.00,
+        "Phoenix_AZ": 465.00
+      },
+      "range": {"low": 335.00, "high": 685.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Dumpster Rental 30 Yard",
+    "category": "equipment",
+    "unit": "per week",
+    "benchmarks": {
+      "national_average": 585.00,
+      "regional": {
+        "Dallas_TX": 562.00,
+        "Houston_TX": 550.00,
+        "New_York_NY": 758.00,
+        "Los_Angeles_CA": 680.00,
+        "Chicago_IL": 625.00,
+        "Miami_FL": 540.00,
+        "Atlanta_GA": 525.00,
+        "Denver_CO": 608.00,
+        "Seattle_WA": 660.00,
+        "Cleveland_OH": 510.00,
+        "Richmond_VA": 562.00,
+        "Phoenix_AZ": 575.00
+      },
+      "range": {"low": 415.00, "high": 850.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Scaffolding Rental (per section)",
+    "category": "equipment",
+    "unit": "per week",
+    "benchmarks": {
+      "national_average": 85.00,
+      "regional": {
+        "Dallas_TX": 82.00,
+        "Houston_TX": 80.00,
+        "New_York_NY": 110.00,
+        "Los_Angeles_CA": 99.00,
+        "Chicago_IL": 91.00,
+        "Miami_FL": 78.00,
+        "Atlanta_GA": 76.00,
+        "Denver_CO": 88.00,
+        "Seattle_WA": 96.00,
+        "Cleveland_OH": 74.00,
+        "Richmond_VA": 82.00,
+        "Phoenix_AZ": 84.00
+      },
+      "range": {"low": 58.00, "high": 125.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Air Compressor Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 85.00,
+      "regional": {
+        "Dallas_TX": 82.00,
+        "Houston_TX": 80.00,
+        "New_York_NY": 110.00,
+        "Los_Angeles_CA": 99.00,
+        "Chicago_IL": 91.00,
+        "Miami_FL": 78.00,
+        "Atlanta_GA": 76.00,
+        "Denver_CO": 88.00,
+        "Seattle_WA": 96.00,
+        "Cleveland_OH": 74.00,
+        "Richmond_VA": 82.00,
+        "Phoenix_AZ": 84.00
+      },
+      "range": {"low": 58.00, "high": 124.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Jackhammer Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 110.00,
+      "regional": {
+        "Dallas_TX": 105.00,
+        "Houston_TX": 102.00,
+        "New_York_NY": 142.00,
+        "Los_Angeles_CA": 128.00,
+        "Chicago_IL": 118.00,
+        "Miami_FL": 100.00,
+        "Atlanta_GA": 98.00,
+        "Denver_CO": 114.00,
+        "Seattle_WA": 125.00,
+        "Cleveland_OH": 95.00,
+        "Richmond_VA": 105.00,
+        "Phoenix_AZ": 108.00
+      },
+      "range": {"low": 75.00, "high": 160.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Plate Compactor Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 75.00,
+      "regional": {
+        "Dallas_TX": 72.00,
+        "Houston_TX": 70.00,
+        "New_York_NY": 98.00,
+        "Los_Angeles_CA": 88.00,
+        "Chicago_IL": 80.00,
+        "Miami_FL": 68.00,
+        "Atlanta_GA": 66.00,
+        "Denver_CO": 78.00,
+        "Seattle_WA": 85.00,
+        "Cleveland_OH": 65.00,
+        "Richmond_VA": 72.00,
+        "Phoenix_AZ": 74.00
+      },
+      "range": {"low": 50.00, "high": 110.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Forklift Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 310.00,
+      "regional": {
+        "Dallas_TX": 298.00,
+        "Houston_TX": 292.00,
+        "New_York_NY": 402.00,
+        "Los_Angeles_CA": 360.00,
+        "Chicago_IL": 332.00,
+        "Miami_FL": 286.00,
+        "Atlanta_GA": 278.00,
+        "Denver_CO": 322.00,
+        "Seattle_WA": 350.00,
+        "Cleveland_OH": 270.00,
+        "Richmond_VA": 298.00,
+        "Phoenix_AZ": 305.00
+      },
+      "range": {"low": 215.00, "high": 450.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Concrete Mixer Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 65.00,
+      "regional": {
+        "Dallas_TX": 62.00,
+        "Houston_TX": 60.00,
+        "New_York_NY": 84.00,
+        "Los_Angeles_CA": 76.00,
+        "Chicago_IL": 70.00,
+        "Miami_FL": 58.00,
+        "Atlanta_GA": 56.00,
+        "Denver_CO": 68.00,
+        "Seattle_WA": 74.00,
+        "Cleveland_OH": 55.00,
+        "Richmond_VA": 62.00,
+        "Phoenix_AZ": 64.00
+      },
+      "range": {"low": 42.00, "high": 95.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Wet Saw (Tile) Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 55.00,
+      "regional": {
+        "Dallas_TX": 52.00,
+        "Houston_TX": 50.00,
+        "New_York_NY": 72.00,
+        "Los_Angeles_CA": 64.00,
+        "Chicago_IL": 58.00,
+        "Miami_FL": 48.00,
+        "Atlanta_GA": 46.00,
+        "Denver_CO": 57.00,
+        "Seattle_WA": 62.00,
+        "Cleveland_OH": 45.00,
+        "Richmond_VA": 52.00,
+        "Phoenix_AZ": 54.00
+      },
+      "range": {"low": 35.00, "high": 80.00}
+    },
+    "source": "EquipmentWatch 2025"
+  },
+  {
+    "item": "Drain Snake/Auger Rental",
+    "category": "equipment",
+    "unit": "per day",
+    "benchmarks": {
+      "national_average": 65.00,
+      "regional": {
+        "Dallas_TX": 62.00,
+        "Houston_TX": 60.00,
+        "New_York_NY": 84.00,
+        "Los_Angeles_CA": 76.00,
+        "Chicago_IL": 70.00,
+        "Miami_FL": 58.00,
+        "Atlanta_GA": 56.00,
+        "Denver_CO": 68.00,
+        "Seattle_WA": 74.00,
+        "Cleveland_OH": 55.00,
+        "Richmond_VA": 62.00,
+        "Phoenix_AZ": 64.00
+      },
+      "range": {"low": 42.00, "high": 95.00}
+    },
+    "source": "EquipmentWatch 2025"
+  }
+]

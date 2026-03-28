@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-manrope: "Manrope", system-ui, -apple-system, sans-serif;
+
+  /* Primary: Growth Green */
+  --color-primary: #0d631b;
+  --color-primary-light: #15803d;
+  --color-primary-container: #dcfce7;
+  --color-primary-glow: rgba(13, 99, 27, 0.15);
+
+  /* Secondary: Trust Navy */
+  --color-secondary: #4c56af;
+  --color-secondary-light: #6366f1;
+  --color-secondary-container: #e0e7ff;
+
+  /* Tertiary: Harvest Gold */
+  --color-tertiary: #6e5100;
+  --color-tertiary-light: #a16207;
+  --color-tertiary-container: #fef3c7;
+
+  /* Surfaces */
+  --color-surface: #f8f9fa;
+  --color-surface-low: #f3f4f5;
+  --color-surface-lowest: #ffffff;
+
+  /* Text */
+  --color-text: #191c1d;
+  --color-text-secondary: #5f6368;
+  --color-text-tertiary: #9aa0a6;
+
+  /* Outline */
+  --color-outline: rgba(25, 28, 29, 0.15);
+
+  /* Status */
+  --color-success: #0d631b;
+  --color-error: #b91c1c;
+  --color-error-container: #fef2f2;
+  --color-warning: #6e5100;
+
+  /* Store colors */
+  --color-walmart: #0071CE;
+  --color-kroger: #E31837;
+  --color-target: #CC0000;
+  --color-wholefoods: #00674B;
+  --color-aldi: #00005F;
+  --color-lidl: #0050AA;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-manrope);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    border-color: var(--color-outline);
+  }
+}
+
+@layer utilities {
+  .tracking-editorial {
+    letter-spacing: 0.12em;
+  }
+
+  .font-display {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .font-headline {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .font-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .font-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .shadow-ambient {
+    box-shadow: 0 20px 40px rgba(25, 28, 29, 0.06);
+  }
+
+  .shadow-ambient-sm {
+    box-shadow: 0 8px 24px rgba(25, 28, 29, 0.04);
+  }
+
+  .card-base {
+    background: var(--color-surface-lowest);
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 40px rgba(25, 28, 29, 0.06);
+  }
+
+  .ghost-border {
+    box-shadow: inset 0 0 0 1px rgba(25, 28, 29, 0.08);
+  }
+
+  @keyframes price-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(13, 99, 27, 0); }
+    50% { box-shadow: 0 0 20px 4px rgba(13, 99, 27, 0.12); }
+  }
+
+  .price-pulse {
+    animation: price-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scan-line {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+  }
+
+  .scan-line {
+    animation: scan-line 2s ease-in-out infinite alternate;
+  }
+}
