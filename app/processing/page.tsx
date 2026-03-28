@@ -1,22 +1,22 @@
 'use client';
 
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, useRef, useCallback, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { CheckCircle, Loader, BarChart3, FileText, ScanSearch, FileCheck } from 'lucide-react';
+import { CheckCircle, Loader, BarChart3, FileText, ScanSearch, FileCheck, AlertCircle } from 'lucide-react';
 
 const steps = [
   {
     id: 'scan',
     title: 'Scanning Receipt',
-    desc: 'OCR extraction and text recognition complete.',
+    desc: 'OCR extraction and text recognition...',
     icon: ScanSearch,
     duration: 1200,
   },
   {
     id: 'classify',
     title: 'Classifying Items',
-    desc: 'Items mapped to grocery categories.',
+    desc: 'Mapping items to grocery categories...',
     icon: FileText,
     duration: 1000,
   },
@@ -49,10 +49,96 @@ function ProcessingContent() {
   const receipt = searchParams.get('receipt') || 'walmart';
   const [currentStep, setCurrentStep] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [error, setError] = useState<string | null>(null);
+  const ocrStarted = useRef(false);
 
   const store = storeConfig[receipt] || storeConfig.walmart;
+  const isUpload = receipt === 'upload';
 
+  const runOcrPipeline = useCallback(async () => {
+    try {
+      // Step 0: Scanning Receipt — run Tesseract OCR
+      const stored = sessionStorage.getItem('uploadedReceipt');
+      if (!stored) {
+        setError('No receipt image found. Please upload again.');
+        return;
+      }
+
+      const { dataUrl } = JSON.parse(stored);
+      if (!dataUrl) {
+        setError('Invalid receipt data. Please upload again.');
+        return;
+      }
+
+      // Dynamic import so Tesseract only loads for uploads
+      const Tesseract = await import('tesseract.js');
+
+      setCurrentStep(0);
+      setProgress(10);
+
+      const result = await Tesseract.recognize(dataUrl, 'eng', {
+        logger: (m: { status: string; progress: number }) => {
+          if (m.status === 'recognizing text') {
+            // Map Tesseract progress (0–1) to our step 0 progress (0–25%)
+            setProgress(Math.round(m.progress * 25));
+          }
+        },
+      });
+
+      const ocrText = result.data.text;
+
+      // Step 1: Classifying Items — parse OCR text
+      setCurrentStep(1);
+      setProgress(35);
+
+      const { parseReceiptText } = await import('../../lib/parse-receipt');
+      const parsedItems = parseReceiptText(ocrText);
+
+      if (parsedItems.length === 0) {
+        setError(
+          'Could not extract items from this receipt. Try a clearer photo with good lighting.'
+        );
+        return;
+      }
+
+      // Store parsed items + raw OCR text for the analysis page
+      sessionStorage.setItem(
+        'parsedReceiptItems',
+        JSON.stringify(parsedItems)
+      );
+      sessionStorage.setItem('ocrRawText', ocrText);
+
+      // Step 2: Comparing Prices
+      setCurrentStep(2);
+      setProgress(60);
+      await new Promise((r) => setTimeout(r, 800));
+
+      // Step 3: Generating Report
+      setCurrentStep(3);
+      setProgress(85);
+      await new Promise((r) => setTimeout(r, 600));
+
+      setProgress(100);
+      await new Promise((r) => setTimeout(r, 400));
+
+      router.push(`/analysis?receipt=upload`);
+    } catch (err) {
+      console.error('OCR pipeline error:', err);
+      setError('Something went wrong processing your receipt. Please try again.');
+    }
+  }, [router]);
+
+  // For sample receipts: use the existing timed animation
   useEffect(() => {
+    if (isUpload) {
+      if (!ocrStarted.current) {
+        ocrStarted.current = true;
+        runOcrPipeline();
+      }
+      return;
+    }
+
+    // Sample receipt animation (unchanged)
     let stepIndex = 0;
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
@@ -77,17 +163,13 @@ function ProcessingContent() {
     setTimeout(advanceStep, steps[0].duration);
 
     return () => clearInterval(progressInterval);
-  }, [receipt, router]);
+  }, [receipt, router, isUpload, runOcrPipeline]);
 
   return (
     <div className="min-h-screen bg-surface">
       <div className="max-w-7xl mx-auto px-6 py-14">
         {/* Header */}
-        <div
-         
-         
-          className="mb-12"
-        >
+        <div className="mb-12">
           <p className="text-xs font-semibold text-primary uppercase tracking-editorial mb-3">
             PROCESSING INTELLIGENCE
           </p>
@@ -99,18 +181,32 @@ function ProcessingContent() {
             receipt
           </h1>
           <p className="text-text-secondary mt-3 text-lg max-w-xl font-medium">
-            Cross-referencing your items against market prices at 6 stores to surface cost-saving opportunities.
+            {isUpload
+              ? 'Running OCR to extract items, then cross-referencing prices at 6 stores.'
+              : 'Cross-referencing your items against market prices at 6 stores to surface cost-saving opportunities.'}
           </p>
         </div>
 
+        {/* Error State */}
+        {error && (
+          <div className="card-base p-6 mb-8 flex items-start gap-4 border-l-4 border-red-500">
+            <AlertCircle className="text-red-500 flex-shrink-0 mt-0.5" size={20} />
+            <div>
+              <p className="font-semibold text-text mb-1">Processing Failed</p>
+              <p className="text-sm text-text-secondary">{error}</p>
+              <button
+                onClick={() => router.push('/')}
+                className="mt-3 text-sm font-semibold text-primary hover:underline"
+              >
+                ← Back to Upload
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left: Receipt Card */}
-          <div
-           
-           
-           
-            className="card-base p-8"
-          >
+          <div className="card-base p-8">
             <div className="flex items-center gap-4 mb-8">
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-lg font-bold"
@@ -132,7 +228,7 @@ function ProcessingContent() {
             <div className="mb-6">
               <div className="flex justify-between text-xs mb-2.5">
                 <span className="text-text-tertiary uppercase tracking-editorial font-semibold">
-                  SCANNING DATA LAYERS
+                  {isUpload ? 'OCR + ANALYSIS' : 'SCANNING DATA LAYERS'}
                 </span>
                 <span className="font-bold text-secondary">{Math.min(progress, 100)}% COMPLETE</span>
               </div>
@@ -147,12 +243,7 @@ function ProcessingContent() {
             {/* Simulated receipt lines */}
             <div className="mt-8 space-y-3">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div
-                  key={i}
-                 
-                 
-                  className="flex justify-between"
-                >
+                <div key={i} className="flex justify-between">
                   <div
                     className="h-3.5 bg-surface-low rounded"
                     style={{ width: `${45 + Math.sin(i * 2.1) * 25}%` }}
@@ -168,8 +259,6 @@ function ProcessingContent() {
                   <div className="h-4 bg-surface-low rounded w-20" />
                   <div
                     className="h-4 rounded w-24"
-                   
-                   
                     style={{ backgroundColor: `${store.color}20` }}
                   />
                 </div>
@@ -205,90 +294,76 @@ function ProcessingContent() {
 
             {/* Step items */}
             <div className="space-y-3">
-              
-                {steps.map((step, i) => {
-                  const isComplete = i < currentStep;
-                  const isCurrent = i === currentStep;
-                  const Icon = step.icon;
+              {steps.map((step, i) => {
+                const isComplete = i < currentStep;
+                const isCurrent = i === currentStep;
+                const Icon = step.icon;
 
-                  return (
+                return (
+                  <div
+                    key={step.id}
+                    className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
+                      isCurrent
+                        ? 'card-base'
+                        : isComplete
+                        ? 'bg-surface-lowest ghost-border'
+                        : 'bg-surface-low'
+                    }`}
+                  >
                     <div
-                      key={step.id}
-                     
-                     
-                     
-                      className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
-                        isCurrent
-                          ? 'card-base'
-                          : isComplete
-                          ? 'bg-surface-lowest ghost-border'
-                          : 'bg-surface-low'
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                        isComplete
+                          ? 'bg-primary-container text-primary'
+                          : isCurrent
+                          ? 'bg-secondary text-white'
+                          : 'bg-surface text-text-tertiary'
                       }`}
                     >
-                      <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                          isComplete
-                            ? 'bg-primary-container text-primary'
-                            : isCurrent
-                            ? 'bg-secondary text-white'
-                            : 'bg-surface text-text-tertiary'
-                        }`}
-                      >
-                        {isComplete ? (
-                          <CheckCircle size={20} />
-                        ) : isCurrent ? (
-                          <div
-                           
-                           
-                          >
-                            <Loader size={20} />
-                          </div>
-                        ) : (
-                          <Icon size={20} />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <p
-                          className={`font-semibold text-sm ${
-                            isCurrent ? 'text-secondary' : isComplete ? 'text-text' : 'text-text-tertiary'
-                          }`}
-                        >
-                          {step.title}
-                        </p>
-                        <p className="text-xs text-text-tertiary mt-0.5">{step.desc}</p>
-                      </div>
-                      {isComplete && (
-                        <span className="text-xs font-semibold text-primary uppercase tracking-editorial">
-                          DONE
-                        </span>
-                      )}
-                      {isCurrent && (
-                        <div
-                         
-                         
-                          className="text-secondary font-bold"
-                        >
-                          •••
+                      {isComplete ? (
+                        <CheckCircle size={20} />
+                      ) : isCurrent ? (
+                        <div>
+                          <Loader size={20} />
                         </div>
+                      ) : (
+                        <Icon size={20} />
                       )}
                     </div>
-                  );
-                })}
-              
+                    <div className="flex-1">
+                      <p
+                        className={`font-semibold text-sm ${
+                          isCurrent ? 'text-secondary' : isComplete ? 'text-text' : 'text-text-tertiary'
+                        }`}
+                      >
+                        {step.title}
+                      </p>
+                      <p className="text-xs text-text-tertiary mt-0.5">{step.desc}</p>
+                    </div>
+                    {isComplete && (
+                      <span className="text-xs font-semibold text-primary uppercase tracking-editorial">
+                        DONE
+                      </span>
+                    )}
+                    {isCurrent && (
+                      <div className="text-secondary font-bold">
+                        •••
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             {/* Info banner */}
             <div
-             
-             
-             
               className="mt-8 rounded-xl p-4 flex gap-3"
               style={{ backgroundColor: 'rgba(76, 86, 175, 0.06)' }}
             >
               <div className="text-secondary mt-0.5 text-lg">ℹ️</div>
               <p className="text-sm text-text-secondary">
-                Large receipts (50+ items) may take a moment. You can safely
-                navigate away — we&apos;ll notify you when your report is ready.
+                {isUpload
+                  ? 'OCR processing runs entirely in your browser — your receipt image never leaves your device.'
+                  : 'Large receipts (50+ items) may take a moment. You can safely navigate away — we\u2019ll notify you when your report is ready.'}
               </p>
             </div>
           </div>
@@ -302,10 +377,7 @@ export default function ProcessingPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-surface flex items-center justify-center">
-        <div
-         
-         
-        >
+        <div>
           <Loader size={32} className="text-secondary" />
         </div>
       </div>

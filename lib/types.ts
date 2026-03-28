@@ -60,6 +60,7 @@ export const STORE_COLORS: Record<string, { primary: string; accent?: string; na
   whole_foods: { primary: '#00674B', name: 'Whole Foods' },
   aldi: { primary: '#00005F', accent: '#FF6600', name: 'Aldi' },
   lidl: { primary: '#0050AA', accent: '#FFE500', name: 'Lidl' },
+  upload: { primary: '#0d631b', name: 'Your Receipt' },
 };
 
 export const STORE_NAMES: Record<string, string> = {
@@ -69,6 +70,7 @@ export const STORE_NAMES: Record<string, string> = {
   whole_foods: 'Whole Foods',
   aldi: 'Aldi',
   lidl: 'Lidl',
+  upload: 'Your Receipt',
 };
 
 export const CATEGORY_DISPLAY: Record<string, string> = {

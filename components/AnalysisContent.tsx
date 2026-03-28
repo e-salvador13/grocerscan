@@ -1,11 +1,12 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { FileText, Scissors, ShoppingCart, AlertTriangle, TrendingDown } from 'lucide-react';
 import { sampleReceipts, SampleReceiptKey } from '../lib/sample-receipts';
-import { STORE_COLORS } from '../lib/types';
+import { STORE_COLORS, AnalysisResult } from '../lib/types';
+import { analyzeReceiptItems, ParsedReceiptInput } from '../lib/match-items';
 import ReportTab from './analysis/ReportTab';
 import SmartSplitTab from './analysis/SmartSplitTab';
 import ShoppingListTab from './analysis/ShoppingListTab';
@@ -20,15 +21,58 @@ type TabId = (typeof tabs)[number]['id'];
 
 export default function AnalysisContent() {
   const searchParams = useSearchParams();
-  const receiptKey = (searchParams.get('receipt') || 'walmart') as SampleReceiptKey;
+  const receiptParam = searchParams.get('receipt') || 'walmart';
+  const isUpload = receiptParam === 'upload';
+  const receiptKey = receiptParam as SampleReceiptKey;
   const initialTab = (searchParams.get('tab') as TabId) || 'report';
-  const analysis = sampleReceipts[receiptKey];
   const [activeTab, setActiveTab] = useState<TabId>(initialTab);
+  const [uploadAnalysis, setUploadAnalysis] = useState<AnalysisResult | null>(null);
+  const [uploadLoading, setUploadLoading] = useState(false);
+
+  // For uploaded receipts: read parsed items from sessionStorage and analyze
+  useEffect(() => {
+    if (!isUpload) return;
+
+    setUploadLoading(true);
+    try {
+      const stored = sessionStorage.getItem('parsedReceiptItems');
+      if (!stored) {
+        setUploadLoading(false);
+        return;
+      }
+      const parsedItems: ParsedReceiptInput[] = JSON.parse(stored);
+      const result = analyzeReceiptItems(parsedItems);
+      setUploadAnalysis(result);
+    } catch (err) {
+      console.error('Failed to analyze uploaded receipt:', err);
+    } finally {
+      setUploadLoading(false);
+    }
+  }, [isUpload]);
+
+  const analysis: AnalysisResult | undefined = isUpload
+    ? uploadAnalysis ?? undefined
+    : sampleReceipts[receiptKey];
+
+  if (isUpload && uploadLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-text-secondary">Analyzing your receipt...</p>
+      </div>
+    );
+  }
 
   if (!analysis) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-text-secondary">Receipt not found.</p>
+        <div className="text-center">
+          <p className="text-text-secondary mb-2">Receipt not found.</p>
+          {isUpload && (
+            <a href="/" className="text-sm text-primary font-semibold hover:underline">
+              ← Upload a new receipt
+            </a>
+          )}
+        </div>
       </div>
     );
   }
