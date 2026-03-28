@@ -20,7 +20,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-surface">
+      <body className="min-h-screen bg-surface" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <footer className="bg-surface-low mt-20">

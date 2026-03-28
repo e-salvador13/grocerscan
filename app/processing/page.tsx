@@ -151,13 +151,15 @@ function ProcessingContent() {
 
       console.log('[GrocerScan] Parsed items:', parsedItems);
 
+      let finalItems = parsedItems;
+      let finalOcrText = ocrText;
+
       if (parsedItems.length === 0) {
-        // Fallback: try server-side OCR with sharp preprocessing
-        console.log('[GrocerScan] Client OCR failed, trying server-side OCR...');
+        // Fallback 1: try server-side Tesseract with sharp preprocessing
+        console.log('[GrocerScan] Client OCR failed, trying server-side Tesseract...');
         setProgress(28);
         
         try {
-          // Convert dataUrl to blob for upload
           const resp = await fetch(dataUrl);
           const blob = await resp.blob();
           const formData = new FormData();
@@ -166,12 +168,41 @@ function ProcessingContent() {
           const serverResp = await fetch('/api/ocr', { method: 'POST', body: formData });
           if (serverResp.ok) {
             const serverData = await serverResp.json();
-            console.log('[GrocerScan] Server OCR result:', serverData);
+            console.log('[GrocerScan] Server Tesseract result:', serverData);
             
             if (serverData.items && serverData.items.length > 0) {
-              sessionStorage.setItem('parsedReceiptItems', JSON.stringify(serverData.items));
-              sessionStorage.setItem('ocrRawText', serverData.ocrText || ocrText);
-              // Skip the error — we got items from server
+              finalItems = serverData.items;
+              finalOcrText = serverData.ocrText || ocrText;
+            }
+          }
+        } catch (serverErr) {
+          console.error('[GrocerScan] Server Tesseract failed:', serverErr);
+        }
+      }
+
+      if (finalItems.length === 0) {
+        // Fallback 2: Vision AI — send image to Claude for extraction
+        console.log('[GrocerScan] Tesseract failed, trying Vision AI...');
+        setProgress(32);
+        
+        try {
+          const resp = await fetch(dataUrl);
+          const blob = await resp.blob();
+          const formData = new FormData();
+          formData.append('image', blob, 'receipt.jpg');
+          
+          const visionResp = await fetch('/api/ocr-vision', { method: 'POST', body: formData });
+          if (visionResp.ok) {
+            const visionData = await visionResp.json();
+            console.log('[GrocerScan] Vision AI result:', visionData);
+            
+            if (visionData.items && visionData.items.length > 0) {
+              finalItems = visionData.items;
+              finalOcrText = `[Vision AI] Extracted ${visionData.items.length} items from ${visionData.store || 'receipt'}`;
+              // Store the receipt total from Vision AI for accurate totalSpent
+              if (visionData.total) {
+                sessionStorage.setItem('receiptTotal', String(visionData.total));
+              }
             } else {
               setError(
                 'Could not extract items from this receipt. Try a clearer photo with good lighting.'
@@ -184,8 +215,8 @@ function ProcessingContent() {
             );
             return;
           }
-        } catch (serverErr) {
-          console.error('[GrocerScan] Server OCR failed:', serverErr);
+        } catch (visionErr) {
+          console.error('[GrocerScan] Vision AI failed:', visionErr);
           setError(
             'Could not extract items from this receipt. Try a clearer photo with good lighting.'
           );
@@ -196,9 +227,9 @@ function ProcessingContent() {
       // Store parsed items + raw OCR text for the analysis page
       sessionStorage.setItem(
         'parsedReceiptItems',
-        JSON.stringify(parsedItems)
+        JSON.stringify(finalItems)
       );
-      sessionStorage.setItem('ocrRawText', ocrText);
+      sessionStorage.setItem('ocrRawText', finalOcrText);
 
       // Step 2: Comparing Prices
       setCurrentStep(2);

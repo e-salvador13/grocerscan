@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 const motion = { div: "div" as any, button: "button" as any };
 import {
@@ -15,7 +15,10 @@ import {
   ChevronRight,
   ArrowUpRight,
   AlertCircle,
+  Clock,
+  Trash2,
 } from 'lucide-react';
+import { getHistory, deleteReceipt, SavedReceipt } from '../lib/receipt-history';
 import StoreLogo from '../components/StoreLogo';
 
 const sampleReceipts = [
@@ -23,8 +26,8 @@ const sampleReceipts = [
     key: 'walmart',
     store: 'Walmart',
     color: '#0071CE',
-    total: '$142.36',
-    items: 36,
+    total: '$142.38',
+    items: 37,
     date: 'Mar 24, 2026',
     tagline: 'Family Weekly Haul',
   },
@@ -32,8 +35,8 @@ const sampleReceipts = [
     key: 'kroger',
     store: 'Kroger',
     color: '#E31837',
-    total: '$98.47',
-    items: 29,
+    total: '$98.05',
+    items: 22,
     date: 'Mar 22, 2026',
     tagline: 'Weeknight Dinner Run',
   },
@@ -41,8 +44,8 @@ const sampleReceipts = [
     key: 'whole_foods',
     store: 'Whole Foods',
     color: '#00674B',
-    total: '$156.82',
-    items: 29,
+    total: '$160.69',
+    items: 27,
     date: 'Mar 20, 2026',
     tagline: 'Health-Conscious Shop',
   },
@@ -110,8 +113,39 @@ export default function Dashboard() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const cameraInputRef = useRef<HTMLInputElement>(null);
 
+  // Receipt history
+  const [history, setHistory] = useState<SavedReceipt[]>([]);
+  useEffect(() => {
+    setHistory(getHistory());
+  }, []);
+
   const handleSampleClick = (key: string) => {
     router.push(`/processing?receipt=${key}`);
+  };
+
+  const handleHistoryClick = (entry: SavedReceipt) => {
+    if (entry.store === 'upload' && entry.parsedItems) {
+      // Re-populate sessionStorage for upload re-analysis
+      sessionStorage.setItem('parsedReceiptItems', JSON.stringify(entry.parsedItems));
+      if (entry.receiptTotal != null) {
+        sessionStorage.setItem('receiptTotal', String(entry.receiptTotal));
+      }
+      if (entry.imageUrl && entry.imageUrl.startsWith('data:')) {
+        sessionStorage.setItem('uploadedReceipt', JSON.stringify({
+          dataUrl: entry.imageUrl,
+          size: entry.imageUrl.length,
+        }));
+      }
+      router.push('/analysis?receipt=upload');
+    } else {
+      router.push(`/analysis?receipt=${entry.store}`);
+    }
+  };
+
+  const handleDeleteHistory = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    deleteReceipt(id);
+    setHistory(getHistory());
   };
 
   const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'application/pdf'];
@@ -383,6 +417,71 @@ export default function Dashboard() {
                 ))}
               </div>
             </div>
+
+            {/* Recent Scans (from history) */}
+            {history.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Clock size={14} className="text-text-tertiary" />
+                  <p className="text-xs font-semibold text-text-tertiary uppercase tracking-editorial">
+                    RECENT SCANS
+                  </p>
+                </div>
+                <div className="flex gap-4 overflow-x-auto pb-2 -mx-1 px-1" style={{ scrollbarWidth: 'thin' }}>
+                  {history.map((entry) => (
+                    <button
+                      key={entry.id}
+                      onClick={() => handleHistoryClick(entry)}
+                      className="card-base p-4 flex-shrink-0 w-56 text-left hover:shadow-lg transition-all group cursor-pointer relative"
+                    >
+                      {/* Delete button */}
+                      <div
+                        onClick={(e) => handleDeleteHistory(e, entry.id)}
+                        className="absolute top-2 right-2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-red-50 transition-all"
+                      >
+                        <Trash2 size={12} className="text-gray-400 hover:text-red-500" />
+                      </div>
+                      <div className="flex items-center gap-3 mb-2">
+                        {entry.imageUrl ? (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
+                            src={entry.imageUrl}
+                            alt={entry.storeName}
+                            className="w-10 h-10 rounded-lg object-cover bg-gray-100"
+                          />
+                        ) : (
+                          <StoreLogo storeKey={entry.store} size={32} />
+                        )}
+                        <div className="min-w-0">
+                          <span className="font-semibold text-text text-sm block leading-tight truncate">
+                            {entry.storeName}
+                          </span>
+                          <span className="text-[11px] text-text-tertiary">{entry.date}</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-end mt-2">
+                        <div>
+                          <p className="text-lg font-extrabold text-text tracking-tight">
+                            ${entry.totalSpent.toFixed(2)}
+                          </p>
+                          <p className="text-[10px] text-text-tertiary uppercase tracking-editorial">
+                            {entry.itemCount} items
+                          </p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-sm font-bold text-primary">
+                            -${entry.savingsFound.toFixed(2)}
+                          </p>
+                          <p className="text-[10px] text-text-tertiary uppercase tracking-editorial">
+                            SAVINGS
+                          </p>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Optimization Flow */}
             <div

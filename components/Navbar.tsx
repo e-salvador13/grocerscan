@@ -6,9 +6,6 @@ import { Bell, User, Upload } from 'lucide-react';
 
 const navLinks = [
   { href: '/', label: 'Dashboard' },
-  { href: '/savings-map', label: 'Savings Map' },
-  { href: '/shopping-list', label: 'Shopping List' },
-  { href: '/settings', label: 'Settings' },
 ];
 
 export default function Navbar() {

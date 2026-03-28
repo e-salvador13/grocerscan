@@ -59,6 +59,32 @@ const ABBREVIATION_MAP: Record<string, string> = {
   'MS10X14BOARD': 'Cutting Board 10x14',
   'NUTELLA': 'Nutella',
   'SWEETARTS': 'Sweetarts',
+  // Kroger-style abbreviations
+  'BNLS CHKN BRST': 'Boneless Chicken Breast',
+  'BNLSCHKN BRST': 'Boneless Chicken Breast',
+  'GRND TURKEY': 'Ground Turkey',
+  'ITAL SAUSAGE': 'Italian Sausage',
+  'ROMA TOMATOES': 'Roma Tomatoes',
+  'YELLOW ONIONS': 'Yellow Onions',
+  'GREEN BELL PEPPER': 'Green Bell Pepper',
+  'RUSSET POTATOES': 'Russet Potatoes',
+  'ROMAINE LETTUCE': 'Romaine Lettuce',
+  'GALA APPLES': 'Gala Apples',
+  'LARGE EGGS': 'Large Eggs',
+  'SHRD CHEDDAR': 'Shredded Cheddar',
+  'HEAVY CREAM': 'Heavy Cream',
+  '2% MILK': '2% Milk',
+  'ATLANTIC SALMON': 'Atlantic Salmon',
+  'SPAGHETTI': 'Spaghetti',
+  'CHKN BROTH': 'Chicken Broth',
+  'GROUND COFFEE': 'Ground Coffee',
+  'COCA-COLA': 'Coca-Cola',
+  'DIGIORNO PIZZA': 'DiGiorno Pizza',
+  'DIGIORNO': 'DiGiorno Pizza',
+  'FRZN VEGGIES': 'Frozen Vegetables',
+  'TOILET PAPER': 'Toilet Paper',
+  'BROCCOLI CROWN': 'Broccoli Crown',
+  // Common items
   'BANANAS': 'Bananas',
   'ONIONS': 'Onions',
   'POTATOES': 'Potatoes',
@@ -145,6 +171,22 @@ function expandAbbreviation(raw: string): string {
 }
 
 /**
+ * Extract quantity multiplier from item line (e.g., "x2", "x3")
+ * Returns { cleanedName, quantity }
+ */
+function extractQuantity(raw: string): { cleanedName: string; quantity: number } {
+  // Match "x2", "x3" etc at the end or near the end
+  const qtyMatch = raw.match(/\s+x(\d+)\s*$/i);
+  if (qtyMatch) {
+    return {
+      cleanedName: raw.substring(0, qtyMatch.index).trim(),
+      quantity: parseInt(qtyMatch[1], 10),
+    };
+  }
+  return { cleanedName: raw, quantity: 1 };
+}
+
+/**
  * Clean up an item name from OCR text
  */
 function cleanItemName(raw: string): string {
@@ -155,6 +197,15 @@ function cleanItemName(raw: string): string {
     .replace(/\s+[FTXJNORBD]\s*$/i, '')
     // Remove "KF" suffix (Walmart weighed item flag)
     .replace(/\s*KF\s*$/i, '')
+    // Remove weight/unit info like "1.2lb @0.56" or "2lb" at end
+    .replace(/\s+\d+\.?\d*\s*lb\s*(@\s*\d+\.?\d*)?\s*/gi, ' ')
+    // Remove quantity multiplier (x2, x3) — handled separately
+    .replace(/\s+x\d+\s*$/i, '')
+    // Remove standalone size/weight descriptors at end (8OZ, 16OZ, 32OZ, 5LB, 12RL, 12PK, etc.)
+    // but keep them if they're part of the product identity
+    .replace(/\s+\d+\s*(OZ|LB|GAL|RL|PK|CT)\s*$/i, '')
+    // Remove "DZ" (dozen) standalone
+    .replace(/\s+DZ\s*$/i, '')
     // Remove leading/trailing whitespace
     .trim()
     // Collapse multiple spaces
@@ -204,6 +255,10 @@ const SKIP_PATTERNS = [
   /walmart/i,
   /kroger/i,
   /target/i,
+  /fresh\s*for\s*everyone/i,
+  /pump\s*rd/i,  // Kroger store addresses
+  /^\s*\d+\s+\w+\s+(rd|st|ave|blvd|dr|ln|ct|way)\b/i,  // Street addresses
+  /^\s*[A-Z][a-z]+,?\s+[A-Z]{2}\s+\d{5}/i,  // City, ST ZIP
 ];
 
 /**
@@ -278,13 +333,16 @@ export function parseReceiptText(ocrText: string): ParsedItem[] {
       // Remove trailing $ if present
       rawName = rawName.replace(/\$\s*$/, '');
 
-      const name = cleanItemName(rawName);
+      // Extract quantity multiplier (x2, x3) before cleaning
+      const { cleanedName: nameBeforeClean, quantity } = extractQuantity(rawName);
+
+      const name = cleanItemName(nameBeforeClean);
       if (name.length < 2) continue;
 
       // Skip if this looks like a subtotal/total line we missed
       if (/subtotal|total|tax|tend|change/i.test(name)) continue;
 
-      items.push({ name, price, quantity: 1 });
+      items.push({ name, price, quantity });
       pendingItemName = null;
       continue;
     }

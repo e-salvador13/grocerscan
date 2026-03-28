@@ -36,7 +36,7 @@ export interface CategoryBreakdown {
 
 export interface OptimalStoreAllocation {
   store: string;
-  items: { name: string; price: number; yourPrice: number }[];
+  items: { name: string; price: number; yourPrice: number; unit?: string }[];
   totalSavings: number;
 }
 

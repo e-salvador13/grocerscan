@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import {
   Share2,
@@ -11,7 +11,6 @@ import {
   ShoppingCart,
   Tag,
   Sparkles,
-  CreditCard,
 } from 'lucide-react';
 import {
   AnalysisResult,
@@ -19,6 +18,15 @@ import {
   STORE_NAMES,
 } from '../../lib/types';
 import StoreLogo from '../StoreLogo';
+
+const STORE_ADDRESSES: Record<string, string> = {
+  walmart: '7625 Mall Rd, Florence, KY 41042',
+  kroger: '7609 Mall Rd, Florence, KY 41042',
+  aldi: '7539 Mall Rd, Florence, KY 41042',
+  target: '7725 Mall Rd, Florence, KY 41042',
+  lidl: '7801 Burlington Pike, Florence, KY 41042',
+  whole_foods: '2660 Edmondson Rd, Crestview Hills, KY 41017',
+};
 
 const STORE_DISTANCES: Record<string, { distance: string; fromPrev: string }> = {
   aldi: { distance: '0.8 MILES AWAY', fromPrev: '' },
@@ -57,6 +65,7 @@ export default function ShoppingListTab({
   analysis: AnalysisResult;
 }) {
   const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
+  const [copiedList, setCopiedList] = useState(false);
   const totalStores = analysis.optimalBasket.length;
 
   const toggleItem = (id: string) => {
@@ -94,11 +103,40 @@ export default function ShoppingListTab({
           </p>
         </div>
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 bg-surface-lowest text-text-secondary px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-low transition-colors ghost-border">
-            <Share2 size={16} />
-            Share List
+          <button
+            onClick={() => {
+              const lines = analysis.optimalBasket.map((allocation) => {
+                const storeName = STORE_NAMES[allocation.store] || allocation.store;
+                const itemLines = allocation.items.map(
+                  (item) => `  • ${item.name} — $${item.price.toFixed(2)}`
+                );
+                return `${storeName}:\n${itemLines.join('\n')}`;
+              });
+              const text = `GrocerScan Shopping List\n\n${lines.join('\n\n')}`;
+              navigator.clipboard.writeText(text).then(() => {
+                setCopiedList(true);
+                setTimeout(() => setCopiedList(false), 2000);
+              });
+            }}
+            className="flex items-center gap-2 bg-surface-lowest text-text-secondary px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-low transition-colors ghost-border"
+          >
+            {copiedList ? <Check size={16} className="text-primary" /> : <Share2 size={16} />}
+            {copiedList ? 'Copied!' : 'Share List'}
           </button>
-          <button className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors">
+          <button
+            onClick={() => {
+              const origin = '410 Meijer Dr, Florence, KY 41042';
+              const stores = analysis.optimalBasket.map(a => a.store);
+              const waypoints = stores
+                .map(s => STORE_ADDRESSES[s])
+                .filter(Boolean)
+                .map(a => encodeURIComponent(a))
+                .join('|');
+              const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(origin)}&waypoints=${waypoints}&travelmode=driving`;
+              window.open(mapsUrl, '_blank');
+            }}
+            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors"
+          >
             <Navigation size={16} />
             Start Navigation
           </button>
@@ -144,7 +182,18 @@ export default function ShoppingListTab({
                       </p>
                     </div>
                   </div>
-                  <button className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-light transition-colors">
+                  <button
+                    onClick={() => {
+                      const address = STORE_ADDRESSES[allocation.store];
+                      if (address) {
+                        window.open(
+                          `https://www.google.com/maps/dir/410+Meijer+Dr,+Florence,+KY+41042/${encodeURIComponent(address)}`,
+                          '_blank'
+                        );
+                      }
+                    }}
+                    className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-light transition-colors"
+                  >
                     <MapPin size={14} />
                     Get Directions
                   </button>
@@ -268,9 +317,6 @@ export default function ShoppingListTab({
                         </span>{' '}
                         {tip}
                       </span>
-                      <button className="ml-auto text-xs font-semibold text-text-tertiary hover:text-text-secondary flex-shrink-0">
-                        VIEW DETAILS
-                      </button>
                     </div>
                   )}
                 </div>
@@ -309,41 +355,6 @@ export default function ShoppingListTab({
               <p className="text-xs font-semibold text-text-secondary">
                 {totalMiles} miles total
               </p>
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="h-52 bg-surface-low relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg viewBox="0 0 300 200" className="w-full h-full" style={{ opacity: 0.3 }}>
-                  <path d="M 30 100 Q 80 60 150 80 T 270 90" stroke="#d1d5db" strokeWidth="3" fill="none" />
-                  <path d="M 60 40 Q 100 120 200 130 T 280 160" stroke="#d1d5db" strokeWidth="2" fill="none" />
-                  <path d="M 20 160 Q 120 140 180 100 T 290 60" stroke="#d1d5db" strokeWidth="2" fill="none" />
-                </svg>
-              </div>
-
-              {analysis.optimalBasket.map((allocation, i) => {
-                const storeColor = STORE_COLORS[allocation.store]?.primary || '#6c757d';
-                const positions = [
-                  { x: '30%', y: '35%' },
-                  { x: '55%', y: '50%' },
-                  { x: '75%', y: '65%' },
-                  { x: '45%', y: '75%' },
-                ];
-                const pos = positions[i] || positions[0];
-                return (
-                  <div
-                    key={i}
-                    className="absolute w-4 h-4 rounded-full shadow-md"
-                    style={{
-                      backgroundColor: storeColor,
-                      left: pos.x,
-                      top: pos.y,
-                      transform: 'translate(-50%, -50%)',
-                      boxShadow: `0 2px 8px ${storeColor}40`,
-                    }}
-                  />
-                );
-              })}
             </div>
 
             <div className="p-4 space-y-2">
@@ -397,25 +408,7 @@ export default function ShoppingListTab({
             </div>
           </div>
 
-          {/* Scan & Save CTA */}
-          <div
-           
-           
-           
-            className="rounded-xl p-6 text-white"
-            style={{ background: 'linear-gradient(145deg, #4c56af, #3730a3)' }}
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <CreditCard size={18} />
-              <h3 className="font-bold text-lg">Scan & Save</h3>
-            </div>
-            <p className="text-sm text-white/70 mb-4">
-              Scan your store membership codes directly from GrocerScan.
-            </p>
-            <button className="w-full py-2.5 bg-white text-secondary rounded-lg text-sm font-bold hover:bg-white/90 transition-colors">
-              Open Loyalty Wallet
-            </button>
-          </div>
+          {/* (Loyalty wallet removed — non-functional feature) */}
         </div>
       </div>
     </div>

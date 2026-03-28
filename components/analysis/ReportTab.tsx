@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import {
   TrendingDown,
@@ -23,8 +23,132 @@ import {
   AnalysisResult,
 } from '../../lib/types';
 
+function generatePdfHtml(analysis: AnalysisResult): string {
+  const storeName = STORE_NAMES[analysis.sourceStore] || analysis.sourceStore;
+  const date = analysis.date;
+
+  const itemRows = analysis.items
+    .map((item) => {
+      const savings = item.savings && item.savings > 0 ? `$${item.savings.toFixed(2)}` : '—';
+      const bestStoreName = item.bestStore ? (STORE_NAMES[item.bestStore] || item.bestStore) : '—';
+      const bestPrice = item.bestPrice ? `$${(item.bestPrice * item.quantity).toFixed(2)}` : '—';
+      const rowColor = item.status === 'overcharged' ? '#fef2f2' : item.status === 'deal' ? '#f0fdf4' : '#ffffff';
+      return `<tr style="background:${rowColor}">
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;font-size:13px;">${item.name}${item.quantity > 1 ? ` ×${item.quantity}` : ''}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;font-size:13px;">$${(item.price * item.quantity).toFixed(2)}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;font-size:13px;color:#0d631b;font-weight:600;">${bestPrice}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;font-size:13px;">${bestStoreName}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;font-size:13px;color:#0d631b;font-weight:600;">${savings}</td>
+      </tr>`;
+    })
+    .join('');
+
+  const categoryRows = analysis.categoryBreakdown
+    .map((cat) => {
+      const icon = CATEGORY_ICONS[cat.category] || '📦';
+      const displayName = CATEGORY_DISPLAY[cat.category] || cat.category;
+      const varianceColor = cat.variance > 0 ? '#dc2626' : '#0d631b';
+      return `<tr>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;font-size:13px;">${icon} ${displayName}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;font-size:13px;">${cat.itemCount}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;font-size:13px;">$${cat.yourTotal.toFixed(2)}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;font-size:13px;color:#0d631b;">$${cat.bestTotal.toFixed(2)}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:right;font-size:13px;color:${varianceColor};font-weight:600;">${cat.variance > 0 ? '+' : ''}${cat.variance}%</td>
+      </tr>`;
+    })
+    .join('');
+
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <title>GrocerScan Report — ${storeName} — ${date}</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; padding: 40px; max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+    h2 { font-size: 18px; font-weight: 700; margin: 32px 0 12px; }
+    .subtitle { color: #6b7280; font-size: 14px; margin-bottom: 24px; }
+    .cards { display: flex; gap: 16px; margin-bottom: 32px; }
+    .card { flex: 1; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+    .card-label { font-size: 10px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .card-value { font-size: 24px; font-weight: 800; }
+    .card-savings { background: #4c56af; color: white; border: none; }
+    .card-savings .card-label { color: rgba(255,255,255,0.6); }
+    .card-savings .card-value { color: #86efac; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+    th { background: #f9fafb; padding: 8px 12px; text-align: left; font-size: 10px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb; }
+    .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #e5e7eb; font-size: 11px; color: #9ca3af; text-align: center; }
+    @media print { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <h1>🛒 GrocerScan Savings Report</h1>
+  <p class="subtitle">Store: ${storeName} &nbsp;•&nbsp; Date: ${date} &nbsp;•&nbsp; ${analysis.items.length} items analyzed</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Total Spent</div>
+      <div class="card-value">$${analysis.totalSpent.toFixed(2)}</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Best Alternative Total</div>
+      <div class="card-value">$${analysis.bestAlternativeTotal.toFixed(2)}</div>
+    </div>
+    <div class="card card-savings">
+      <div class="card-label">Savings Opportunity</div>
+      <div class="card-value">$${analysis.savingsOpportunity.toFixed(2)}</div>
+    </div>
+  </div>
+
+  <h2>Item-by-Item Comparison</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th style="text-align:right">You Paid</th>
+        <th style="text-align:right">Best Price</th>
+        <th style="text-align:center">Best Store</th>
+        <th style="text-align:right">Savings</th>
+      </tr>
+    </thead>
+    <tbody>${itemRows}</tbody>
+  </table>
+
+  <h2>Category Breakdown</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th style="text-align:center">Items</th>
+        <th style="text-align:right">Your Total</th>
+        <th style="text-align:right">Best Total</th>
+        <th style="text-align:right">Variance</th>
+      </tr>
+    </thead>
+    <tbody>${categoryRows}</tbody>
+  </table>
+
+  <div class="footer">
+    Generated by GrocerScan &nbsp;•&nbsp; ${new Date().toLocaleDateString()} &nbsp;•&nbsp; grocerscan.app
+  </div>
+</body>
+</html>`;
+}
+
 export default function ReportTab({ analysis }: { analysis: AnalysisResult }) {
   const [expandedRow, setExpandedRow] = useState<number | null>(null);
+
+  const handleDownloadPdf = useCallback(() => {
+    const html = generatePdfHtml(analysis);
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+    printWindow.document.write(html);
+    printWindow.document.close();
+    // Small delay to let CSS render before print dialog
+    setTimeout(() => {
+      printWindow.print();
+    }, 300);
+  }, [analysis]);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-10 space-y-10">
@@ -141,7 +265,7 @@ export default function ReportTab({ analysis }: { analysis: AnalysisResult }) {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {analysis.categoryBreakdown.map((cat) => (
-            <CategoryCard key={cat.category} category={cat} />
+            <CategoryCard key={cat.category} category={cat} items={analysis.items} />
           ))}
         </div>
       </div>
@@ -166,7 +290,10 @@ export default function ReportTab({ analysis }: { analysis: AnalysisResult }) {
           </p>
         </div>
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-secondary-light transition-colors">
+          <button
+            onClick={handleDownloadPdf}
+            className="flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-secondary-light transition-colors"
+          >
             <Download size={16} />
             Download Report
           </button>
@@ -323,6 +450,7 @@ function ItemRow({
 
 function CategoryCard({
   category,
+  items,
 }: {
   category: {
     category: string;
@@ -331,34 +459,53 @@ function CategoryCard({
     bestTotal: number;
     variance: number;
   };
+  items: ReceiptItem[];
 }) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const icon = CATEGORY_ICONS[category.category] || '📦';
   const isOverpriced = category.variance > 0;
 
+  // Filter items that belong to this category
+  const categoryItems = items.filter(
+    (item) => (item.matchedItem?.category || 'other') === category.category
+  );
+
   return (
     <div className="card-base p-5">
-      <div className="flex items-center justify-between mb-5">
-        <div className="flex items-center gap-2.5">
-          <span className="text-xl">{icon}</span>
-          <h3 className="font-semibold text-text">
-            {CATEGORY_DISPLAY[category.category] || category.category}
-          </h3>
-          <span className="text-xs text-text-tertiary font-medium ml-1">
-            {category.itemCount} items
-          </span>
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full text-left"
+      >
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-2.5">
+            <span className="text-xl">{icon}</span>
+            <h3 className="font-semibold text-text">
+              {CATEGORY_DISPLAY[category.category] || category.category}
+            </h3>
+            <span className="text-xs text-text-tertiary font-medium ml-1">
+              {category.itemCount} items
+            </span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs text-text-tertiary uppercase tracking-editorial font-semibold">VAR:</span>
+              <span
+                className={`text-sm font-bold ${
+                  isOverpriced ? 'text-error' : 'text-primary'
+                }`}
+              >
+                {isOverpriced ? '+' : ''}
+                {category.variance}%
+              </span>
+            </div>
+            {isExpanded ? (
+              <ChevronUp size={16} className="text-text-tertiary" />
+            ) : (
+              <ChevronDown size={16} className="text-text-tertiary" />
+            )}
+          </div>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span className="text-xs text-text-tertiary uppercase tracking-editorial font-semibold">VAR:</span>
-          <span
-            className={`text-sm font-bold ${
-              isOverpriced ? 'text-error' : 'text-primary'
-            }`}
-          >
-            {isOverpriced ? '+' : ''}
-            {category.variance}%
-          </span>
-        </div>
-      </div>
+      </button>
 
       <div className="space-y-4">
         <div>
@@ -400,6 +547,65 @@ function CategoryCard({
           </div>
         </div>
       </div>
+
+      {/* Expandable item list */}
+      {isExpanded && categoryItems.length > 0 && (
+        <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(25,28,29,0.06)' }}>
+          <div className="space-y-2.5">
+            {categoryItems.map((item, i) => {
+              const yourPrice = item.price * item.quantity;
+              const bestPrice = item.bestPrice
+                ? item.bestPrice * item.quantity
+                : yourPrice;
+              const bestStoreColor = item.bestStore
+                ? STORE_COLORS[item.bestStore]?.primary || '#6c757d'
+                : '#6c757d';
+              const bestStoreName = item.bestStore
+                ? STORE_NAMES[item.bestStore] || item.bestStore
+                : '';
+
+              return (
+                <div
+                  key={i}
+                  className="flex items-center justify-between py-2 px-3 rounded-lg bg-surface-low/40"
+                >
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-text truncate">
+                      {item.name}
+                      {item.quantity > 1 && (
+                        <span className="text-xs text-text-tertiary ml-1">×{item.quantity}</span>
+                      )}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 flex-shrink-0 ml-3">
+                    <div className="text-right">
+                      <p className="text-xs text-text-tertiary">You paid</p>
+                      <p className="text-sm font-semibold text-text">${yourPrice.toFixed(2)}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-text-tertiary">Best</p>
+                      <p className={`text-sm font-semibold ${bestPrice < yourPrice ? 'text-primary' : 'text-text'}`}>
+                        ${bestPrice.toFixed(2)}
+                      </p>
+                    </div>
+                    {bestStoreName && (
+                      <span
+                        className="text-[10px] font-bold px-2 py-0.5 rounded-md whitespace-nowrap"
+                        style={{
+                          backgroundColor: `${bestStoreColor}12`,
+                          color: bestStoreColor,
+                        }}
+                      >
+                        {bestStoreName}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
