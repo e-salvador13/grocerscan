@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "scrape:kroger": "npx tsx scripts/kroger-scraper.ts"
+    "scrape:kroger": "npx tsx scripts/kroger-scraper.ts",
+    "scrape:walmart": "npx tsx scripts/walmart-scraper.ts",
+    "scrape:target": "npx tsx scripts/target-scraper.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
