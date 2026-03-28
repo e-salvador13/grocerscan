@@ -12,7 +12,7 @@
     "PriceOfMeat.com BLS data - Mar 2026"
   ],
   "price_index_vs_walmart": {
-    "walmart": 1.0,
+    "walmart": 1,
     "kroger": 1.15,
     "target": 1.06,
     "whole_foods": 1.28,
@@ -20,7 +20,14 @@
     "lidl": 0.94,
     "source": "Consumer Reports Feb 2026 national average"
   },
-  "stores": ["walmart", "kroger", "target", "whole_foods", "aldi", "lidl"],
+  "stores": [
+    "walmart",
+    "kroger",
+    "target",
+    "whole_foods",
+    "aldi",
+    "lidl"
+  ],
   "items": [
     {
       "id": "bananas-per-lb",
@@ -29,12 +36,34 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 0.58, "estimated": false, "source": "Walmart store check NPR/WalmartDesk 2026" },
-        "kroger": { "price": 0.65, "estimated": false, "source": "WCPO Cincinnati tracker" },
-        "target": { "price": 0.62, "estimated": true },
-        "whole_foods": { "price": 0.69, "estimated": false, "source": "Cheapism organic price check" },
-        "aldi": { "price": 0.49, "estimated": false, "source": "Cheapism comparison" },
-        "lidl": { "price": 0.52, "estimated": true }
+        "walmart": {
+          "price": 0.58,
+          "estimated": false,
+          "source": "Walmart store check NPR/WalmartDesk 2026"
+        },
+        "kroger": {
+          "price": 0.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Bunch of Bananas – 5-7 Bananas"
+        },
+        "target": {
+          "price": 0.62,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 0.69,
+          "estimated": false,
+          "source": "Cheapism organic price check"
+        },
+        "aldi": {
+          "price": 0.49,
+          "estimated": false,
+          "source": "Cheapism comparison"
+        },
+        "lidl": {
+          "price": 0.52,
+          "estimated": true
+        }
       }
     },
     {
@@ -44,12 +73,33 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.62, "estimated": false, "source": "Walmart.com" },
-        "kroger": { "price": 1.79, "estimated": true },
-        "target": { "price": 1.66, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": false, "source": "Cheapism organic price check" },
-        "aldi": { "price": 1.45, "estimated": true },
-        "lidl": { "price": 1.49, "estimated": true }
+        "walmart": {
+          "price": 1.62,
+          "estimated": false,
+          "source": "Walmart.com"
+        },
+        "kroger": {
+          "price": 1.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Large Gala Apple - Each"
+        },
+        "target": {
+          "price": 1.66,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Cheapism organic price check"
+        },
+        "aldi": {
+          "price": 1.45,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -59,12 +109,33 @@
       "unit": "each",
       "size": "1 each",
       "prices": {
-        "walmart": { "price": 0.98, "estimated": true },
-        "kroger": { "price": 1.25, "estimated": false, "source": "Cheapism Kroger comparison" },
-        "target": { "price": 1.09, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": false, "source": "Cheapism Whole Foods comparison" },
-        "aldi": { "price": 0.55, "estimated": false, "source": "Allrecipes store comparison" },
-        "lidl": { "price": 0.69, "estimated": true }
+        "walmart": {
+          "price": 0.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Medium Ripe Avocado"
+        },
+        "target": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Cheapism Whole Foods comparison"
+        },
+        "aldi": {
+          "price": 0.55,
+          "estimated": false,
+          "source": "Allrecipes store comparison"
+        },
+        "lidl": {
+          "price": 0.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -74,12 +145,33 @@
       "unit": "1 lb container",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 4.42, "estimated": false, "source": "Easy Family Budgeting comparison Dec 2025" },
-        "kroger": { "price": 3.99, "estimated": true },
-        "target": { "price": 4.99, "estimated": false, "source": "Easy Family Budgeting comparison Dec 2025" },
-        "whole_foods": { "price": 4.99, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.29, "estimated": true }
+        "walmart": {
+          "price": 4.42,
+          "estimated": false,
+          "source": "Easy Family Budgeting comparison Dec 2025"
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Frozen Sliced Strawberries"
+        },
+        "target": {
+          "price": 4.99,
+          "estimated": false,
+          "source": "Easy Family Budgeting comparison Dec 2025"
+        },
+        "whole_foods": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -89,12 +181,31 @@
       "unit": "6 oz container",
       "size": "6 oz",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.29, "estimated": true },
-        "target": { "price": 3.49, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.69, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Simple Truth Organic® Frozen Blueberries"
+        },
+        "target": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -104,12 +215,32 @@
       "unit": "each",
       "size": "1 each",
       "prices": {
-        "walmart": { "price": 0.58, "estimated": false, "source": "WalmartDesk 2026 rollback price" },
-        "kroger": { "price": 0.69, "estimated": true },
-        "target": { "price": 0.65, "estimated": true },
-        "whole_foods": { "price": 0.79, "estimated": true },
-        "aldi": { "price": 0.49, "estimated": true },
-        "lidl": { "price": 0.52, "estimated": true }
+        "walmart": {
+          "price": 0.58,
+          "estimated": false,
+          "source": "WalmartDesk 2026 rollback price"
+        },
+        "kroger": {
+          "price": 0.85,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Large Lemon - Each"
+        },
+        "target": {
+          "price": 0.65,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.52,
+          "estimated": true
+        }
       }
     },
     {
@@ -119,12 +250,32 @@
       "unit": "each",
       "size": "1 each",
       "prices": {
-        "walmart": { "price": 0.25, "estimated": false, "source": "WalmartDesk 2026 store prices" },
-        "kroger": { "price": 0.33, "estimated": true },
-        "target": { "price": 0.29, "estimated": true },
-        "whole_foods": { "price": 0.50, "estimated": true },
-        "aldi": { "price": 0.25, "estimated": true },
-        "lidl": { "price": 0.25, "estimated": true }
+        "walmart": {
+          "price": 0.25,
+          "estimated": false,
+          "source": "WalmartDesk 2026 store prices"
+        },
+        "kroger": {
+          "price": 0.67,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Limes - Each"
+        },
+        "target": {
+          "price": 0.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 0.5,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.25,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.25,
+          "estimated": true
+        }
       }
     },
     {
@@ -134,12 +285,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.32, "estimated": true },
-        "kroger": { "price": 1.49, "estimated": true },
-        "target": { "price": 1.39, "estimated": true },
-        "whole_foods": { "price": 1.79, "estimated": true },
-        "aldi": { "price": 1.19, "estimated": true },
-        "lidl": { "price": 1.25, "estimated": true }
+        "walmart": {
+          "price": 1.32,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Medium Fresh Navel Oranges- Each"
+        },
+        "target": {
+          "price": 1.39,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.25,
+          "estimated": true
+        }
       }
     },
     {
@@ -149,12 +319,32 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": false, "source": "WalmartDesk 2.25lb bag $4.43" },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.29, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.89, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": false,
+          "source": "WalmartDesk 2.25lb bag $4.43"
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Fresh Seedless White Grapes"
+        },
+        "target": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -164,12 +354,32 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.28, "estimated": true },
-        "kroger": { "price": 1.49, "estimated": false, "source": "Cheapism Kroger vine tomatoes" },
-        "target": { "price": 1.39, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": false, "source": "Cheapism WF vine tomatoes" },
-        "aldi": { "price": 1.09, "estimated": true },
-        "lidl": { "price": 1.15, "estimated": true }
+        "walmart": {
+          "price": 1.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Roma Tomato"
+        },
+        "target": {
+          "price": 1.39,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Cheapism WF vine tomatoes"
+        },
+        "aldi": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.15,
+          "estimated": true
+        }
       }
     },
     {
@@ -179,12 +389,32 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.16, "estimated": false, "source": "WalmartDesk 2026 white onions" },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.19, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": true },
-        "aldi": { "price": 0.95, "estimated": true },
-        "lidl": { "price": 0.99, "estimated": true }
+        "walmart": {
+          "price": 1.16,
+          "estimated": false,
+          "source": "WalmartDesk 2026 white onions"
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Jumbo Yellow Onions"
+        },
+        "target": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.95,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -194,12 +424,31 @@
       "unit": "5 lb bag",
       "size": "5 lb",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Russet Potato"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -209,12 +458,31 @@
       "unit": "5 oz container",
       "size": "5 oz",
       "prices": {
-        "walmart": { "price": 2.47, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.69, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.19, "estimated": true }
+        "walmart": {
+          "price": 2.47,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Spinach"
+        },
+        "target": {
+          "price": 2.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -224,12 +492,32 @@
       "unit": "each",
       "size": "1 head",
       "prices": {
-        "walmart": { "price": 1.88, "estimated": false, "source": "WalmartDesk 2026" },
-        "kroger": { "price": 2.29, "estimated": true },
-        "target": { "price": 2.19, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.69, "estimated": true },
-        "lidl": { "price": 1.79, "estimated": true }
+        "walmart": {
+          "price": 1.88,
+          "estimated": false,
+          "source": "WalmartDesk 2026"
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Wrapped Iceberg Lettuce"
+        },
+        "target": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -239,12 +527,33 @@
       "unit": "each",
       "size": "1 each",
       "prices": {
-        "walmart": { "price": 0.75, "estimated": false, "source": "WalmartDesk 2026 manager special" },
-        "kroger": { "price": 0.99, "estimated": true },
-        "target": { "price": 0.83, "estimated": false, "source": "Target 3pk $2.49 multicolored" },
-        "whole_foods": { "price": 1.29, "estimated": true },
-        "aldi": { "price": 0.65, "estimated": true },
-        "lidl": { "price": 0.69, "estimated": true }
+        "walmart": {
+          "price": 0.75,
+          "estimated": false,
+          "source": "WalmartDesk 2026 manager special"
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Large Green Bell Pepper"
+        },
+        "target": {
+          "price": 0.83,
+          "estimated": false,
+          "source": "Target 3pk $2.49 multicolored"
+        },
+        "whole_foods": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.65,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -254,12 +563,31 @@
       "unit": "each",
       "size": "1 each",
       "prices": {
-        "walmart": { "price": 0.99, "estimated": true },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.09, "estimated": true },
-        "whole_foods": { "price": 1.69, "estimated": true },
-        "aldi": { "price": 0.89, "estimated": true },
-        "lidl": { "price": 0.95, "estimated": true }
+        "walmart": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Large Green Bell Pepper"
+        },
+        "target": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.95,
+          "estimated": true
+        }
       }
     },
     {
@@ -269,12 +597,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.48, "estimated": true },
-        "kroger": { "price": 1.79, "estimated": true },
-        "target": { "price": 1.69, "estimated": true },
-        "whole_foods": { "price": 2.49, "estimated": true },
-        "aldi": { "price": 1.29, "estimated": true },
-        "lidl": { "price": 1.35, "estimated": true }
+        "walmart": {
+          "price": 1.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Birds Eye Steamfresh Broccoli Florets, Frozen Vegetables"
+        },
+        "target": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.35,
+          "estimated": true
+        }
       }
     },
     {
@@ -284,12 +631,33 @@
       "unit": "1 lb bag",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.37, "estimated": false, "source": "Easy Family Budgeting comparison" },
-        "kroger": { "price": 1.49, "estimated": true },
-        "target": { "price": 1.29, "estimated": false, "source": "Easy Family Budgeting comparison" },
-        "whole_foods": { "price": 1.79, "estimated": true },
-        "aldi": { "price": 0.99, "estimated": true },
-        "lidl": { "price": 1.09, "estimated": true }
+        "walmart": {
+          "price": 1.37,
+          "estimated": false,
+          "source": "Easy Family Budgeting comparison"
+        },
+        "kroger": {
+          "price": 1.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Cut and Peeled Baby Carrots"
+        },
+        "target": {
+          "price": 1.29,
+          "estimated": false,
+          "source": "Easy Family Budgeting comparison"
+        },
+        "whole_foods": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -299,12 +667,31 @@
       "unit": "bunch",
       "size": "1 bunch",
       "prices": {
-        "walmart": { "price": 1.68, "estimated": true },
-        "kroger": { "price": 1.99, "estimated": true },
-        "target": { "price": 1.89, "estimated": true },
-        "whole_foods": { "price": 2.49, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.55, "estimated": true }
+        "walmart": {
+          "price": 1.68,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Celery Sticks"
+        },
+        "target": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.55,
+          "estimated": true
+        }
       }
     },
     {
@@ -314,12 +701,31 @@
       "unit": "each",
       "size": "1 each",
       "prices": {
-        "walmart": { "price": 0.68, "estimated": true },
-        "kroger": { "price": 0.79, "estimated": true },
-        "target": { "price": 0.75, "estimated": true },
-        "whole_foods": { "price": 1.29, "estimated": true },
-        "aldi": { "price": 0.55, "estimated": true },
-        "lidl": { "price": 0.59, "estimated": true }
+        "walmart": {
+          "price": 0.68,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.5,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Pickling Cucumbers"
+        },
+        "target": {
+          "price": 0.75,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.55,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -329,12 +735,31 @@
       "unit": "each",
       "size": "1 bulb",
       "prices": {
-        "walmart": { "price": 0.50, "estimated": true },
-        "kroger": { "price": 0.59, "estimated": true },
-        "target": { "price": 0.55, "estimated": true },
-        "whole_foods": { "price": 0.79, "estimated": true },
-        "aldi": { "price": 0.39, "estimated": true },
-        "lidl": { "price": 0.42, "estimated": true }
+        "walmart": {
+          "price": 0.5,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.79,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Garlic"
+        },
+        "target": {
+          "price": 0.55,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.39,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.42,
+          "estimated": true
+        }
       }
     },
     {
@@ -344,12 +769,30 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 4.99, "estimated": true },
-        "target": { "price": 4.79, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.19, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 4.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -359,12 +802,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 0.98, "estimated": true },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.19, "estimated": true },
-        "whole_foods": { "price": 1.79, "estimated": true },
-        "aldi": { "price": 0.89, "estimated": true },
-        "lidl": { "price": 0.95, "estimated": true }
+        "walmart": {
+          "price": 0.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Sweet Potato"
+        },
+        "target": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.95,
+          "estimated": true
+        }
       }
     },
     {
@@ -374,12 +836,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.28, "estimated": true },
-        "kroger": { "price": 1.49, "estimated": true },
-        "target": { "price": 1.39, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": true },
-        "aldi": { "price": 1.09, "estimated": true },
-        "lidl": { "price": 1.15, "estimated": true }
+        "walmart": {
+          "price": 1.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.69,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Zucchini"
+        },
+        "target": {
+          "price": 1.39,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.15,
+          "estimated": true
+        }
       }
     },
     {
@@ -389,12 +870,31 @@
       "unit": "8 oz container",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": true },
-        "kroger": { "price": 2.29, "estimated": true },
-        "target": { "price": 2.19, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.69, "estimated": true },
-        "lidl": { "price": 1.79, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Whole White Mushrooms"
+        },
+        "target": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -404,12 +904,31 @@
       "unit": "each",
       "size": "1 ear",
       "prices": {
-        "walmart": { "price": 0.50, "estimated": true },
-        "kroger": { "price": 0.59, "estimated": true },
-        "target": { "price": 0.55, "estimated": true },
-        "whole_foods": { "price": 0.79, "estimated": true },
-        "aldi": { "price": 0.39, "estimated": true },
-        "lidl": { "price": 0.42, "estimated": true }
+        "walmart": {
+          "price": 0.5,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.76,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Smart Way™ Whole Kernel Sweet Golden Corn"
+        },
+        "target": {
+          "price": 0.55,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.39,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.42,
+          "estimated": true
+        }
       }
     },
     {
@@ -419,12 +938,30 @@
       "unit": "bunch",
       "size": "1 bunch",
       "prices": {
-        "walmart": { "price": 0.58, "estimated": true },
-        "kroger": { "price": 0.79, "estimated": true },
-        "target": { "price": 0.69, "estimated": true },
-        "whole_foods": { "price": 0.99, "estimated": true },
-        "aldi": { "price": 0.49, "estimated": true },
-        "lidl": { "price": 0.52, "estimated": true }
+        "walmart": {
+          "price": 0.58,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "target": {
+          "price": 0.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.52,
+          "estimated": true
+        }
       }
     },
     {
@@ -434,12 +971,30 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.28, "estimated": true },
-        "kroger": { "price": 1.49, "estimated": true },
-        "target": { "price": 1.39, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": true },
-        "aldi": { "price": 1.09, "estimated": true },
-        "lidl": { "price": 1.15, "estimated": true }
+        "walmart": {
+          "price": 1.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 1.39,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.15,
+          "estimated": true
+        }
       }
     },
     {
@@ -449,12 +1004,30 @@
       "unit": "each",
       "size": "1 whole",
       "prices": {
-        "walmart": { "price": 5.97, "estimated": true },
-        "kroger": { "price": 6.99, "estimated": true },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 5.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -464,12 +1037,30 @@
       "unit": "each",
       "size": "1 whole",
       "prices": {
-        "walmart": { "price": 2.78, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 2.99, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.19, "estimated": true }
+        "walmart": {
+          "price": 2.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -479,12 +1070,35 @@
       "unit": "gallon",
       "size": "1 gallon",
       "prices": {
-        "walmart": { "price": 2.66, "estimated": false, "source": "WalmartDesk 2026" },
-        "kroger": { "price": 3.49, "estimated": false, "source": "Chowhound comparison Dec 2025" },
-        "target": { "price": 3.39, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "whole_foods": { "price": 5.79, "estimated": false, "source": "Chowhound comparison Dec 2025" },
-        "aldi": { "price": 2.83, "estimated": false, "source": "WCPO Cincinnati tracker" },
-        "lidl": { "price": 2.89, "estimated": true }
+        "walmart": {
+          "price": 2.66,
+          "estimated": false,
+          "source": "WalmartDesk 2026"
+        },
+        "kroger": {
+          "price": 1.69,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® 2% Reduced Fat Milk Half Gallon"
+        },
+        "target": {
+          "price": 3.39,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "whole_foods": {
+          "price": 5.79,
+          "estimated": false,
+          "source": "Chowhound comparison Dec 2025"
+        },
+        "aldi": {
+          "price": 2.83,
+          "estimated": false,
+          "source": "WCPO Cincinnati tracker"
+        },
+        "lidl": {
+          "price": 2.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -494,12 +1108,33 @@
       "unit": "gallon",
       "size": "1 gallon",
       "prices": {
-        "walmart": { "price": 2.62, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.39, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.79, "estimated": true },
-        "lidl": { "price": 2.85, "estimated": true }
+        "walmart": {
+          "price": 2.62,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "kroger": {
+          "price": 1.69,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® 2% Reduced Fat Milk Half Gallon"
+        },
+        "target": {
+          "price": 3.39,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.85,
+          "estimated": true
+        }
       }
     },
     {
@@ -509,12 +1144,34 @@
       "unit": "64 oz",
       "size": "64 oz",
       "prices": {
-        "walmart": { "price": 2.63, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "kroger": { "price": 3.19, "estimated": false, "source": "Cheapism Kroger comparison" },
-        "target": { "price": 2.59, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "whole_foods": { "price": 2.99, "estimated": false, "source": "Cheapism WF comparison" },
-        "aldi": { "price": 2.39, "estimated": true },
-        "lidl": { "price": 2.49, "estimated": true }
+        "walmart": {
+          "price": 2.63,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Simple Truth® Dairy Free Unsweetened Vanilla Almond Milk Half Gallon"
+        },
+        "target": {
+          "price": 2.59,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Cheapism WF comparison"
+        },
+        "aldi": {
+          "price": 2.39,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -524,12 +1181,31 @@
       "unit": "64 oz",
       "size": "64 oz",
       "prices": {
-        "walmart": { "price": 3.48, "estimated": true },
-        "kroger": { "price": 3.99, "estimated": true },
-        "target": { "price": 3.69, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.19, "estimated": true }
+        "walmart": {
+          "price": 3.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.69,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Planet Oat® Dairy Free Extra Creamy Original Oat Milk"
+        },
+        "target": {
+          "price": 3.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -539,12 +1215,35 @@
       "unit": "dozen",
       "size": "12 ct",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": false, "source": "WalmartDesk/Chowhound 2026" },
-        "kroger": { "price": 2.09, "estimated": false, "source": "Chowhound comparison" },
-        "target": { "price": 2.29, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "whole_foods": { "price": 3.99, "estimated": false, "source": "Bellingham Herald Nov 2025" },
-        "aldi": { "price": 2.19, "estimated": false, "source": "Chowhound comparison" },
-        "lidl": { "price": 2.15, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": false,
+          "source": "WalmartDesk/Chowhound 2026"
+        },
+        "kroger": {
+          "price": 1.15,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Large White Eggs"
+        },
+        "target": {
+          "price": 2.29,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": false,
+          "source": "Bellingham Herald Nov 2025"
+        },
+        "aldi": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Chowhound comparison"
+        },
+        "lidl": {
+          "price": 2.15,
+          "estimated": true
+        }
       }
     },
     {
@@ -554,12 +1253,32 @@
       "unit": "1 lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 3.87, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.29, "estimated": false, "source": "Cheapism WF organic comparison" },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.87,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.79,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Unsalted Butter Sticks"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.29,
+          "estimated": false,
+          "source": "Cheapism WF organic comparison"
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -569,12 +1288,31 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 1.76, "estimated": true },
-        "kroger": { "price": 2.29, "estimated": true },
-        "target": { "price": 1.99, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.55, "estimated": true }
+        "walmart": {
+          "price": 1.76,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Original Cream Cheese Spread"
+        },
+        "target": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.55,
+          "estimated": true
+        }
       }
     },
     {
@@ -584,12 +1322,32 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": false, "source": "WalmartDesk 2026" },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.19, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.85, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": false,
+          "source": "WalmartDesk 2026"
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Mild Cheddar Shredded Cheese"
+        },
+        "target": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.85,
+          "estimated": true
+        }
       }
     },
     {
@@ -599,12 +1357,33 @@
       "unit": "12 ct",
       "size": "12 slices",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": false, "source": "Easy Family Budgeting 11ct" },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 1.69, "estimated": false, "source": "Easy Family Budgeting 12ct" },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.65, "estimated": true },
-        "lidl": { "price": 1.69, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": false,
+          "source": "Easy Family Budgeting 11ct"
+        },
+        "kroger": {
+          "price": 2.89,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Singles American Sliced Cheese"
+        },
+        "target": {
+          "price": 1.69,
+          "estimated": false,
+          "source": "Easy Family Budgeting 12ct"
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.65,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -614,12 +1393,33 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 2.64, "estimated": false, "source": "Easy Family Budgeting" },
-        "kroger": { "price": 3.99, "estimated": true },
-        "target": { "price": 3.69, "estimated": false, "source": "Easy Family Budgeting" },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 3.29, "estimated": true },
-        "lidl": { "price": 3.39, "estimated": true }
+        "walmart": {
+          "price": 2.64,
+          "estimated": false,
+          "source": "Easy Family Budgeting"
+        },
+        "kroger": {
+          "price": 0.8,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Yoplait Original Low Fat Harvest Peach Yogurt Cup"
+        },
+        "target": {
+          "price": 3.69,
+          "estimated": false,
+          "source": "Easy Family Budgeting"
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -629,12 +1429,31 @@
       "unit": "4-pack",
       "size": "4 cups",
       "prices": {
-        "walmart": { "price": 2.78, "estimated": true },
-        "kroger": { "price": 3.29, "estimated": true },
-        "target": { "price": 2.99, "estimated": true },
-        "whole_foods": { "price": 4.29, "estimated": true },
-        "aldi": { "price": 2.39, "estimated": true },
-        "lidl": { "price": 2.49, "estimated": true }
+        "walmart": {
+          "price": 2.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.8,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Yoplait Original Low Fat Harvest Peach Yogurt Cup"
+        },
+        "target": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.39,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -644,12 +1463,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 1.76, "estimated": true },
-        "kroger": { "price": 2.29, "estimated": true },
-        "target": { "price": 1.99, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.55, "estimated": true }
+        "walmart": {
+          "price": 1.76,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.25,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Original Sour Cream"
+        },
+        "target": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.55,
+          "estimated": true
+        }
       }
     },
     {
@@ -659,12 +1497,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.98, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.69, "estimated": true },
-        "lidl": { "price": 2.79, "estimated": true }
+        "walmart": {
+          "price": 2.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Heavy Whipping Cream Pint"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -674,12 +1531,31 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 2.78, "estimated": true },
-        "kroger": { "price": 3.29, "estimated": true },
-        "target": { "price": 2.99, "estimated": true },
-        "whole_foods": { "price": 4.29, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Half and Half Pint"
+        },
+        "target": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -689,12 +1565,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.38, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.69, "estimated": true },
-        "whole_foods": { "price": 4.29, "estimated": true },
-        "aldi": { "price": 2.19, "estimated": true },
-        "lidl": { "price": 2.29, "estimated": true }
+        "walmart": {
+          "price": 2.38,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® 4% Milkfat Small Curd Cottage Cheese"
+        },
+        "target": {
+          "price": 2.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -704,12 +1599,30 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 3.48, "estimated": true },
-        "kroger": { "price": 3.99, "estimated": true },
-        "target": { "price": 3.79, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.09, "estimated": true }
+        "walmart": {
+          "price": 3.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -719,12 +1632,30 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": true },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.19, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.85, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.85,
+          "estimated": true
+        }
       }
     },
     {
@@ -734,12 +1665,30 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -749,12 +1698,30 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -764,12 +1731,34 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 2.92, "estimated": false, "source": "FinanceBuzz Jan 2026" },
-        "kroger": { "price": 3.12, "estimated": false, "source": "WCPO Cincinnati tracker" },
-        "target": { "price": 2.69, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 3.45, "estimated": false, "source": "WCPO Cincinnati tracker" },
-        "lidl": { "price": 2.79, "estimated": true }
+        "walmart": {
+          "price": 2.92,
+          "estimated": false,
+          "source": "FinanceBuzz Jan 2026"
+        },
+        "kroger": {
+          "price": 2.89,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Heritage Farm® Boneless Skinless Chicken Breasts"
+        },
+        "target": {
+          "price": 2.69,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.45,
+          "estimated": false,
+          "source": "WCPO Cincinnati tracker"
+        },
+        "lidl": {
+          "price": 2.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -779,12 +1768,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 2.18, "estimated": true },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.29, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.18,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Heritage Farm® Bone In Skin On Chicken Drumsticks"
+        },
+        "target": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -794,12 +1802,34 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 5.97, "estimated": false, "source": "BLS avg ground beef Feb 2026 $6.74, Walmart lower" },
-        "kroger": { "price": 7.04, "estimated": false, "source": "WCPO Cincinnati tracker" },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 6.99, "estimated": false, "source": "Cheapism organic 85/15" },
-        "aldi": { "price": 7.03, "estimated": false, "source": "WCPO Cincinnati tracker" },
-        "lidl": { "price": 5.49, "estimated": true }
+        "walmart": {
+          "price": 5.97,
+          "estimated": false,
+          "source": "BLS avg ground beef Feb 2026 $6.74, Walmart lower"
+        },
+        "kroger": {
+          "price": 6.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® 73/27 Ground Beef Roll 1 LB"
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 6.99,
+          "estimated": false,
+          "source": "Cheapism organic 85/15"
+        },
+        "aldi": {
+          "price": 7.03,
+          "estimated": false,
+          "source": "WCPO Cincinnati tracker"
+        },
+        "lidl": {
+          "price": 5.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -809,12 +1839,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 4.99, "estimated": true },
-        "target": { "price": 4.79, "estimated": true },
-        "whole_foods": { "price": 6.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.19, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® 85/15 Ground Turkey"
+        },
+        "target": {
+          "price": 4.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -824,12 +1873,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 5.97, "estimated": true },
-        "kroger": { "price": 6.99, "estimated": true },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 5.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Hardwood Smoked Bacon"
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -839,12 +1907,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 3.78, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.19, "estimated": true },
-        "whole_foods": { "price": 6.99, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Pork Loin Assorted End Chop Bone"
+        },
+        "target": {
+          "price": 4.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -854,12 +1941,32 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 8.26, "estimated": false, "source": "Walmart.com Marketside Atlantic Salmon" },
-        "kroger": { "price": 9.99, "estimated": true },
-        "target": { "price": 9.49, "estimated": true },
-        "whole_foods": { "price": 12.99, "estimated": true },
-        "aldi": { "price": 7.99, "estimated": true },
-        "lidl": { "price": 8.49, "estimated": true }
+        "walmart": {
+          "price": 8.26,
+          "estimated": false,
+          "source": "Walmart.com Marketside Atlantic Salmon"
+        },
+        "kroger": {
+          "price": 9.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Fresh Farm Raised Atlantic Salmon Fillet"
+        },
+        "target": {
+          "price": 9.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 12.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 8.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -869,12 +1976,31 @@
       "unit": "1 lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 7.47, "estimated": true },
-        "kroger": { "price": 8.99, "estimated": true },
-        "target": { "price": 8.49, "estimated": true },
-        "whole_foods": { "price": 11.99, "estimated": true },
-        "aldi": { "price": 6.99, "estimated": true },
-        "lidl": { "price": 7.29, "estimated": true }
+        "walmart": {
+          "price": 7.47,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 8.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Service Counter Extra Large EZ Peel Shrimp 21/25"
+        },
+        "target": {
+          "price": 8.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 11.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 7.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -884,12 +2010,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 5.49, "estimated": true },
-        "target": { "price": 4.99, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.29, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 5,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Fresh Farm Raised Tilapia Fillets"
+        },
+        "target": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -899,12 +2044,31 @@
       "unit": "8 ct",
       "size": "8 ct",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": true },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.19, "estimated": true },
-        "whole_foods": { "price": 4.99, "estimated": true },
-        "aldi": { "price": 1.69, "estimated": true },
-        "lidl": { "price": 1.79, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.25,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Bar-S Classic Franks"
+        },
+        "target": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -914,12 +2078,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 6.48, "estimated": true },
-        "kroger": { "price": 7.99, "estimated": true },
-        "target": { "price": 7.49, "estimated": true },
-        "whole_foods": { "price": 11.99, "estimated": true },
-        "aldi": { "price": 5.49, "estimated": true },
-        "lidl": { "price": 5.79, "estimated": true }
+        "walmart": {
+          "price": 6.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Oscar Mayer Deli Fresh Oven Roasted Turkey Breast Thin Sliced Lunchmeat"
+        },
+        "target": {
+          "price": 7.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 11.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -929,12 +2112,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 5.98, "estimated": true },
-        "kroger": { "price": 7.49, "estimated": true },
-        "target": { "price": 6.99, "estimated": true },
-        "whole_foods": { "price": 10.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 5.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Hillshire Farm Ultra Thin Sliced Black Forest Ham Deli Lunch Meat"
+        },
+        "target": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 10.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -944,12 +2146,31 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 5.29, "estimated": true },
-        "target": { "price": 4.99, "estimated": true },
-        "whole_foods": { "price": 6.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.19, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Original Breakfast Sausage Links"
+        },
+        "target": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -959,12 +2180,32 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 12.97, "estimated": true },
-        "kroger": { "price": 14.99, "estimated": true },
-        "target": { "price": 13.99, "estimated": true },
-        "whole_foods": { "price": 18.99, "estimated": false, "source": "Cheapism WF organic ribeye" },
-        "aldi": { "price": 11.99, "estimated": true },
-        "lidl": { "price": 12.49, "estimated": true }
+        "walmart": {
+          "price": 12.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 7.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Beef Shaved Steak"
+        },
+        "target": {
+          "price": 13.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 18.99,
+          "estimated": false,
+          "source": "Cheapism WF organic ribeye"
+        },
+        "aldi": {
+          "price": 11.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 12.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -974,12 +2215,32 @@
       "unit": "per lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 1.68, "estimated": true },
-        "kroger": { "price": 1.99, "estimated": false, "source": "Cheapism Kroger comparison" },
-        "target": { "price": 1.89, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": false, "source": "Cheapism WF comparison" },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.55, "estimated": true }
+        "walmart": {
+          "price": 1.68,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Cheapism Kroger comparison"
+        },
+        "target": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Cheapism WF comparison"
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.55,
+          "estimated": true
+        }
       }
     },
     {
@@ -989,12 +2250,32 @@
       "unit": "24-pack",
       "size": "24 x 16.9 oz",
       "prices": {
-        "walmart": { "price": 2.98, "estimated": true },
-        "kroger": { "price": 2.69, "estimated": false, "source": "Cheapism Kroger comparison" },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": false, "source": "Cheapism WF comparison" },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Drinking Gallon Water"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": false,
+          "source": "Cheapism WF comparison"
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1004,12 +2285,31 @@
       "unit": "12-pack cans",
       "size": "12 x 12 oz",
       "prices": {
-        "walmart": { "price": 7.48, "estimated": true },
-        "kroger": { "price": 7.99, "estimated": true },
-        "target": { "price": 7.49, "estimated": true },
-        "whole_foods": { "price": 8.49, "estimated": true },
-        "aldi": { "price": 5.49, "estimated": true },
-        "lidl": { "price": 5.79, "estimated": true }
+        "walmart": {
+          "price": 7.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 11.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fanta® Strawberry Soda Cans"
+        },
+        "target": {
+          "price": 7.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -1019,12 +2319,30 @@
       "unit": "12-pack cans",
       "size": "12 x 12 oz",
       "prices": {
-        "walmart": { "price": 7.48, "estimated": true },
-        "kroger": { "price": 7.99, "estimated": true },
-        "target": { "price": 7.49, "estimated": true },
-        "whole_foods": { "price": 8.49, "estimated": true },
-        "aldi": { "price": 5.49, "estimated": true },
-        "lidl": { "price": 5.79, "estimated": true }
+        "walmart": {
+          "price": 7.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 7.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -1034,12 +2352,31 @@
       "unit": "64 oz",
       "size": "64 oz",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Minute Maid® Fruit Punch"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1049,12 +2386,30 @@
       "unit": "64 oz",
       "size": "64 oz",
       "prices": {
-        "walmart": { "price": 2.98, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.69, "estimated": true },
-        "lidl": { "price": 2.79, "estimated": true }
+        "walmart": {
+          "price": 2.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -1064,12 +2419,31 @@
       "unit": "12 oz",
       "size": "12 oz",
       "prices": {
-        "walmart": { "price": 6.97, "estimated": true },
-        "kroger": { "price": 7.99, "estimated": true },
-        "target": { "price": 7.49, "estimated": true },
-        "whole_foods": { "price": 9.99, "estimated": true },
-        "aldi": { "price": 5.49, "estimated": true },
-        "lidl": { "price": 5.79, "estimated": true }
+        "walmart": {
+          "price": 6.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 9.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Seattle's Best Coffee Breakfast Blend Medium Roast Ground Coffee"
+        },
+        "target": {
+          "price": 7.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 9.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -1079,12 +2453,30 @@
       "unit": "12 ct",
       "size": "12 ct",
       "prices": {
-        "walmart": { "price": 7.97, "estimated": true },
-        "kroger": { "price": 8.99, "estimated": true },
-        "target": { "price": 8.49, "estimated": true },
-        "whole_foods": { "price": 9.99, "estimated": true },
-        "aldi": { "price": 5.99, "estimated": true },
-        "lidl": { "price": 6.29, "estimated": true }
+        "walmart": {
+          "price": 7.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 8.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 9.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 6.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1094,12 +2486,31 @@
       "unit": "20 ct",
       "size": "20 ct",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Real Brewed Caffeinated Sweet Iced Tea Gallon"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1109,12 +2520,31 @@
       "unit": "8-pack",
       "size": "8 x 20 oz",
       "prices": {
-        "walmart": { "price": 6.98, "estimated": true },
-        "kroger": { "price": 7.99, "estimated": true },
-        "target": { "price": 7.49, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 5.99, "estimated": true },
-        "lidl": { "price": 6.29, "estimated": true }
+        "walmart": {
+          "price": 6.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.59,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — POWERADE® Grape Sports Drink Bottle"
+        },
+        "target": {
+          "price": 7.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 6.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1124,12 +2554,30 @@
       "unit": "12-pack",
       "size": "12 x 12 oz",
       "prices": {
-        "walmart": { "price": 4.98, "estimated": true },
-        "kroger": { "price": 5.99, "estimated": true },
-        "target": { "price": 5.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.19, "estimated": true }
+        "walmart": {
+          "price": 4.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 5.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -1139,12 +2587,31 @@
       "unit": "4-pack",
       "size": "4 x 8.4 oz",
       "prices": {
-        "walmart": { "price": 6.28, "estimated": true },
-        "kroger": { "price": 6.99, "estimated": true },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 7.99, "estimated": true },
-        "aldi": { "price": 5.99, "estimated": true },
-        "lidl": { "price": 6.19, "estimated": true }
+        "walmart": {
+          "price": 6.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.5,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Red Bull Spring Edition Energy Drink Cherry Sakura Can"
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 6.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -1154,12 +2621,30 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 3.28, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.49, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.09, "estimated": true }
+        "walmart": {
+          "price": 3.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1169,12 +2654,30 @@
       "unit": "64 oz",
       "size": "64 oz",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1184,12 +2687,31 @@
       "unit": "5 lb",
       "size": "5 lb",
       "prices": {
-        "walmart": { "price": 3.98, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® 90 Second Jasmine Rice Pouch"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1199,12 +2721,30 @@
       "unit": "2 lb",
       "size": "2 lb",
       "prices": {
-        "walmart": { "price": 2.18, "estimated": true },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.29, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.18,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1214,12 +2754,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 0.98, "estimated": true },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.19, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": true },
-        "aldi": { "price": 0.79, "estimated": true },
-        "lidl": { "price": 0.85, "estimated": true }
+        "walmart": {
+          "price": 0.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.25,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger 16 Oz Tortiglioni Pasta"
+        },
+        "target": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.85,
+          "estimated": true
+        }
       }
     },
     {
@@ -1229,12 +2788,30 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 0.98, "estimated": true },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.19, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": true },
-        "aldi": { "price": 0.79, "estimated": true },
-        "lidl": { "price": 0.85, "estimated": true }
+        "walmart": {
+          "price": 0.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "target": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.85,
+          "estimated": true
+        }
       }
     },
     {
@@ -1244,12 +2821,35 @@
       "unit": "loaf",
       "size": "~20 oz loaf",
       "prices": {
-        "walmart": { "price": 1.48, "estimated": false, "source": "WalmartDesk 2026 Great Value" },
-        "kroger": { "price": 1.99, "estimated": false, "source": "Chowhound comparison" },
-        "target": { "price": 1.49, "estimated": false, "source": "Easy Family Budgeting Dec 2025" },
-        "whole_foods": { "price": 2.49, "estimated": false, "source": "Chowhound comparison" },
-        "aldi": { "price": 1.55, "estimated": false, "source": "Chowhound comparison" },
-        "lidl": { "price": 1.39, "estimated": true }
+        "walmart": {
+          "price": 1.48,
+          "estimated": false,
+          "source": "WalmartDesk 2026 Great Value"
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® White Sandwich Bread"
+        },
+        "target": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Easy Family Budgeting Dec 2025"
+        },
+        "whole_foods": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Chowhound comparison"
+        },
+        "aldi": {
+          "price": 1.55,
+          "estimated": false,
+          "source": "Chowhound comparison"
+        },
+        "lidl": {
+          "price": 1.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -1259,12 +2859,34 @@
       "unit": "loaf",
       "size": "~20 oz loaf",
       "prices": {
-        "walmart": { "price": 1.87, "estimated": false, "source": "WalmartDesk 2026" },
-        "kroger": { "price": 1.99, "estimated": true },
-        "target": { "price": 1.49, "estimated": false, "source": "Easy Family Budgeting wheat bread" },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.58, "estimated": false, "source": "WCPO Cincinnati bread tracker" },
-        "lidl": { "price": 1.49, "estimated": true }
+        "walmart": {
+          "price": 1.87,
+          "estimated": false,
+          "source": "WalmartDesk 2026"
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® White Sandwich Bread"
+        },
+        "target": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Easy Family Budgeting wheat bread"
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.58,
+          "estimated": false,
+          "source": "WCPO Cincinnati bread tracker"
+        },
+        "lidl": {
+          "price": 1.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -1274,12 +2896,31 @@
       "unit": "5 lb",
       "size": "5 lb",
       "prices": {
-        "walmart": { "price": 2.47, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 2.19, "estimated": true },
-        "lidl": { "price": 2.29, "estimated": true }
+        "walmart": {
+          "price": 2.47,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® All Purpose Bleached Enriched Flour"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.19,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1289,12 +2930,31 @@
       "unit": "4 lb",
       "size": "4 lb",
       "prices": {
-        "walmart": { "price": 3.28, "estimated": true },
-        "kroger": { "price": 3.79, "estimated": true },
-        "target": { "price": 3.49, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.89, "estimated": true },
-        "lidl": { "price": 2.99, "estimated": true }
+        "walmart": {
+          "price": 3.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Light Brown Sugar"
+        },
+        "target": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -1304,12 +2964,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 4.97, "estimated": true },
-        "kroger": { "price": 5.99, "estimated": true },
-        "target": { "price": 5.49, "estimated": true },
-        "whole_foods": { "price": 7.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.29, "estimated": true }
+        "walmart": {
+          "price": 4.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 6.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Extra Virgin Olive Oil"
+        },
+        "target": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1319,12 +2998,31 @@
       "unit": "48 oz",
       "size": "48 oz",
       "prices": {
-        "walmart": { "price": 3.48, "estimated": true },
-        "kroger": { "price": 3.99, "estimated": true },
-        "target": { "price": 3.79, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.09, "estimated": true }
+        "walmart": {
+          "price": 3.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Smart Way™ Vegetable Oil"
+        },
+        "target": {
+          "price": 3.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1334,12 +3032,33 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.19, "estimated": false, "source": "Easy Family Budgeting 18oz" },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 1.99, "estimated": false, "source": "Easy Family Budgeting 16oz" },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.89, "estimated": true }
+        "walmart": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Easy Family Budgeting 18oz"
+        },
+        "kroger": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Natural Peanut Butter Creamy"
+        },
+        "target": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Easy Family Budgeting 16oz"
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -1349,12 +3068,31 @@
       "unit": "20 oz",
       "size": "20 oz",
       "prices": {
-        "walmart": { "price": 2.18, "estimated": true },
-        "kroger": { "price": 2.79, "estimated": true },
-        "target": { "price": 2.49, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.89, "estimated": true }
+        "walmart": {
+          "price": 2.18,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Smart Way™ Grape Jelly"
+        },
+        "target": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -1364,12 +3102,31 @@
       "unit": "18 oz",
       "size": "18 oz",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 4.99, "estimated": true },
-        "target": { "price": 4.79, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.69, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Bite Size Frosted Shredded Wheat Cereal"
+        },
+        "target": {
+          "price": 4.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -1379,12 +3136,31 @@
       "unit": "42 oz",
       "size": "42 oz",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.09, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — NATURALLY FLAVORED MAPLE AND BROWN SUGAR INSTANT OATMEAL 10 PK - KROGER - 15.1 OZ"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1394,12 +3170,33 @@
       "unit": "14.5 oz",
       "size": "14.5 oz",
       "prices": {
-        "walmart": { "price": 0.96, "estimated": false, "source": "WalmartDesk 2026 Great Value" },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 0.99, "estimated": false, "source": "Easy Family Budgeting" },
-        "whole_foods": { "price": 1.79, "estimated": true },
-        "aldi": { "price": 0.79, "estimated": true },
-        "lidl": { "price": 0.85, "estimated": true }
+        "walmart": {
+          "price": 0.96,
+          "estimated": false,
+          "source": "WalmartDesk 2026 Great Value"
+        },
+        "kroger": {
+          "price": 1,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Petite Diced Tomatoes"
+        },
+        "target": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Easy Family Budgeting"
+        },
+        "whole_foods": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.85,
+          "estimated": true
+        }
       }
     },
     {
@@ -1409,12 +3206,32 @@
       "unit": "15 oz",
       "size": "15 oz",
       "prices": {
-        "walmart": { "price": 0.86, "estimated": false, "source": "WalmartDesk 2026 Great Value" },
-        "kroger": { "price": 1.19, "estimated": true },
-        "target": { "price": 0.99, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": true },
-        "aldi": { "price": 0.69, "estimated": true },
-        "lidl": { "price": 0.75, "estimated": true }
+        "walmart": {
+          "price": 0.86,
+          "estimated": false,
+          "source": "WalmartDesk 2026 Great Value"
+        },
+        "kroger": {
+          "price": 1,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Light Red Kidney Beans"
+        },
+        "target": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.75,
+          "estimated": true
+        }
       }
     },
     {
@@ -1424,12 +3241,30 @@
       "unit": "5 oz",
       "size": "5 oz",
       "prices": {
-        "walmart": { "price": 1.08, "estimated": true },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.19, "estimated": true },
-        "whole_foods": { "price": 2.49, "estimated": true },
-        "aldi": { "price": 0.89, "estimated": true },
-        "lidl": { "price": 0.95, "estimated": true }
+        "walmart": {
+          "price": 1.08,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "target": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.95,
+          "estimated": true
+        }
       }
     },
     {
@@ -1439,12 +3274,31 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 1.48, "estimated": true },
-        "kroger": { "price": 1.79, "estimated": true },
-        "target": { "price": 1.69, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.19, "estimated": true },
-        "lidl": { "price": 1.29, "estimated": true }
+        "walmart": {
+          "price": 1.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.89,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Chicken Broth"
+        },
+        "target": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.19,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1454,12 +3308,31 @@
       "unit": "20 oz",
       "size": "20 oz",
       "prices": {
-        "walmart": { "price": 2.28, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.49, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.59, "estimated": true }
+        "walmart": {
+          "price": 2.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.39,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Original Tomato Ketchup"
+        },
+        "target": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1469,12 +3342,31 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 0.98, "estimated": true },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.09, "estimated": true },
-        "whole_foods": { "price": 1.99, "estimated": true },
-        "aldi": { "price": 0.69, "estimated": true },
-        "lidl": { "price": 0.75, "estimated": true }
+        "walmart": {
+          "price": 0.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger Original Yellow Mustard"
+        },
+        "target": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.75,
+          "estimated": true
+        }
       }
     },
     {
@@ -1484,12 +3376,31 @@
       "unit": "30 oz",
       "size": "30 oz",
       "prices": {
-        "walmart": { "price": 3.98, "estimated": true },
-        "kroger": { "price": 4.99, "estimated": true },
-        "target": { "price": 4.49, "estimated": true },
-        "whole_foods": { "price": 6.49, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.19, "estimated": true }
+        "walmart": {
+          "price": 3.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.79,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Real Mayo"
+        },
+        "target": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -1499,12 +3410,31 @@
       "unit": "26 oz",
       "size": "26 oz",
       "prices": {
-        "walmart": { "price": 0.78, "estimated": true },
-        "kroger": { "price": 0.99, "estimated": true },
-        "target": { "price": 0.89, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": true },
-        "aldi": { "price": 0.59, "estimated": true },
-        "lidl": { "price": 0.65, "estimated": true }
+        "walmart": {
+          "price": 0.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.89,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Salt"
+        },
+        "target": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.59,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.65,
+          "estimated": true
+        }
       }
     },
     {
@@ -1514,12 +3444,31 @@
       "unit": "4 oz",
       "size": "4 oz",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.09, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Fresh Large Green Bell Pepper"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1529,12 +3478,31 @@
       "unit": "10 ct",
       "size": "10 ct",
       "prices": {
-        "walmart": { "price": 2.28, "estimated": true },
-        "kroger": { "price": 2.79, "estimated": true },
-        "target": { "price": 2.49, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.89, "estimated": true },
-        "lidl": { "price": 1.99, "estimated": true }
+        "walmart": {
+          "price": 2.28,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Soft Taco Size Flour Tortillas"
+        },
+        "target": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -1544,12 +3512,31 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 2.98, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Lay's® Classic Potato Chips"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1559,12 +3546,30 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.89, "estimated": true },
-        "lidl": { "price": 1.99, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -1574,12 +3579,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.69, "estimated": true },
-        "lidl": { "price": 1.79, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Cheese Dip 'N' Cracker Sticks"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -1589,12 +3613,31 @@
       "unit": "6 ct",
       "size": "6 ct",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Chewy Dipped Chocolate Chip Granola Bars"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1604,12 +3647,31 @@
       "unit": "7.25 oz",
       "size": "7.25 oz",
       "prices": {
-        "walmart": { "price": 0.58, "estimated": false, "source": "WalmartDesk 2026 Great Value" },
-        "kroger": { "price": 0.99, "estimated": true },
-        "target": { "price": 0.79, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": true },
-        "aldi": { "price": 0.49, "estimated": true },
-        "lidl": { "price": 0.55, "estimated": true }
+        "walmart": {
+          "price": 0.58,
+          "estimated": false,
+          "source": "WalmartDesk 2026 Great Value"
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 0.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.55,
+          "estimated": true
+        }
       }
     },
     {
@@ -1619,12 +3681,30 @@
       "unit": "12-pack",
       "size": "12 ct",
       "prices": {
-        "walmart": { "price": 2.78, "estimated": true },
-        "kroger": { "price": 3.29, "estimated": true },
-        "target": { "price": 2.99, "estimated": true },
-        "whole_foods": { "price": 4.99, "estimated": true },
-        "aldi": { "price": 2.29, "estimated": true },
-        "lidl": { "price": 2.39, "estimated": true }
+        "walmart": {
+          "price": 2.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -1634,12 +3714,31 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 1.89, "estimated": true },
-        "lidl": { "price": 1.99, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Complete Original Pancake & Waffle Mix"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -1649,12 +3748,31 @@
       "unit": "24 oz",
       "size": "24 oz",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Original Pancake Syrup"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1664,12 +3782,31 @@
       "unit": "12 oz",
       "size": "12 oz",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.59, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.39,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Clover Honey Bear"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1679,12 +3816,31 @@
       "unit": "15 oz",
       "size": "15 oz",
       "prices": {
-        "walmart": { "price": 0.78, "estimated": true },
-        "kroger": { "price": 0.99, "estimated": true },
-        "target": { "price": 0.89, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": true },
-        "aldi": { "price": 0.59, "estimated": true },
-        "lidl": { "price": 0.65, "estimated": true }
+        "walmart": {
+          "price": 0.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.69,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® No Salt Added Whole Kernel Corn"
+        },
+        "target": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.59,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.65,
+          "estimated": true
+        }
       }
     },
     {
@@ -1694,12 +3850,30 @@
       "unit": "14.5 oz",
       "size": "14.5 oz",
       "prices": {
-        "walmart": { "price": 0.78, "estimated": true },
-        "kroger": { "price": 0.99, "estimated": true },
-        "target": { "price": 0.89, "estimated": true },
-        "whole_foods": { "price": 1.49, "estimated": true },
-        "aldi": { "price": 0.59, "estimated": true },
-        "lidl": { "price": 0.65, "estimated": true }
+        "walmart": {
+          "price": 0.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.59,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.65,
+          "estimated": true
+        }
       }
     },
     {
@@ -1709,12 +3883,31 @@
       "unit": "8 oz",
       "size": "8 oz",
       "prices": {
-        "walmart": { "price": 0.58, "estimated": true },
-        "kroger": { "price": 0.79, "estimated": true },
-        "target": { "price": 0.69, "estimated": true },
-        "whole_foods": { "price": 1.29, "estimated": true },
-        "aldi": { "price": 0.45, "estimated": true },
-        "lidl": { "price": 0.49, "estimated": true }
+        "walmart": {
+          "price": 0.58,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 0.59,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Tomato Sauce"
+        },
+        "target": {
+          "price": 0.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.45,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.49,
+          "estimated": true
+        }
       }
     },
     {
@@ -1724,12 +3917,30 @@
       "unit": "18 oz",
       "size": "18 oz",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": true },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.29, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.59, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1739,12 +3950,31 @@
       "unit": "10 oz",
       "size": "10 oz",
       "prices": {
-        "walmart": { "price": 1.97, "estimated": true },
-        "kroger": { "price": 2.49, "estimated": true },
-        "target": { "price": 2.29, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.59, "estimated": true }
+        "walmart": {
+          "price": 1.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Less Sodium Soy Sauce"
+        },
+        "target": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1754,12 +3984,30 @@
       "unit": "5 oz",
       "size": "5 oz",
       "prices": {
-        "walmart": { "price": 1.48, "estimated": true },
-        "kroger": { "price": 1.79, "estimated": true },
-        "target": { "price": 1.69, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 0.99, "estimated": true },
-        "lidl": { "price": 1.09, "estimated": true }
+        "walmart": {
+          "price": 1.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "target": {
+          "price": 1.69,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -1769,12 +4017,31 @@
       "unit": "1 pizza",
       "size": "~28 oz",
       "prices": {
-        "walmart": { "price": 6.97, "estimated": true },
-        "kroger": { "price": 7.49, "estimated": true },
-        "target": { "price": 7.29, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 6.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Totino's™ Party Pizza™ Pepperoni Thin Crust Frozen Pizza"
+        },
+        "target": {
+          "price": 7.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1784,12 +4051,31 @@
       "unit": "48 oz",
       "size": "48 oz",
       "prices": {
-        "walmart": { "price": 4.97, "estimated": true },
-        "kroger": { "price": 5.49, "estimated": true },
-        "target": { "price": 5.29, "estimated": true },
-        "whole_foods": { "price": 6.99, "estimated": true },
-        "aldi": { "price": 3.49, "estimated": true },
-        "lidl": { "price": 3.69, "estimated": true }
+        "walmart": {
+          "price": 4.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Butterfinger® Peanut Butter Candy Crunch Frozen Dairy Dessert Tub"
+        },
+        "target": {
+          "price": 5.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 6.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -1799,12 +4085,33 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 1.05, "estimated": false, "source": "Easy Family Budgeting" },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 0.99, "estimated": false, "source": "Easy Family Budgeting" },
-        "whole_foods": { "price": 2.29, "estimated": true },
-        "aldi": { "price": 0.89, "estimated": true },
-        "lidl": { "price": 0.95, "estimated": true }
+        "walmart": {
+          "price": 1.05,
+          "estimated": false,
+          "source": "Easy Family Budgeting"
+        },
+        "kroger": {
+          "price": 1.25,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Traditional Favorites Frozen Corn Super Sweet"
+        },
+        "target": {
+          "price": 0.99,
+          "estimated": false,
+          "source": "Easy Family Budgeting"
+        },
+        "whole_foods": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.95,
+          "estimated": true
+        }
       }
     },
     {
@@ -1814,12 +4121,31 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® French Fries"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1829,12 +4155,31 @@
       "unit": "24 oz",
       "size": "24 oz",
       "prices": {
-        "walmart": { "price": 5.97, "estimated": true },
-        "kroger": { "price": 6.99, "estimated": true },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 5.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 5.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Banquet Chicken Nuggets, Frozen Meal"
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1844,12 +4189,31 @@
       "unit": "10 ct",
       "size": "10 ct",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.59, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Buttermilk Waffles"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -1859,12 +4223,30 @@
       "unit": "8 ct",
       "size": "8 ct",
       "prices": {
-        "walmart": { "price": 4.97, "estimated": true },
-        "kroger": { "price": 5.49, "estimated": true },
-        "target": { "price": 5.29, "estimated": true },
-        "whole_foods": { "price": 7.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.19, "estimated": true }
+        "walmart": {
+          "price": 4.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 5.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -1874,12 +4256,32 @@
       "unit": "12 oz",
       "size": "12 oz",
       "prices": {
-        "walmart": { "price": 2.64, "estimated": false, "source": "WalmartDesk 16oz blend $3.52 scaled" },
-        "kroger": { "price": 3.29, "estimated": true },
-        "target": { "price": 2.99, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.29, "estimated": true },
-        "lidl": { "price": 2.39, "estimated": true }
+        "walmart": {
+          "price": 2.64,
+          "estimated": false,
+          "source": "WalmartDesk 16oz blend $3.52 scaled"
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Frozen Sliced Bananas"
+        },
+        "target": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -1889,12 +4291,30 @@
       "unit": "1 lb",
       "size": "1 lb",
       "prices": {
-        "walmart": { "price": 7.47, "estimated": true },
-        "kroger": { "price": 8.99, "estimated": true },
-        "target": { "price": 8.49, "estimated": true },
-        "whole_foods": { "price": 11.99, "estimated": true },
-        "aldi": { "price": 6.49, "estimated": true },
-        "lidl": { "price": 6.79, "estimated": true }
+        "walmart": {
+          "price": 7.47,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 8.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 11.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 6.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -1904,12 +4324,30 @@
       "unit": "6 ct",
       "size": "6 ct",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.29, "estimated": true },
-        "lidl": { "price": 2.39, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -1919,12 +4357,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 0.98, "estimated": false, "source": "WalmartDesk frozen veg 12oz $0.98" },
-        "kroger": { "price": 1.29, "estimated": true },
-        "target": { "price": 1.09, "estimated": true },
-        "whole_foods": { "price": 2.29, "estimated": true },
-        "aldi": { "price": 0.85, "estimated": true },
-        "lidl": { "price": 0.89, "estimated": true }
+        "walmart": {
+          "price": 0.98,
+          "estimated": false,
+          "source": "WalmartDesk frozen veg 12oz $0.98"
+        },
+        "kroger": {
+          "price": 1.29,
+          "estimated": true
+        },
+        "target": {
+          "price": 1.09,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 0.85,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 0.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -1934,12 +4391,30 @@
       "unit": "12 ct",
       "size": "12 ct",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.99, "estimated": true },
-        "aldi": { "price": 2.29, "estimated": true },
-        "lidl": { "price": 2.39, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -1949,12 +4424,31 @@
       "unit": "6-roll",
       "size": "6 roll",
       "prices": {
-        "walmart": { "price": 5.97, "estimated": true },
-        "kroger": { "price": 6.99, "estimated": true },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 5.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Glimmer Select-A-Sheet Paper Towels Double Rolls"
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1964,12 +4458,31 @@
       "unit": "12-roll",
       "size": "12 roll",
       "prices": {
-        "walmart": { "price": 6.97, "estimated": true },
-        "kroger": { "price": 7.99, "estimated": true },
-        "target": { "price": 7.49, "estimated": true },
-        "whole_foods": { "price": 10.99, "estimated": true },
-        "aldi": { "price": 5.99, "estimated": true },
-        "lidl": { "price": 6.29, "estimated": true }
+        "walmart": {
+          "price": 6.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.69,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Angel Soft® Soft & Strong Toilet Paper Mega Rolls"
+        },
+        "target": {
+          "price": 7.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 10.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 6.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -1979,12 +4492,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.89, "estimated": true },
-        "lidl": { "price": 1.99, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Simple Truth® Lemongrass Clementine Liquid Dish Soap"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -1994,12 +4526,31 @@
       "unit": "50 oz",
       "size": "50 oz",
       "prices": {
-        "walmart": { "price": 5.97, "estimated": true },
-        "kroger": { "price": 6.99, "estimated": true },
-        "target": { "price": 6.49, "estimated": true },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 4.99, "estimated": true },
-        "lidl": { "price": 5.29, "estimated": true }
+        "walmart": {
+          "price": 5.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 5.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — ARM & HAMMER Plus OxiClean with Odor Blasters Fresh Burst Liquid Laundry Detergent"
+        },
+        "target": {
+          "price": 6.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -2009,12 +4560,31 @@
       "unit": "30 ct",
       "size": "30 ct",
       "prices": {
-        "walmart": { "price": 5.47, "estimated": true },
-        "kroger": { "price": 6.49, "estimated": true },
-        "target": { "price": 5.99, "estimated": true },
-        "whole_foods": { "price": 7.99, "estimated": true },
-        "aldi": { "price": 4.49, "estimated": true },
-        "lidl": { "price": 4.69, "estimated": true }
+        "walmart": {
+          "price": 5.47,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.19,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Tall Kichen Drawstring Trash Bags"
+        },
+        "target": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -2024,12 +4594,31 @@
       "unit": "75 sq ft",
       "size": "75 sq ft",
       "prices": {
-        "walmart": { "price": 3.97, "estimated": true },
-        "kroger": { "price": 4.49, "estimated": true },
-        "target": { "price": 4.29, "estimated": true },
-        "whole_foods": { "price": 5.99, "estimated": true },
-        "aldi": { "price": 2.99, "estimated": true },
-        "lidl": { "price": 3.19, "estimated": true }
+        "walmart": {
+          "price": 3.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Aluminum Foil"
+        },
+        "target": {
+          "price": 4.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 3.19,
+          "estimated": true
+        }
       }
     },
     {
@@ -2039,12 +4628,31 @@
       "unit": "200 sq ft",
       "size": "200 sq ft",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Tight Seal Cling Wrap"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     },
     {
@@ -2054,12 +4662,30 @@
       "unit": "20 ct",
       "size": "20 ct",
       "prices": {
-        "walmart": { "price": 3.47, "estimated": true },
-        "kroger": { "price": 3.99, "estimated": true },
-        "target": { "price": 3.79, "estimated": true },
-        "whole_foods": { "price": 4.99, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.69, "estimated": true }
+        "walmart": {
+          "price": 3.47,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -2069,12 +4695,31 @@
       "unit": "3 ct",
       "size": "3 ct",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.89, "estimated": true },
-        "lidl": { "price": 1.99, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.79,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Heavy Duty Scrub Sponge"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -2084,12 +4729,30 @@
       "unit": "32 oz",
       "size": "32 oz",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.29, "estimated": true },
-        "lidl": { "price": 2.39, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.29,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.39,
+          "estimated": true
+        }
       }
     },
     {
@@ -2099,12 +4762,31 @@
       "unit": "14.3 oz",
       "size": "14.3 oz",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 4.99, "estimated": true },
-        "target": { "price": 4.79, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.69, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.79,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Smart Way™ Duplex Sandwich Cookies"
+        },
+        "target": {
+          "price": 4.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.69,
+          "estimated": true
+        }
       }
     },
     {
@@ -2114,12 +4796,30 @@
       "unit": "9.25 oz",
       "size": "9.25 oz",
       "prices": {
-        "walmart": { "price": 4.48, "estimated": true },
-        "kroger": { "price": 4.99, "estimated": true },
-        "target": { "price": 4.79, "estimated": true },
-        "whole_foods": { "price": 5.49, "estimated": true },
-        "aldi": { "price": 2.79, "estimated": true },
-        "lidl": { "price": 2.99, "estimated": true }
+        "walmart": {
+          "price": 4.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 4.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 4.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.99,
+          "estimated": true
+        }
       }
     },
     {
@@ -2129,12 +4829,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 2.98, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.98,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Cheese Dip 'N' Pretzel Sticks"
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -2144,12 +4863,31 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 4.97, "estimated": true },
-        "kroger": { "price": 5.99, "estimated": true },
-        "target": { "price": 5.49, "estimated": true },
-        "whole_foods": { "price": 7.99, "estimated": true },
-        "aldi": { "price": 3.99, "estimated": true },
-        "lidl": { "price": 4.29, "estimated": true }
+        "walmart": {
+          "price": 4.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.29,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — PLANTERS Trail Mix Nuts & Chocolate"
+        },
+        "target": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 7.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 4.29,
+          "estimated": true
+        }
       }
     },
     {
@@ -2159,12 +4897,31 @@
       "unit": "3 ct",
       "size": "3 ct",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.99, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.89, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Movie Theater Butter Microwave Popcorn"
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -2174,12 +4931,30 @@
       "unit": "6.6 oz",
       "size": "6.6 oz",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 3.49, "estimated": true },
-        "aldi": { "price": 1.79, "estimated": true },
-        "lidl": { "price": 1.89, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.79,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.89,
+          "estimated": true
+        }
       }
     },
     {
@@ -2189,12 +4964,30 @@
       "unit": "10 ct",
       "size": "10 ct",
       "prices": {
-        "walmart": { "price": 2.48, "estimated": true },
-        "kroger": { "price": 2.99, "estimated": true },
-        "target": { "price": 2.79, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 1.99, "estimated": true },
-        "lidl": { "price": 2.09, "estimated": true }
+        "walmart": {
+          "price": 2.48,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 2.79,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.09,
+          "estimated": true
+        }
       }
     },
     {
@@ -2204,12 +4997,33 @@
       "unit": "16 oz",
       "size": "16 oz",
       "prices": {
-        "walmart": { "price": 6.48, "estimated": false, "source": "Easy Family Budgeting" },
-        "kroger": { "price": 7.49, "estimated": true },
-        "target": { "price": 4.69, "estimated": false, "source": "Easy Family Budgeting 11oz" },
-        "whole_foods": { "price": 8.99, "estimated": true },
-        "aldi": { "price": 5.49, "estimated": true },
-        "lidl": { "price": 5.79, "estimated": true }
+        "walmart": {
+          "price": 6.48,
+          "estimated": false,
+          "source": "Easy Family Budgeting"
+        },
+        "kroger": {
+          "price": 4.49,
+          "estimated": false,
+          "source": "Kroger API 2026-03-28 — Kroger® Salted with Sea Salt Mixed Nuts"
+        },
+        "target": {
+          "price": 4.69,
+          "estimated": false,
+          "source": "Easy Family Budgeting 11oz"
+        },
+        "whole_foods": {
+          "price": 8.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 5.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 5.79,
+          "estimated": true
+        }
       }
     },
     {
@@ -2219,12 +5033,30 @@
       "unit": "3.5 oz",
       "size": "3.5 oz",
       "prices": {
-        "walmart": { "price": 1.78, "estimated": true },
-        "kroger": { "price": 1.99, "estimated": true },
-        "target": { "price": 1.89, "estimated": true },
-        "whole_foods": { "price": 2.99, "estimated": true },
-        "aldi": { "price": 1.49, "estimated": true },
-        "lidl": { "price": 1.55, "estimated": true }
+        "walmart": {
+          "price": 1.78,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 1.99,
+          "estimated": true
+        },
+        "target": {
+          "price": 1.89,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 2.99,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 1.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 1.55,
+          "estimated": true
+        }
       }
     },
     {
@@ -2234,12 +5066,30 @@
       "unit": "10 oz",
       "size": "10 oz",
       "prices": {
-        "walmart": { "price": 2.97, "estimated": true },
-        "kroger": { "price": 3.49, "estimated": true },
-        "target": { "price": 3.29, "estimated": true },
-        "whole_foods": { "price": 4.49, "estimated": true },
-        "aldi": { "price": 2.49, "estimated": true },
-        "lidl": { "price": 2.59, "estimated": true }
+        "walmart": {
+          "price": 2.97,
+          "estimated": true
+        },
+        "kroger": {
+          "price": 3.49,
+          "estimated": true
+        },
+        "target": {
+          "price": 3.29,
+          "estimated": true
+        },
+        "whole_foods": {
+          "price": 4.49,
+          "estimated": true
+        },
+        "aldi": {
+          "price": 2.49,
+          "estimated": true
+        },
+        "lidl": {
+          "price": 2.59,
+          "estimated": true
+        }
       }
     }
   ],
