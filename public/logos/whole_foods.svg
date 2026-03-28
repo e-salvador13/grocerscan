@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#00674B"/>
+  <g transform="translate(100,100)">
+    <!-- Leaf icon for Whole Foods organic theme -->
+    <path d="M-5,40 C-5,40 -45,-10 -10,-50 C10,-70 40,-50 40,-20 C40,10 10,40 -5,40 Z" fill="#8BC34A" opacity="0.9"/>
+    <path d="M-5,40 C-5,40 -5,-20 30,-35" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M5,10 C5,10 20,-5 25,-15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M0,22 C0,22 -15,5 -20,-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

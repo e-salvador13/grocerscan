@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Walmart Spark -->
+  <rect width="200" height="200" rx="40" fill="#0071CE"/>
+  <g transform="translate(100,100)">
+    <!-- 6-pointed spark -->
+    <g fill="#FFC220">
+      <!-- Top -->
+      <path d="M0,-60 L8,-20 L-8,-20 Z"/>
+      <!-- Top-right -->
+      <path d="M52,-30 L17,-7 L10,-22 Z"/>
+      <!-- Bottom-right -->
+      <path d="M52,30 L10,22 L17,7 Z"/>
+      <!-- Bottom -->
+      <path d="M0,60 L-8,20 L8,20 Z"/>
+      <!-- Bottom-left -->
+      <path d="M-52,30 L-17,7 L-10,22 Z"/>
+      <!-- Top-left -->
+      <path d="M-52,-30 L-10,-22 L-17,-7 Z"/>
+    </g>
+    <circle cx="0" cy="0" r="8" fill="#FFC220"/>
+  </g>
+</svg>

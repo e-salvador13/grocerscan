@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#00005F"/>
+  <g transform="translate(100,100)">
+    <!-- Aldi "A" in a stylized form -->
+    <path d="M0,-55 L40,45 L25,45 L18,25 L-18,25 L-25,45 L-40,45 Z" fill="#FF6600"/>
+    <path d="M0,-30 L-10,15 L10,15 Z" fill="#00005F"/>
+    <rect x="-15" y="50" width="30" height="4" rx="2" fill="#FF6600" opacity="0.6"/>
+  </g>
+</svg>

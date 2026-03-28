@@ -16,6 +16,7 @@ import {
   ArrowUpRight,
   AlertCircle,
 } from 'lucide-react';
+import StoreLogo from '../components/StoreLogo';
 
 const sampleReceipts = [
   {
@@ -76,6 +77,7 @@ const optimizationSteps = [
 
 const recentSaves = [
   {
+    key: 'whole_foods',
     store: 'Whole Foods Market',
     date: 'Yesterday, 4:12 PM',
     savings: 12.40,
@@ -83,6 +85,7 @@ const recentSaves = [
     color: '#00674B',
   },
   {
+    key: 'kroger',
     store: 'Kroger Plaza',
     date: 'Mar 22, 10:30 AM',
     savings: 8.15,
@@ -90,6 +93,7 @@ const recentSaves = [
     color: '#E31837',
   },
   {
+    key: 'walmart',
     store: 'Walmart Supercenter',
     date: 'Mar 20, 6:45 PM',
     savings: 34.20,
@@ -326,12 +330,7 @@ export default function Dashboard() {
                     className="card-base p-5 text-left hover:shadow-lg transition-all group cursor-pointer"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold"
-                        style={{ backgroundColor: receipt.color }}
-                      >
-                        {receipt.store.charAt(0)}
-                      </div>
+                      <StoreLogo storeKey={receipt.key} size={32} />
                       <div>
                         <span className="font-semibold text-text text-sm block leading-tight">
                           {receipt.store}
@@ -463,12 +462,7 @@ export default function Dashboard() {
                     key={i}
                     className="flex items-center gap-3 cursor-pointer hover:bg-surface-low rounded-xl p-3 -mx-1 transition-colors"
                   >
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
-                      style={{ backgroundColor: save.color }}
-                    >
-                      {save.store.charAt(0)}
-                    </div>
+                    <StoreLogo storeKey={save.key} size={40} />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold text-text truncate">
                         {save.store}

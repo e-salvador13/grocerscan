@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#0050AA"/>
+  <g transform="translate(100,100)">
+    <!-- Lidl circle with text -->
+    <circle cx="0" cy="0" r="55" fill="#FFE500"/>
+    <circle cx="0" cy="-2" r="42" fill="#0050AA"/>
+    <text x="0" y="12" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="40" fill="#FFE500">lidl</text>
+  </g>
+</svg>

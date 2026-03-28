@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#E31837"/>
+  <g transform="translate(100,100)">
+    <!-- Kroger "K" stylized -->
+    <text x="0" y="12" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="90" fill="white">K</text>
+  </g>
+</svg>

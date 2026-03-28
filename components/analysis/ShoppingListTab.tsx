@@ -18,6 +18,7 @@ import {
   STORE_COLORS,
   STORE_NAMES,
 } from '../../lib/types';
+import StoreLogo from '../StoreLogo';
 
 const STORE_DISTANCES: Record<string, { distance: string; fromPrev: string }> = {
   aldi: { distance: '0.8 MILES AWAY', fromPrev: '' },
@@ -128,12 +129,7 @@ export default function ShoppingListTab({
                 {/* Store Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-bold"
-                      style={{ backgroundColor: storeColor }}
-                    >
-                      {storeName.charAt(0)}
-                    </div>
+                    <StoreLogo storeKey={allocation.store} size={40} />
                     <div>
                       <h3 className="text-xl font-bold text-text">
                         {storeName}

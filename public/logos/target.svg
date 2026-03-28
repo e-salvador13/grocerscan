@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#CC0000"/>
+  <g transform="translate(100,100)">
+    <!-- Target bullseye -->
+    <circle cx="0" cy="0" r="55" fill="white"/>
+    <circle cx="0" cy="0" r="40" fill="#CC0000"/>
+    <circle cx="0" cy="0" r="25" fill="white"/>
+    <circle cx="0" cy="0" r="12" fill="#CC0000"/>
+  </g>
+</svg>

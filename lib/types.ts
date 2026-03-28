@@ -60,6 +60,8 @@ export const STORE_COLORS: Record<string, { primary: string; accent?: string; na
   whole_foods: { primary: '#00674B', name: 'Whole Foods' },
   aldi: { primary: '#00005F', accent: '#FF6600', name: 'Aldi' },
   lidl: { primary: '#0050AA', accent: '#FFE500', name: 'Lidl' },
+  harris_teeter: { primary: '#E21836', name: 'Harris Teeter' },
+  costco: { primary: '#E31837', name: 'Costco' },
   upload: { primary: '#0d631b', name: 'Your Receipt' },
 };
 
@@ -70,7 +72,20 @@ export const STORE_NAMES: Record<string, string> = {
   whole_foods: 'Whole Foods',
   aldi: 'Aldi',
   lidl: 'Lidl',
+  harris_teeter: 'Harris Teeter',
+  costco: 'Costco',
   upload: 'Your Receipt',
+};
+
+export const STORE_LOGOS: Record<string, string> = {
+  walmart: '/logos/walmart.svg',
+  kroger: '/logos/kroger.svg',
+  target: '/logos/target.svg',
+  whole_foods: '/logos/whole_foods.svg',
+  aldi: '/logos/aldi.svg',
+  lidl: '/logos/lidl.svg',
+  harris_teeter: '/logos/harris_teeter.svg',
+  costco: '/logos/costco.svg',
 };
 
 export const CATEGORY_DISPLAY: Record<string, string> = {

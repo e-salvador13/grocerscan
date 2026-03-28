@@ -17,6 +17,7 @@ import {
   STORE_COLORS,
   STORE_NAMES,
 } from '../../lib/types';
+import StoreLogo from '../StoreLogo';
 
 const STORE_IMAGES: Record<string, string> = {
   aldi: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=300&fit=crop',
@@ -198,11 +199,8 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
 
                   <div className="p-5">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className="w-3 h-3 rounded-full"
-                          style={{ backgroundColor: storeColor }}
-                        />
+                      <div className="flex items-center gap-2.5">
+                        <StoreLogo storeKey={allocation.store} size={28} />
                         <h3 className="font-bold text-text text-lg">{storeName}</h3>
                       </div>
                       <span className="text-sm font-bold text-primary">

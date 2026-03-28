@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#E31837"/>
+  <g transform="translate(100,100)">
+    <!-- Costco block letter style -->
+    <rect x="-55" y="-25" width="110" height="50" rx="6" fill="white"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="28" fill="#E31837" letter-spacing="3">COSTCO</text>
+  </g>
+</svg>
