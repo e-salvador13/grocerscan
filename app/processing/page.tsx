@@ -40,6 +40,7 @@ const storeConfig: Record<string, { name: string; color: string }> = {
   walmart: { name: 'Walmart', color: '#0071CE' },
   kroger: { name: 'Kroger', color: '#E31837' },
   whole_foods: { name: 'Whole Foods', color: '#00674B' },
+  upload: { name: 'Your Receipt', color: '#0d631b' },
 };
 
 function ProcessingContent() {
@@ -138,10 +139,7 @@ function ProcessingContent() {
               <div className="h-3 bg-surface-low rounded-full overflow-hidden">
                 <div
                   className="h-full rounded-full"
-                  style={{ backgroundColor: store.color }}
-                 
-                  animate={{ width: `${Math.min(progress, 100)}%` }}
-                 
+                  style={{ backgroundColor: store.color, width: `${Math.min(progress, 100)}%`, transition: 'width 0.3s ease' }}
                 />
               </div>
             </div>
@@ -196,11 +194,10 @@ function ProcessingContent() {
                 <div key={i} className="flex-1 h-2.5 bg-surface-low rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full bg-secondary"
-                   
-                    animate={{
+                    style={{
                       width: i < currentStep ? '100%' : i === currentStep ? '60%' : '0%',
+                      transition: 'width 0.5s ease',
                     }}
-                   
                   />
                 </div>
               ))}

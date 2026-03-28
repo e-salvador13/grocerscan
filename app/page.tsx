@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 const motion = { div: "div" as any, button: "button" as any };
 import {
@@ -14,6 +14,7 @@ import {
   TrendingUp,
   ChevronRight,
   ArrowUpRight,
+  AlertCircle,
 } from 'lucide-react';
 
 const sampleReceipts = [
@@ -100,9 +101,60 @@ const recentSaves = [
 export default function Dashboard() {
   const router = useRouter();
   const [isDragOver, setIsDragOver] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
 
   const handleSampleClick = (key: string) => {
     router.push(`/processing?receipt=${key}`);
+  };
+
+  const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'application/pdf'];
+  const MAX_SIZE_MB = 10;
+
+  const handleFiles = (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    setUploadError(null);
+
+    const file = files[0];
+
+    // Validate type
+    if (!ACCEPTED_TYPES.includes(file.type) && !file.name.toLowerCase().endsWith('.heic')) {
+      setUploadError('Please upload a photo (JPG, PNG, WebP, HEIC) or PDF.');
+      return;
+    }
+
+    // Validate size
+    if (file.size > MAX_SIZE_MB * 1024 * 1024) {
+      setUploadError(`File too large. Max ${MAX_SIZE_MB}MB.`);
+      return;
+    }
+
+    setIsUploading(true);
+
+    // Store file info in sessionStorage for the processing page
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        sessionStorage.setItem('uploadedReceipt', JSON.stringify({
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          dataUrl: reader.result,
+          timestamp: Date.now(),
+        }));
+        router.push('/processing?receipt=upload');
+      } catch {
+        setUploadError('File too large for browser storage. Try a smaller image.');
+        setIsUploading(false);
+      }
+    };
+    reader.onerror = () => {
+      setUploadError('Failed to read file. Please try again.');
+      setIsUploading(false);
+    };
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -173,40 +225,85 @@ export default function Dashboard() {
                 isDragOver
                   ? 'ring-2 ring-primary bg-primary-container/30'
                   : ''
-              }`}
+              } ${isUploading ? 'opacity-60 pointer-events-none' : ''}`}
               style={{
                 border: '2px dashed',
                 borderColor: isDragOver ? '#0d631b' : 'rgba(25, 28, 29, 0.12)',
               }}
               onDragOver={(e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 setIsDragOver(true);
               }}
-              onDragLeave={() => setIsDragOver(false)}
+              onDragLeave={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsDragOver(false);
+              }}
               onDrop={(e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 setIsDragOver(false);
-                router.push('/processing?receipt=walmart');
+                handleFiles(e.dataTransfer.files);
               }}
             >
+              {/* Hidden file inputs */}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*,.pdf,.heic"
+                className="hidden"
+                onChange={(e) => handleFiles(e.target.files)}
+              />
+              <input
+                ref={cameraInputRef}
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="hidden"
+                onChange={(e) => handleFiles(e.target.files)}
+              />
+
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5"
                 style={{ background: 'rgba(13, 99, 27, 0.08)' }}
               >
-                <Upload className="text-primary" size={28} />
+                {isUploading ? (
+                  <div className="animate-spin">
+                    <Upload className="text-primary" size={28} />
+                  </div>
+                ) : (
+                  <Upload className="text-primary" size={28} />
+                )}
               </div>
               <h3 className="text-xl font-bold text-text mb-2">
-                Upload Your Receipt
+                {isUploading ? 'Processing...' : 'Upload Your Receipt'}
               </h3>
               <p className="text-text-secondary mb-6 max-w-sm mx-auto">
-                Drag and drop your grocery photos or PDFs, or use the buttons below
+                {isUploading
+                  ? 'Reading your receipt file...'
+                  : 'Drag and drop your grocery photos or PDFs, or use the buttons below'}
               </p>
+
+              {uploadError && (
+                <div className="flex items-center gap-2 justify-center mb-4 text-red-600 text-sm">
+                  <AlertCircle size={16} />
+                  <span>{uploadError}</span>
+                </div>
+              )}
+
               <div className="flex gap-3 justify-center">
-                <button className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors">
+                <button
+                  onClick={() => cameraInputRef.current?.click()}
+                  className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors"
+                >
                   <Camera size={16} />
                   Take Photo
                 </button>
-                <button className="flex items-center gap-2 bg-surface-lowest text-text-secondary px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-low transition-colors ghost-border">
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex items-center gap-2 bg-surface-lowest text-text-secondary px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-surface-low transition-colors ghost-border"
+                >
                   <FolderOpen size={16} />
                   Browse Files
                 </button>
@@ -335,10 +432,8 @@ export default function Dashboard() {
                     <div className="flex-1 bg-white/10 rounded-full h-2 overflow-hidden">
                       <div
                        
-                        animate={{ width: `${store.pct}%` }}
-                       
                         className="h-full rounded-full"
-                        style={{ backgroundColor: store.color }}
+                        style={{ backgroundColor: store.color, width: `${store.pct}%` }}
                       />
                     </div>
                     <span className="text-xs text-white/50 w-8 text-right font-medium">
