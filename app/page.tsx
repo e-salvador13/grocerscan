@@ -23,28 +23,28 @@ const sampleReceipts = [
     key: 'walmart',
     store: 'Walmart',
     color: '#0071CE',
-    total: '$87.42',
-    items: 23,
-    date: 'Mar 24, 2025',
-    tagline: 'Supercenter Run',
+    total: '$142.36',
+    items: 36,
+    date: 'Mar 24, 2026',
+    tagline: 'Family Weekly Haul',
   },
   {
     key: 'kroger',
     store: 'Kroger',
     color: '#E31837',
-    total: '$94.18',
-    items: 19,
-    date: 'Mar 22, 2025',
-    tagline: 'Weekly Essentials',
+    total: '$98.47',
+    items: 29,
+    date: 'Mar 22, 2026',
+    tagline: 'Weeknight Dinner Run',
   },
   {
     key: 'whole_foods',
     store: 'Whole Foods',
     color: '#00674B',
-    total: '$112.55',
-    items: 16,
-    date: 'Mar 20, 2025',
-    tagline: 'Organic Haul',
+    total: '$156.82',
+    items: 29,
+    date: 'Mar 20, 2026',
+    tagline: 'Health-Conscious Shop',
   },
 ];
 
@@ -137,28 +137,57 @@ export default function Dashboard() {
 
     setIsUploading(true);
 
-    // Store file info in sessionStorage for the processing page
-    const reader = new FileReader();
-    reader.onload = () => {
-      try {
-        sessionStorage.setItem('uploadedReceipt', JSON.stringify({
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          dataUrl: reader.result,
-          timestamp: Date.now(),
-        }));
-        router.push('/processing?receipt=upload');
-      } catch {
-        setUploadError('File too large for browser storage. Try a smaller image.');
+    // Resize image before storing to avoid sessionStorage limits
+    const resizeAndStore = (file: File) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const img = new window.Image();
+        img.onload = () => {
+          // Resize to max 2000px on longest side for OCR
+          const MAX_DIM = 2000;
+          let { width, height } = img;
+          if (width > MAX_DIM || height > MAX_DIM) {
+            const scale = MAX_DIM / Math.max(width, height);
+            width = Math.round(width * scale);
+            height = Math.round(height * scale);
+          }
+          
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d')!;
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+          
+          try {
+            sessionStorage.setItem('uploadedReceipt', JSON.stringify({
+              name: file.name,
+              type: 'image/jpeg',
+              size: dataUrl.length,
+              dataUrl,
+              timestamp: Date.now(),
+            }));
+            router.push('/processing?receipt=upload');
+          } catch {
+            setUploadError('File too large for browser storage. Try a smaller image.');
+            setIsUploading(false);
+          }
+        };
+        img.onerror = () => {
+          setUploadError('Could not read image. Please try again.');
+          setIsUploading(false);
+        };
+        img.src = reader.result as string;
+      };
+      reader.onerror = () => {
+        setUploadError('Failed to read file. Please try again.');
         setIsUploading(false);
-      }
+      };
+      reader.readAsDataURL(file);
     };
-    reader.onerror = () => {
-      setUploadError('Failed to read file. Please try again.');
-      setIsUploading(false);
-    };
-    reader.readAsDataURL(file);
+
+    resizeAndStore(file);
   };
 
   return (

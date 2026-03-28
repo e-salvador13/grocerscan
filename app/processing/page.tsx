@@ -74,18 +74,73 @@ function ProcessingContent() {
       const Tesseract = await import('tesseract.js');
 
       setCurrentStep(0);
+      setProgress(5);
+
+      // --- Image preprocessing for better OCR ---
+      // Receipts need: crop to receipt area, high contrast, binarization
+      const preprocessImage = (imgDataUrl: string): Promise<string> => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d')!;
+
+            // Draw original
+            ctx.drawImage(img, 0, 0);
+
+            // Get pixel data
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+
+            // Pass 1: Find the brightness range of the receipt area
+            // (receipts are white/light paper — find the bright region)
+            const brightPixels: number[] = [];
+            for (let i = 0; i < data.length; i += 4) {
+              const gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+              if (gray > 100) brightPixels.push(gray);
+            }
+            
+            // Calculate adaptive threshold based on image histogram
+            brightPixels.sort((a, b) => a - b);
+            const median = brightPixels[Math.floor(brightPixels.length * 0.5)] || 160;
+            const threshold = Math.max(90, median * 0.55); // Adaptive threshold
+
+            // Pass 2: Convert to binary with adaptive threshold
+            for (let i = 0; i < data.length; i += 4) {
+              const gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+              
+              // Invert: make text black on white (most receipts are dark text on light paper)
+              const bw = gray > threshold ? 255 : 0;
+
+              data[i] = bw;
+              data[i + 1] = bw;
+              data[i + 2] = bw;
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+            resolve(canvas.toDataURL('image/png'));
+          };
+          img.src = imgDataUrl;
+        });
+      };
+
+      const processedDataUrl = await preprocessImage(dataUrl);
+
       setProgress(10);
 
-      const result = await Tesseract.recognize(dataUrl, 'eng', {
+      const result = await Tesseract.recognize(processedDataUrl, 'eng', {
         logger: (m: { status: string; progress: number }) => {
           if (m.status === 'recognizing text') {
-            // Map Tesseract progress (0–1) to our step 0 progress (0–25%)
-            setProgress(Math.round(m.progress * 25));
+            // Map Tesseract progress (0–1) to our step 0 progress (10–25%)
+            setProgress(10 + Math.round(m.progress * 15));
           }
         },
       });
 
       const ocrText = result.data.text;
+      console.log('[GrocerScan] OCR raw text:', ocrText);
 
       // Step 1: Classifying Items — parse OCR text
       setCurrentStep(1);
@@ -94,11 +149,48 @@ function ProcessingContent() {
       const { parseReceiptText } = await import('../../lib/parse-receipt');
       const parsedItems = parseReceiptText(ocrText);
 
+      console.log('[GrocerScan] Parsed items:', parsedItems);
+
       if (parsedItems.length === 0) {
-        setError(
-          'Could not extract items from this receipt. Try a clearer photo with good lighting.'
-        );
-        return;
+        // Fallback: try server-side OCR with sharp preprocessing
+        console.log('[GrocerScan] Client OCR failed, trying server-side OCR...');
+        setProgress(28);
+        
+        try {
+          // Convert dataUrl to blob for upload
+          const resp = await fetch(dataUrl);
+          const blob = await resp.blob();
+          const formData = new FormData();
+          formData.append('image', blob, 'receipt.jpg');
+          
+          const serverResp = await fetch('/api/ocr', { method: 'POST', body: formData });
+          if (serverResp.ok) {
+            const serverData = await serverResp.json();
+            console.log('[GrocerScan] Server OCR result:', serverData);
+            
+            if (serverData.items && serverData.items.length > 0) {
+              sessionStorage.setItem('parsedReceiptItems', JSON.stringify(serverData.items));
+              sessionStorage.setItem('ocrRawText', serverData.ocrText || ocrText);
+              // Skip the error — we got items from server
+            } else {
+              setError(
+                'Could not extract items from this receipt. Try a clearer photo with good lighting.'
+              );
+              return;
+            }
+          } else {
+            setError(
+              'Could not extract items from this receipt. Try a clearer photo with good lighting.'
+            );
+            return;
+          }
+        } catch (serverErr) {
+          console.error('[GrocerScan] Server OCR failed:', serverErr);
+          setError(
+            'Could not extract items from this receipt. Try a clearer photo with good lighting.'
+          );
+          return;
+        }
       }
 
       // Store parsed items + raw OCR text for the analysis page
