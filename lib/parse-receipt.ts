@@ -272,6 +272,38 @@ function isWeightLine(line: string): boolean {
 /**
  * Parse raw OCR text into structured receipt items.
  */
+/**
+ * Extract the receipt subtotal and total from OCR text.
+ * Returns subtotal if found (pre-tax), otherwise total.
+ */
+export function extractReceiptTotal(ocrText: string): number | null {
+  const lines = ocrText.split('\n').map((l) => l.trim()).filter(Boolean);
+  let subtotal: number | null = null;
+  let total: number | null = null;
+
+  for (const line of lines) {
+    // Match SUBTOTAL
+    const subMatch = line.match(/^\s*(?:sub\s*total|subtotal)\b[^A-Z]*?(\d{1,5}\.\d{2})\s*$/i);
+    if (subMatch) {
+      const val = parseFloat(subMatch[1]);
+      if (val > 0) subtotal = val;
+      continue;
+    }
+
+    // Match TOTAL (but not SUBTOTAL)
+    const totalMatch = line.match(/^\s*TOTAL\b[^A-Z]*?(\d{1,5}\.\d{2})\s*$/i);
+    if (totalMatch && !/sub\s*total/i.test(line)) {
+      const val = parseFloat(totalMatch[1]);
+      if (val > 0 && (total === null || val > total)) {
+        total = val;
+      }
+    }
+  }
+
+  // Prefer subtotal (pre-tax) since our analysis is about item prices, not tax
+  return subtotal || total;
+}
+
 export function parseReceiptText(ocrText: string): ParsedItem[] {
   const lines = ocrText.split('\n').map((l) => l.trim()).filter(Boolean);
   const items: ParsedItem[] = [];

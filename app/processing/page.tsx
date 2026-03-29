@@ -146,8 +146,15 @@ function ProcessingContent() {
       setCurrentStep(1);
       setProgress(35);
 
-      const { parseReceiptText } = await import('../../lib/parse-receipt');
+      const { parseReceiptText, extractReceiptTotal } = await import('../../lib/parse-receipt');
       const parsedItems = parseReceiptText(ocrText);
+
+      // Try to extract receipt total from OCR text
+      const ocrTotal = extractReceiptTotal(ocrText);
+      if (ocrTotal) {
+        sessionStorage.setItem('receiptTotal', String(ocrTotal));
+        console.log('[GrocerScan] Extracted receipt total from OCR:', ocrTotal);
+      }
 
       console.log('[GrocerScan] Parsed items:', parsedItems);
 
