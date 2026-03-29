@@ -44,6 +44,14 @@ function buildReceiptItem(itemId: string, receiptPrice: number, qty: number = 1)
   };
 }
 
+function buildStoreReceiptItem(itemId: string, store: string, qty: number = 1): ReceiptItem {
+  const item = getItemById(itemId);
+  if (!item) return { name: itemId, price: 0, quantity: qty, status: 'similar' };
+  const storePrice = (item.prices as Record<string, { price: number }>)[store]?.price;
+  if (storePrice == null) return { name: item.name, price: 0, quantity: qty, status: 'similar' };
+  return buildReceiptItem(itemId, storePrice, qty);
+}
+
 function buildCategoryBreakdown(items: ReceiptItem[]): CategoryBreakdown[] {
   const cats: Record<string, { yourTotal: number; bestTotal: number; count: number }> = {};
   for (const item of items) {
@@ -97,49 +105,49 @@ function buildOptimalBasket(items: ReceiptItem[]): OptimalStoreAllocation[] {
 // ==========================================================================
 const walmartItems: ReceiptItem[] = [
   // Produce (big family = lots of fresh food)
-  buildReceiptItem('bananas-per-lb', 0.58, 4),
-  buildReceiptItem('apples-gala-per-lb', 1.67, 3),
-  buildReceiptItem('strawberries-1lb', 3.47, 1),
-  buildReceiptItem('avocados-each', 1.08, 2),
-  buildReceiptItem('baby-spinach-5oz', 2.97, 1),
-  buildReceiptItem('romaine-lettuce-each', 1.98, 1),
-  buildReceiptItem('broccoli-crown-per-lb', 1.78, 1),
-  buildReceiptItem('carrots-1lb-bag', 1.18, 1),
-  buildReceiptItem('potatoes-russet-5lb', 4.47, 1),
-  buildReceiptItem('onions-yellow-per-lb', 1.28, 2),
-  buildReceiptItem('tomatoes-roma-per-lb', 1.68, 2),
+  buildStoreReceiptItem('bananas-per-lb', 'walmart', 4),
+  buildStoreReceiptItem('apples-gala-per-lb', 'walmart', 3),
+  buildStoreReceiptItem('strawberries-1lb', 'walmart', 1),
+  buildStoreReceiptItem('avocados-each', 'walmart', 2),
+  buildStoreReceiptItem('baby-spinach-5oz', 'walmart', 1),
+  buildStoreReceiptItem('romaine-lettuce-each', 'walmart', 1),
+  buildStoreReceiptItem('broccoli-crown-per-lb', 'walmart', 1),
+  buildStoreReceiptItem('carrots-1lb-bag', 'walmart', 1),
+  buildStoreReceiptItem('potatoes-russet-5lb', 'walmart', 1),
+  buildStoreReceiptItem('onions-yellow-per-lb', 'walmart', 2),
+  buildStoreReceiptItem('tomatoes-roma-per-lb', 'walmart', 2),
   // Dairy
-  buildReceiptItem('whole-milk-gallon', 3.36, 1),
-  buildReceiptItem('large-eggs-dozen', 2.47, 1),
-  buildReceiptItem('butter-unsalted-1lb', 3.96, 1),
-  buildReceiptItem('shredded-cheddar-8oz', 2.48, 2),
-  buildReceiptItem('greek-yogurt-plain-32oz', 4.68, 1),
-  buildReceiptItem('sour-cream-16oz', 1.98, 1),
+  buildStoreReceiptItem('whole-milk-gallon', 'walmart', 1),
+  buildStoreReceiptItem('large-eggs-dozen', 'walmart', 1),
+  buildStoreReceiptItem('butter-unsalted-1lb', 'walmart', 1),
+  buildStoreReceiptItem('shredded-cheddar-8oz', 'walmart', 2),
+  buildStoreReceiptItem('greek-yogurt-plain-32oz', 'walmart', 1),
+  buildStoreReceiptItem('sour-cream-16oz', 'walmart', 1),
   // Meat
-  buildReceiptItem('chicken-breast-boneless-per-lb', 2.97, 3),
-  buildReceiptItem('ground-beef-80-20-per-lb', 5.97, 1),
-  buildReceiptItem('bacon-16oz', 5.97, 1),
-  buildReceiptItem('hot-dogs-8ct', 2.48, 1),
+  buildStoreReceiptItem('chicken-breast-boneless-per-lb', 'walmart', 3),
+  buildStoreReceiptItem('ground-beef-80-20-per-lb', 'walmart', 1),
+  buildStoreReceiptItem('bacon-16oz', 'walmart', 1),
+  buildStoreReceiptItem('hot-dogs-8ct', 'walmart', 1),
   // Pantry
-  buildReceiptItem('bread-white-loaf', 1.68, 2),
-  buildReceiptItem('pasta-spaghetti-16oz', 1.28, 2),
-  buildReceiptItem('cereal-cheerios-18oz', 4.98, 1),
-  buildReceiptItem('peanut-butter-16oz', 2.97, 1),
-  buildReceiptItem('canned-beans-black-15oz', 1.08, 3),
-  buildReceiptItem('tomato-sauce-8oz', 0.78, 2),
-  buildReceiptItem('white-rice-5lb', 3.97, 1),
+  buildStoreReceiptItem('bread-white-loaf', 'walmart', 2),
+  buildStoreReceiptItem('pasta-spaghetti-16oz', 'walmart', 2),
+  buildStoreReceiptItem('cereal-cheerios-18oz', 'walmart', 1),
+  buildStoreReceiptItem('peanut-butter-16oz', 'walmart', 1),
+  buildStoreReceiptItem('canned-beans-black-15oz', 'walmart', 3),
+  buildStoreReceiptItem('tomato-sauce-8oz', 'walmart', 2),
+  buildStoreReceiptItem('white-rice-5lb', 'walmart', 1),
   // Beverages
-  buildReceiptItem('orange-juice-64oz', 3.97, 1),
-  buildReceiptItem('water-bottles-24pack', 3.97, 1),
-  buildReceiptItem('coca-cola-12pack', 7.48, 1),
+  buildStoreReceiptItem('orange-juice-64oz', 'walmart', 1),
+  buildStoreReceiptItem('water-bottles-24pack', 'walmart', 1),
+  buildStoreReceiptItem('coca-cola-12pack', 'walmart', 1),
   // Frozen
-  buildReceiptItem('frozen-pizza-digiorno', 6.47, 1),
-  buildReceiptItem('frozen-vegetables-mixed-16oz', 1.48, 2),
-  buildReceiptItem('ice-cream-48oz', 4.48, 1),
+  buildStoreReceiptItem('frozen-pizza-digiorno', 'walmart', 1),
+  buildStoreReceiptItem('frozen-vegetables-mixed-16oz', 'walmart', 2),
+  buildStoreReceiptItem('ice-cream-48oz', 'walmart', 1),
   // Household
-  buildReceiptItem('paper-towels-6roll', 6.47, 1),
-  buildReceiptItem('dish-soap-16oz', 2.47, 1),
-  buildReceiptItem('trash-bags-30ct', 5.47, 1),
+  buildStoreReceiptItem('paper-towels-6roll', 'walmart', 1),
+  buildStoreReceiptItem('dish-soap-16oz', 'walmart', 1),
+  buildStoreReceiptItem('trash-bags-30ct', 'walmart', 1),
 ];
 
 // ==========================================================================
@@ -149,37 +157,37 @@ const walmartItems: ReceiptItem[] = [
 // ==========================================================================
 const wholeFoodsItems: ReceiptItem[] = [
   // Produce (organic premium)
-  buildReceiptItem('bananas-per-lb', 0.79, 3),
-  buildReceiptItem('avocados-each', 1.79, 2),
-  buildReceiptItem('baby-spinach-5oz', 3.99, 1),
-  buildReceiptItem('blueberries-6oz', 4.99, 1),
-  buildReceiptItem('strawberries-1lb', 4.99, 1),
-  buildReceiptItem('bell-pepper-red-each', 1.99, 2),
-  buildReceiptItem('sweet-potatoes-per-lb', 1.99, 1),
-  buildReceiptItem('mushrooms-white-8oz', 3.49, 1),
-  buildReceiptItem('cauliflower-each', 4.49, 1),
-  buildReceiptItem('cucumber-each', 1.49, 1),
+  buildStoreReceiptItem('bananas-per-lb', 'whole_foods', 3),
+  buildStoreReceiptItem('avocados-each', 'whole_foods', 2),
+  buildStoreReceiptItem('baby-spinach-5oz', 'whole_foods', 1),
+  buildStoreReceiptItem('blueberries-6oz', 'whole_foods', 1),
+  buildStoreReceiptItem('strawberries-1lb', 'whole_foods', 1),
+  buildStoreReceiptItem('bell-pepper-red-each', 'whole_foods', 2),
+  buildStoreReceiptItem('sweet-potatoes-per-lb', 'whole_foods', 1),
+  buildStoreReceiptItem('mushrooms-white-8oz', 'whole_foods', 1),
+  buildStoreReceiptItem('cauliflower-each', 'whole_foods', 1),
+  buildStoreReceiptItem('cucumber-each', 'whole_foods', 1),
   // Dairy (all premium)
-  buildReceiptItem('whole-milk-gallon', 5.99, 1),
-  buildReceiptItem('large-eggs-dozen', 5.99, 1),
-  buildReceiptItem('greek-yogurt-plain-32oz', 6.49, 1),
-  buildReceiptItem('butter-unsalted-1lb', 5.49, 1),
-  buildReceiptItem('oat-milk-64oz', 4.99, 1),
+  buildStoreReceiptItem('whole-milk-gallon', 'whole_foods', 1),
+  buildStoreReceiptItem('large-eggs-dozen', 'whole_foods', 1),
+  buildStoreReceiptItem('greek-yogurt-plain-32oz', 'whole_foods', 1),
+  buildStoreReceiptItem('butter-unsalted-1lb', 'whole_foods', 1),
+  buildStoreReceiptItem('oat-milk-64oz', 'whole_foods', 1),
   // Meat (grass-fed, wild-caught)
-  buildReceiptItem('chicken-breast-boneless-per-lb', 8.49, 1),
-  buildReceiptItem('salmon-fillet-per-lb', 14.99, 1),
-  buildReceiptItem('ground-beef-80-20-per-lb', 8.99, 1),
-  buildReceiptItem('ground-turkey-per-lb', 7.49, 1),
+  buildStoreReceiptItem('chicken-breast-boneless-per-lb', 'whole_foods', 1),
+  buildStoreReceiptItem('salmon-fillet-per-lb', 'whole_foods', 1),
+  buildStoreReceiptItem('ground-beef-80-20-per-lb', 'whole_foods', 1),
+  buildStoreReceiptItem('ground-turkey-per-lb', 'whole_foods', 1),
   // Pantry
-  buildReceiptItem('olive-oil-16oz', 8.99, 1),
-  buildReceiptItem('honey-12oz', 7.99, 1),
-  buildReceiptItem('almond-milk-64oz', 3.99, 1),
-  buildReceiptItem('coffee-ground-12oz', 10.99, 1),
-  buildReceiptItem('oatmeal-42oz', 5.99, 1),
-  buildReceiptItem('peanut-butter-16oz', 4.49, 1),
+  buildStoreReceiptItem('olive-oil-16oz', 'whole_foods', 1),
+  buildStoreReceiptItem('honey-12oz', 'whole_foods', 1),
+  buildStoreReceiptItem('almond-milk-64oz', 'whole_foods', 1),
+  buildStoreReceiptItem('coffee-ground-12oz', 'whole_foods', 1),
+  buildStoreReceiptItem('oatmeal-42oz', 'whole_foods', 1),
+  buildStoreReceiptItem('peanut-butter-16oz', 'whole_foods', 1),
   // Snacks
-  buildReceiptItem('granola-bars-6ct', 4.99, 1),
-  buildReceiptItem('nuts-almonds-16oz', 8.99, 1),
+  buildStoreReceiptItem('granola-bars-6ct', 'whole_foods', 1),
+  buildStoreReceiptItem('nuts-almonds-16oz', 'whole_foods', 1),
 ];
 
 // ==========================================================================
@@ -189,33 +197,33 @@ const wholeFoodsItems: ReceiptItem[] = [
 // ==========================================================================
 const krogerItems: ReceiptItem[] = [
   // Produce (dinner essentials)
-  buildReceiptItem('tomatoes-roma-per-lb', 1.79, 2),
-  buildReceiptItem('onions-yellow-per-lb', 1.29, 2),
-  buildReceiptItem('garlic-each', 0.79, 2),
-  buildReceiptItem('bell-pepper-green-each', 1.29, 3),
-  buildReceiptItem('broccoli-crown-per-lb', 2.49, 2),
-  buildReceiptItem('romaine-lettuce-each', 2.49, 1),
+  buildStoreReceiptItem('tomatoes-roma-per-lb', 'kroger', 2),
+  buildStoreReceiptItem('onions-yellow-per-lb', 'kroger', 2),
+  buildStoreReceiptItem('garlic-each', 'kroger', 2),
+  buildStoreReceiptItem('bell-pepper-green-each', 'kroger', 3),
+  buildStoreReceiptItem('broccoli-crown-per-lb', 'kroger', 2),
+  buildStoreReceiptItem('romaine-lettuce-each', 'kroger', 1),
   // Dairy
-  buildReceiptItem('2pct-milk-gallon', 3.49, 1),
-  buildReceiptItem('large-eggs-dozen', 3.29, 1),
-  buildReceiptItem('shredded-cheddar-8oz', 2.79, 1),
-  buildReceiptItem('cream-cheese-8oz', 2.49, 1),
-  buildReceiptItem('heavy-cream-16oz', 3.49, 1),
+  buildStoreReceiptItem('2pct-milk-gallon', 'kroger', 1),
+  buildStoreReceiptItem('large-eggs-dozen', 'kroger', 1),
+  buildStoreReceiptItem('shredded-cheddar-8oz', 'kroger', 1),
+  buildStoreReceiptItem('cream-cheese-8oz', 'kroger', 1),
+  buildStoreReceiptItem('heavy-cream-16oz', 'kroger', 1),
   // Meat (dinner proteins)
-  buildReceiptItem('chicken-breast-boneless-per-lb', 3.49, 3),
-  buildReceiptItem('ground-turkey-per-lb', 5.49, 1),
-  buildReceiptItem('salmon-fillet-per-lb', 10.99, 1),
-  buildReceiptItem('italian-sausage-per-lb', 4.49, 1),
+  buildStoreReceiptItem('chicken-breast-boneless-per-lb', 'kroger', 3),
+  buildStoreReceiptItem('ground-turkey-per-lb', 'kroger', 1),
+  buildStoreReceiptItem('salmon-fillet-per-lb', 'kroger', 1),
+  buildStoreReceiptItem('italian-sausage-per-lb', 'kroger', 1),
   // Pantry
-  buildReceiptItem('pasta-spaghetti-16oz', 1.49, 2),
-  buildReceiptItem('tomato-sauce-8oz', 0.99, 3),
-  buildReceiptItem('chicken-broth-32oz', 2.49, 2),
-  buildReceiptItem('olive-oil-16oz', 6.99, 1),
-  buildReceiptItem('soy-sauce-10oz', 2.99, 1),
+  buildStoreReceiptItem('pasta-spaghetti-16oz', 'kroger', 2),
+  buildStoreReceiptItem('tomato-sauce-8oz', 'kroger', 3),
+  buildStoreReceiptItem('chicken-broth-32oz', 'kroger', 2),
+  buildStoreReceiptItem('olive-oil-16oz', 'kroger', 1),
+  buildStoreReceiptItem('soy-sauce-10oz', 'kroger', 1),
   // Frozen
-  buildReceiptItem('frozen-vegetables-mixed-16oz', 1.79, 2),
+  buildStoreReceiptItem('frozen-vegetables-mixed-16oz', 'kroger', 2),
   // Beverages
-  buildReceiptItem('coffee-ground-12oz', 7.49, 1),
+  buildStoreReceiptItem('coffee-ground-12oz', 'kroger', 1),
 ];
 
 function buildAnalysis(
