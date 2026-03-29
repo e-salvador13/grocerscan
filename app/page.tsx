@@ -78,32 +78,7 @@ const optimizationSteps = [
   },
 ];
 
-const recentSaves = [
-  {
-    key: 'whole_foods',
-    store: 'Whole Foods Market',
-    date: 'Yesterday, 4:12 PM',
-    savings: 12.40,
-    items: 12,
-    color: '#00674B',
-  },
-  {
-    key: 'kroger',
-    store: 'Kroger Plaza',
-    date: 'Mar 22, 10:30 AM',
-    savings: 8.15,
-    items: 5,
-    color: '#E31837',
-  },
-  {
-    key: 'walmart',
-    store: 'Walmart Supercenter',
-    date: 'Mar 20, 6:45 PM',
-    savings: 34.20,
-    items: 28,
-    color: '#0071CE',
-  },
-];
+// Real data derived from history in component body
 
 export default function Dashboard() {
   const router = useRouter();
@@ -118,6 +93,25 @@ export default function Dashboard() {
   useEffect(() => {
     setHistory(getHistory());
   }, []);
+
+  // Derived stats from history
+  const lifetimeSavings = history.reduce((sum, e) => sum + e.savingsFound, 0);
+  const totalItemsScanned = history.reduce((sum, e) => sum + e.itemCount, 0);
+  const receiptCount = history.length;
+
+  // Store loyalty breakdown: items per store
+  const storeItemMap: Record<string, number> = {};
+  history.forEach((e) => {
+    const name = e.storeName || e.store;
+    storeItemMap[name] = (storeItemMap[name] || 0) + e.itemCount;
+  });
+  const storeLoyalty = Object.entries(storeItemMap)
+    .map(([name, items]) => ({
+      name,
+      items,
+      pct: totalItemsScanned > 0 ? Math.round((items / totalItemsScanned) * 100) : 0,
+    }))
+    .sort((a, b) => b.items - a.items);
 
   const handleSampleClick = (key: string) => {
     router.push(`/processing?receipt=${key}`);
@@ -266,11 +260,13 @@ export default function Dashboard() {
                 LIFETIME SAVINGS
               </p>
               <p className="text-5xl lg:text-6xl font-extrabold text-white mt-2 tracking-tight">
-                $1,248<span className="text-white/60">.42</span>
+                ${Math.floor(lifetimeSavings).toLocaleString()}<span className="text-white/60">.{(lifetimeSavings % 1).toFixed(2).slice(2)}</span>
               </p>
               <div className="flex items-center gap-2 justify-end mt-2">
                 <ArrowUpRight size={14} className="text-white/60" />
-                <span className="text-sm text-white/60 font-medium">+12.3% this month</span>
+                <span className="text-sm text-white/60 font-medium">
+                  {receiptCount === 0 ? 'No receipts yet' : `${receiptCount} receipt${receiptCount === 1 ? '' : 's'} analyzed`}
+                </span>
               </div>
             </div>
           </div>
@@ -531,15 +527,15 @@ export default function Dashboard() {
               <div className="flex justify-between mb-6">
                 <div>
                   <p className="text-xs font-semibold text-white/50 uppercase tracking-editorial">
-                    MONTHLY SAVINGS
+                    TOTAL SAVINGS
                   </p>
-                  <p className="text-3xl font-extrabold mt-1">$214.50</p>
+                  <p className="text-3xl font-extrabold mt-1">${lifetimeSavings.toFixed(2)}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xs font-semibold text-white/50 uppercase tracking-editorial">
                     ITEMS SCANNED
                   </p>
-                  <p className="text-3xl font-extrabold mt-1">84</p>
+                  <p className="text-3xl font-extrabold mt-1">{totalItemsScanned}</p>
                 </div>
               </div>
 
@@ -548,26 +544,24 @@ export default function Dashboard() {
                   <span>Store Loyalty Breakdown</span>
                   <span>Share %</span>
                 </div>
-                {[
-                  { name: 'Walmart', pct: 45, color: '#0071CE' },
-                  { name: 'Kroger', pct: 28, color: '#E31837' },
-                  { name: 'Whole Foods', pct: 18, color: '#00674B' },
-                  { name: 'Aldi', pct: 9, color: '#FF6600' },
-                ].map((store) => (
-                  <div key={store.name} className="flex items-center gap-3 mb-2">
-                    <span className="text-xs text-white/70 w-16 font-medium">{store.name}</span>
-                    <div className="flex-1 bg-white/10 rounded-full h-2 overflow-hidden">
-                      <div
-                       
-                        className="h-full rounded-full"
-                        style={{ backgroundColor: store.color, width: `${store.pct}%` }}
-                      />
+                {storeLoyalty.length === 0 ? (
+                  <p className="text-xs text-white/40 italic">No data yet</p>
+                ) : (
+                  storeLoyalty.map((store) => (
+                    <div key={store.name} className="flex items-center gap-3 mb-2">
+                      <span className="text-xs text-white/70 w-20 font-medium truncate">{store.name}</span>
+                      <div className="flex-1 bg-white/10 rounded-full h-2 overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-white/60"
+                          style={{ width: `${store.pct}%` }}
+                        />
+                      </div>
+                      <span className="text-xs text-white/50 w-8 text-right font-medium">
+                        {store.pct}%
+                      </span>
                     </div>
-                    <span className="text-xs text-white/50 w-8 text-right font-medium">
-                      {store.pct}%
-                    </span>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </div>
 
@@ -580,34 +574,47 @@ export default function Dashboard() {
             >
               <div className="flex justify-between items-center mb-5">
                 <h3 className="font-title text-text">Recent Saves</h3>
-                <button className="text-xs font-semibold text-secondary uppercase tracking-editorial hover:text-secondary-light transition-colors">
-                  VIEW ALL
-                </button>
               </div>
-              <div className="space-y-1">
-                {recentSaves.map((save, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 cursor-pointer hover:bg-surface-low rounded-xl p-3 -mx-1 transition-colors"
-                  >
-                    <StoreLogo storeKey={save.key} size={40} />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-text truncate">
-                        {save.store}
-                      </p>
-                      <p className="text-xs text-text-tertiary">{save.date}</p>
+              {history.length === 0 ? (
+                <p className="text-sm text-text-tertiary italic text-center py-6">
+                  Scan a receipt to see your savings history
+                </p>
+              ) : (
+                <div className="space-y-1">
+                  {history.slice(0, 5).map((entry) => (
+                    <div
+                      key={entry.id}
+                      onClick={() => handleHistoryClick(entry)}
+                      className="flex items-center gap-3 cursor-pointer hover:bg-surface-low rounded-xl p-3 -mx-1 transition-colors"
+                    >
+                      {entry.imageUrl ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={entry.imageUrl}
+                          alt={entry.storeName}
+                          className="w-10 h-10 rounded-lg object-cover bg-gray-100"
+                        />
+                      ) : (
+                        <StoreLogo storeKey={entry.store} size={40} />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-text truncate">
+                          {entry.storeName}
+                        </p>
+                        <p className="text-xs text-text-tertiary">{entry.date}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-sm font-bold text-primary">
+                          +${entry.savingsFound.toFixed(2)}
+                        </p>
+                        <p className="text-[10px] text-text-tertiary uppercase tracking-editorial">
+                          {entry.itemCount} ITEMS
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm font-bold text-primary">
-                        +${save.savings.toFixed(2)}
-                      </p>
-                      <p className="text-[10px] text-text-tertiary uppercase tracking-editorial">
-                        {save.items} ITEMS
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
