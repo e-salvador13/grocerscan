@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import {
   TrendingDown,
   Ticket,
@@ -25,36 +26,60 @@ import StoreLogo from '../StoreLogo';
 
 function Tooltip({ text }: { text: string }) {
   const [show, setShow] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const tipRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+
+  const updatePos = useCallback(() => {
+    if (!btnRef.current) return;
+    const rect = btnRef.current.getBoundingClientRect();
+    setPos({
+      top: rect.top + window.scrollY - 8,
+      left: rect.left + rect.width / 2,
+    });
+  }, []);
 
   useEffect(() => {
     if (!show) return;
+    updatePos();
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setShow(false);
+      if (
+        btnRef.current?.contains(e.target as Node) ||
+        tipRef.current?.contains(e.target as Node)
+      ) return;
+      setShow(false);
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, [show]);
+  }, [show, updatePos]);
 
   return (
-    <div className="relative inline-block" ref={ref}>
+    <>
       <button
+        ref={btnRef}
         onClick={() => setShow(!show)}
         className="w-5 h-5 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-[10px] font-bold text-white/80 transition-colors"
         aria-label="How is this calculated?"
       >
         ?
       </button>
-      {show && (
+      {show && typeof document !== 'undefined' && createPortal(
         <div
-          className="absolute z-50 bottom-full mb-2 left-1/2 -translate-x-1/2 w-56 rounded-lg px-3 py-2 text-xs text-gray-700 leading-relaxed shadow-lg"
-          style={{ backgroundColor: '#fff' }}
+          ref={tipRef}
+          className="fixed z-[9999] w-56 rounded-lg px-3 py-2.5 text-xs text-gray-700 leading-relaxed shadow-xl"
+          style={{
+            backgroundColor: '#fff',
+            top: pos.top,
+            left: pos.left,
+            transform: 'translate(-50%, -100%)',
+          }}
         >
           {text}
           <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-transparent border-t-white" />
-        </div>
+        </div>,
+        document.body
       )}
-    </div>
+    </>
   );
 }
 
