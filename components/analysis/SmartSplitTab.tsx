@@ -253,7 +253,7 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
        
        
        
-        className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-5"
       >
         <div
           className="rounded-xl p-6 text-white relative overflow-hidden"
@@ -269,22 +269,6 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
             EFFICIENCY SCORE
           </p>
           <p className="text-2xl font-extrabold">{efficiencyScore}% Optimized</p>
-        </div>
-
-        <div
-          className="rounded-xl p-6 text-white relative overflow-hidden"
-          style={{ background: 'linear-gradient(145deg, #6e5100, #a16207)' }}
-        >
-          <div className="absolute top-4 right-4 flex items-center gap-2">
-            <Tooltip text="Items where you're paying significantly more than the cheapest available price at another store in your area." />
-            <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-              <Ticket size={20} />
-            </div>
-          </div>
-          <p className="text-xs font-semibold uppercase tracking-editorial text-white/60 mb-1">
-            SAVINGS ALERTS
-          </p>
-          <p className="text-2xl font-extrabold">{couponAlerts.length} Active Deal{couponAlerts.length !== 1 ? 's' : ''}</p>
         </div>
 
         <div
@@ -403,15 +387,10 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
         <RouteOverview stores={analysis.optimalBasket.map((a) => a.store)} />
       )}
 
-      {/* Item Comparison + Coupon Alerts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Item Comparison */}
+      <div>
         {/* Item Comparison Table */}
-        <div
-         
-         
-         
-          className="lg:col-span-2"
-        >
+        <div>
           <div className="flex items-center gap-3 mb-5">
             <h2 className="font-headline text-text">
               Item Comparison
@@ -558,95 +537,6 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
           </div>
         </div>
 
-        {/* Savings Alerts Sidebar */}
-        <div
-         
-         
-         
-          className="space-y-5"
-        >
-          <h2 className="font-headline text-text">
-            Savings Alerts
-          </h2>
-
-          {couponAlerts.length === 0 ? (
-            <div className="card-base p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mx-auto mb-3">
-                <Tag size={20} className="text-primary" />
-              </div>
-              <p className="text-sm font-bold text-text">You&apos;re already getting great deals!</p>
-              <p className="text-xs text-text-tertiary mt-1">No overcharged items found on this receipt.</p>
-            </div>
-          ) : (
-            <>
-              {/* Main Savings Card */}
-              <div className="rounded-xl p-5 space-y-3" style={{ backgroundColor: '#fef3c7' }}>
-                <span
-                  className="inline-block text-[10px] font-bold text-white px-2.5 py-1 rounded-lg uppercase tracking-editorial"
-                  style={{ backgroundColor: couponAlerts[0].badgeColor }}
-                >
-                  {couponAlerts[0].badge}
-                </span>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-3xl font-extrabold text-text">
-                      {couponAlerts[0].discount}
-                    </p>
-                    <p className="text-sm font-semibold text-text mt-0.5">
-                      {couponAlerts[0].product}
-                    </p>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-white/60 flex items-center justify-center">
-                    <Tag size={18} className="text-text-secondary" />
-                  </div>
-                </div>
-                <p className="text-xs text-text-secondary leading-relaxed">
-                  {couponAlerts[0].desc}
-                </p>
-              </div>
-
-              {/* Additional Savings Cards */}
-              {couponAlerts.slice(1).map((coupon, i) => (
-                <div
-                  key={i}
-                  className="card-base p-4 flex items-center gap-3 hover:shadow-lg transition-shadow cursor-pointer"
-                >
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${coupon.badgeColor}10` }}
-                  >
-                    <Tag size={16} style={{ color: coupon.badgeColor }} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-text">{coupon.discount}</p>
-                    <p className="text-xs text-text-tertiary truncate">{coupon.product}</p>
-                  </div>
-                  <span
-                    className="text-[9px] font-bold px-2 py-0.5 rounded-md text-white flex-shrink-0"
-                    style={{ backgroundColor: coupon.badgeColor }}
-                  >
-                    {coupon.badge}
-                  </span>
-                </div>
-              ))}
-            </>
-          )}
-
-          {/* Dynamic Bulk Buy Alert */}
-          {bulkBuyAlert && (
-            <div className="card-base p-4 flex gap-3">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(76,86,175,0.08)' }}>
-                <Package size={16} className="text-secondary" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-text">Bulk Buy Alert</p>
-                <p className="text-xs text-text-secondary leading-relaxed mt-0.5">
-                  Buy {bulkBuyAlert.qty} {bulkBuyAlert.name} at {bulkBuyAlert.store} to save ${bulkBuyAlert.savings} today.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
