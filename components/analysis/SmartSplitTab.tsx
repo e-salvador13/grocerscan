@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import {
   TrendingDown,
   Ticket,
@@ -22,6 +22,41 @@ import {
   STORE_NAMES,
 } from '../../lib/types';
 import StoreLogo from '../StoreLogo';
+
+function Tooltip({ text }: { text: string }) {
+  const [show, setShow] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!show) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setShow(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [show]);
+
+  return (
+    <div className="relative inline-block" ref={ref}>
+      <button
+        onClick={() => setShow(!show)}
+        className="w-5 h-5 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-[10px] font-bold text-white/80 transition-colors"
+        aria-label="How is this calculated?"
+      >
+        ?
+      </button>
+      {show && (
+        <div
+          className="absolute z-50 bottom-full mb-2 left-1/2 -translate-x-1/2 w-56 rounded-lg px-3 py-2 text-xs text-gray-700 leading-relaxed shadow-lg"
+          style={{ backgroundColor: '#fff' }}
+        >
+          {text}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-transparent border-t-white" />
+        </div>
+      )}
+    </div>
+  );
+}
 
 // Florence, KY store locations for route planning
 const FLORENCE_STORES: Record<string, { address: string; lat: number; lng: number }> = {
@@ -199,8 +234,11 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
           className="rounded-xl p-6 text-white relative overflow-hidden"
           style={{ background: 'linear-gradient(145deg, #0d631b, #15803d)' }}
         >
-          <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-            <Zap size={20} />
+          <div className="absolute top-4 right-4 flex items-center gap-2">
+            <Tooltip text="Best possible total divided by what you paid. 100% means you're already paying the lowest price at every store." />
+            <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
+              <Zap size={20} />
+            </div>
           </div>
           <p className="text-xs font-semibold uppercase tracking-editorial text-white/60 mb-1">
             EFFICIENCY SCORE
@@ -212,8 +250,11 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
           className="rounded-xl p-6 text-white relative overflow-hidden"
           style={{ background: 'linear-gradient(145deg, #6e5100, #a16207)' }}
         >
-          <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-            <Ticket size={20} />
+          <div className="absolute top-4 right-4 flex items-center gap-2">
+            <Tooltip text="Items where you're paying significantly more than the cheapest available price at another store in your area." />
+            <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
+              <Ticket size={20} />
+            </div>
           </div>
           <p className="text-xs font-semibold uppercase tracking-editorial text-white/60 mb-1">
             SAVINGS ALERTS
@@ -225,8 +266,11 @@ export default function SmartSplitTab({ analysis }: { analysis: AnalysisResult }
           className="rounded-xl p-6 text-white relative overflow-hidden"
           style={{ background: 'linear-gradient(145deg, #4c56af, #3730a3)' }}
         >
-          <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-            <MapPin size={20} />
+          <div className="absolute top-4 right-4 flex items-center gap-2">
+            <Tooltip text="Number of stores in your area that offer the best price on at least one item from your receipt." />
+            <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
+              <MapPin size={20} />
+            </div>
           </div>
           <p className="text-xs font-semibold uppercase tracking-editorial text-white/60 mb-1">
             BEST LOCAL STORES
